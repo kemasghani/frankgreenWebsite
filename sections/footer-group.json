@@ -1,0 +1,141 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "name": "t:sections.footer.name",
+  "type": "footer",
+  "sections": {
+    "custom_liquid_DRXqYR": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "<script>\ndocument.addEventListener('DOMContentLoaded', function () {\n  // Select the specific external link in the footer\n  const externalLink = document.querySelector('.footer-block__details-content a[href=\"https://frankgreen.com.au/blogs/read\"]');\n  \n  if (externalLink) {\n    // Set attributes to open in a new tab\n    externalLink.setAttribute('target', '_blank'); \n    externalLink.setAttribute('rel', 'noopener noreferrer');\n  }\n});\n</script>",
+        "color_scheme": "",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "1733385335f813e746": {
+      "type": "apps",
+      "blocks": {
+        "klaviyo_email_marketing_sms_form_embed_block_iE6Thy": {
+          "type": "shopify://apps/klaviyo-email-marketing-sms/blocks/form-embed-block/2632fe16-c075-4321-a88b-50b567f42507",
+          "settings": {
+            "formId": "<div class=\"klaviyo-form-UZBM4r\"></div>"
+          }
+        },
+        "klaviyo_email_marketing_sms_form_embed_block_nLwDHe": {
+          "type": "shopify://apps/klaviyo-email-marketing-sms/blocks/form-embed-block/2632fe16-c075-4321-a88b-50b567f42507",
+          "settings": {
+            "formId": ""
+          }
+        }
+      },
+      "block_order": [
+        "klaviyo_email_marketing_sms_form_embed_block_iE6Thy",
+        "klaviyo_email_marketing_sms_form_embed_block_nLwDHe"
+      ],
+      "disabled": true,
+      "settings": {
+        "include_margins": true
+      }
+    },
+    "custom_liquid_EYWR8C": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "<style>\n.card {\n    position: relative;\n} \n\n.customise-button {\n    position: absolute;\n    top: 10px;\n    right: 10px;\n    padding: 3px 6px;\n    font-family: 'DM Sans', sans-serif;\n    font-size: 12px;\n    font-weight: 600;\n    color: #000000; \n    background: white;\n    border: 3px solid transparent; \n    border-image: linear-gradient(90deg, #fdd0ce, #0d3560, #ceb0d2, #b7d8c0, #ff822b, #ff4078, #8ec9ea) 1; \n    animation: glowing-border 4s linear infinite; \n    border-radius: 15px;\n    z-index: 10;\n    cursor: pointer;\n}\n\n@keyframes glowing-border {\n    0% {\n        border-image-source: linear-gradient(90deg, #fdd0ce, #0d3560, #ceb0d2, #b7d8c0, #ff822b, #ff4078, #8ec9ea); \n    }\n    25% {\n        border-image-source: linear-gradient(180deg, #0d3560, #ceb0d2, #b7d8c0, #ff822b, #ff4078, #8ec9ea, #fdd0ce); \n    }\n    50% {\n        border-image-source: linear-gradient(270deg, #ceb0d2, #b7d8c0, #ff822b, #ff4078, #8ec9ea, #fdd0ce, #0d3560); \n    }\n    75% {\n        border-image-source: linear-gradient(360deg, #b7d8c0, #ff822b, #ff4078, #8ec9ea, #fdd0ce, #0d3560, #ceb0d2); \n    }\n    100% {\n        border-image-source: linear-gradient(90deg, #fdd0ce, #0d3560, #ceb0d2, #b7d8c0, #ff822b, #ff4078, #8ec9ea); \n    }\n}\n\n\n.limited-button {\n    position: absolute;\n    top: 10px;\n    right: 10px;\n    padding: 3px 6px;\n    font-family: 'DM Sans', sans-serif;\n    font-size: 12px;\n    font-weight: 600;\n    color: #000000; \n    background: white;\n    border: 3px solid transparent; \n    border-image: linear-gradient(90deg, #a8e6cf, #56ab91, #8fc0a9, #b2e8c4, #6fcf97, #2d6a4f, #a0d995) 1;\n    animation: limited-glowing-border 4s linear infinite;\n    border-radius: 15px;\n    z-index: 10;\n    cursor: pointer;\n    }\n    \n    @keyframes limited-glowing-border {\n        0% {\n            border-image-source: linear-gradient(90deg, #a8e6cf, #56ab91, #8fc0a9, #b2e8c4, #6fcf97, #2d6a4f, #a0d995);\n        }\n        25% {\n            border-image-source: linear-gradient(180deg, #56ab91, #8fc0a9, #b2e8c4, #6fcf97, #2d6a4f, #a0d995, #a8e6cf);\n        }\n        50% {\n            border-image-source: linear-gradient(270deg, #8fc0a9, #b2e8c4, #6fcf97, #2d6a4f, #a0d995, #a8e6cf, #56ab91);\n        }\n        75% {\n            border-image-source: linear-gradient(360deg, #b2e8c4, #6fcf97, #2d6a4f, #a0d995, #a8e6cf, #56ab91, #8fc0a9);\n        }\n        100% {\n            border-image-source: linear-gradient(90deg, #a8e6cf, #56ab91, #8fc0a9, #b2e8c4, #6fcf97, #2d6a4f, #a0d995);\n        }\n    }\n</style>",
+        "color_scheme": "",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "custom_liquid_JnHXKY": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "<style>\n.powered-by-doku {\n  margin-top: 20px;\n  text-align: center;\n}\n.footer__content-bottom-wrapper--center .footer__copyright {\n  color: #ffffff; \n}\n\n.footer__content-bottom-wrapper--center .footer__copyright a {\n  color: #ffffff; \n  text-decoration: none; \n}\n\n.footer__content-bottom-wrapper--center .footer__copyright a:hover {\n  color: #dddddd; \n}\n.powered-text {\n  font-size: 14px;\n  font-weight: bold;\n  color: #fff;\n  margin-bottom: 10px;\n}\n\n.payment-icons {\n  display: flex;\n  flex-wrap: wrap;\n  justify-content: center;\n  gap: 10px;\n}\n\n.payment-icons img {\n  width: 50px;\n  height: auto;\n  object-fit: contain;\n  border-radius: 5px;\n}\n</style>\n<script>\ndocument.addEventListener(\"DOMContentLoaded\", function () {\n  const footerContent = document.querySelector(\".footer-block__details-content.rte\");\n\n  if (footerContent) {\n    const poweredByDoku = document.createElement(\"div\");\n    poweredByDoku.className = \"powered-by-doku\";\n\n    poweredByDoku.innerHTML = `\n      <p class=\"powered-text\">Powered by DOKU</p>\n      <div class=\"payment-icons\">\n        <img src=\"https://cdn.shopify.com/s/files/1/0906/2072/3475/files/Icon-Bank_VISA.jpg?v=1733796890\" alt=\"VISA\" />\n        <img src=\"https://cdn.shopify.com/s/files/1/0906/2072/3475/files/Icon-Bank_MASTERCARD.jpg?v=1733796890\" alt=\"MasterCard\" />\n        <img src=\"https://cdn.shopify.com/s/files/1/0906/2072/3475/files/Icon-Bank_ATM-BERSAMA.jpg?v=1733796890\" alt=\"ATM Bersama\" />\n        <img src=\"https://cdn.shopify.com/s/files/1/0906/2072/3475/files/Icon-Bank_BRI.jpg?v=1733796890\" alt=\"BRI\" />\n        <img src=\"https://cdn.shopify.com/s/files/1/0906/2072/3475/files/Icon-Bank_BNI.jpg?v=1733796890\" alt=\"BNI\" />\n        <img src=\"https://cdn.shopify.com/s/files/1/0906/2072/3475/files/Icon-Bank_CIMB-NIAGA.jpg?v=1733796890\" alt=\"CIMB Niaga\" />\n        <img src=\"https://cdn.shopify.com/s/files/1/0906/2072/3475/files/Icon-Bank_DOKU.jpg?v=1733796890\" alt=\"DOKU\" />\n        <img src=\"https://cdn.shopify.com/s/files/1/0906/2072/3475/files/Icon-Bank_PRIMA.jpg?v=1733796890\" alt=\"Prima\" />\n        <img src=\"https://cdn.shopify.com/s/files/1/0906/2072/3475/files/Icon-Bank_BSI.jpg?v=1733796890\" alt=\"BSI\" />\n        <img src=\"https://cdn.shopify.com/s/files/1/0906/2072/3475/files/Icon-Bank_ALTO.jpg?v=1733796890\" alt=\"ALTO\" />\n        <img src=\"https://cdn.shopify.com/s/files/1/0906/2072/3475/files/Icon-Bank_JCB.jpg?v=1733796890\" alt=\"JCB\" />\n      </div>\n    `;\n\n    footerContent.appendChild(poweredByDoku);\n  }\n});\n\n</script>",
+        "color_scheme": "",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "footer": {
+      "type": "footer",
+      "blocks": {
+        "image_EfQh7x": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/FG_LOGO_Putih-03.png",
+            "image_width": 210,
+            "alignment": ""
+          }
+        },
+        "link_list_ff6PAC": {
+          "type": "link_list",
+          "settings": {
+            "heading": "",
+            "menu": "footer"
+          }
+        },
+        "link_list_TjNKWg": {
+          "type": "link_list",
+          "settings": {
+            "heading": "",
+            "menu": "footer-menu2"
+          }
+        },
+        "brand_information_q4CRwd": {
+          "type": "brand_information",
+          "settings": {
+            "show_social": true
+          }
+        },
+        "text_WGMPFa": {
+          "type": "text",
+          "settings": {
+            "heading": "",
+            "subtext": ""
+          }
+        }
+      },
+      "block_order": [
+        "image_EfQh7x",
+        "link_list_ff6PAC",
+        "link_list_TjNKWg",
+        "brand_information_q4CRwd",
+        "text_WGMPFa"
+      ],
+      "custom_css": [
+        ".footer{background-color:#009739}",
+        ".footer-block{padding:8px}",
+        ".footer__content-top *{color:#fff}",
+        "@media screen and (max-width:768px){.footer-block__image-wrapper{max-width:90px!important}.footer-block__details-content{display:flex;flex-direction:column;align-items:flex-start;margin:0}.footer-block.grid__item{margin:0}.footer__blocks-wrapper{display:flex;flex-wrap:wrap;justify-content:space-between;gap:0}.footer-block--menu{flex:1 1 45%;max-width:45%;margin:0}.footer-block--menu ul{text-align:left}}"
+      ],
+      "settings": {
+        "color_scheme": "scheme-1",
+        "newsletter_enable": false,
+        "newsletter_heading": "Subscribe to our emails",
+        "enable_follow_on_shop": false,
+        "show_social": false,
+        "enable_country_selector": false,
+        "enable_language_selector": false,
+        "payment_enable": true,
+        "show_policy": false,
+        "margin_top": 0,
+        "padding_top": 28,
+        "padding_bottom": 20
+      }
+    }
+  },
+  "order": [
+    "custom_liquid_DRXqYR",
+    "1733385335f813e746",
+    "custom_liquid_EYWR8C",
+    "custom_liquid_JnHXKY",
+    "footer"
+  ]
+}
