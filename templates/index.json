@@ -1,1 +1,715 @@
-{"sections":{"custom_liquid_WgtWxe":{"type":"custom-liquid","settings":{"custom_liquid":"<!-- Google Tag Manager (noscript) -->\n<noscript><iframe src=\"https:\/\/www.googletagmanager.com\/ns.html?id=GTM-KQQ55SR4\"\n  height=\"0\" width=\"0\" style=\"display:none;visibility:hidden\"><\/iframe><\/noscript>\n<!-- End Google Tag Manager (noscript) -->\n<style>\n  .collection { \n  margin-top:0;\n  }\n  .collection__title--desktop-slider {\n    margin-bottom: 0 !important;\n  }\n  .title{\n  margin-bottom: 0 !important;\n  }\n<\/style>\n<style>\n  #Slider-template--23686114541843__featured_collection, \n  #Slider-template--23686114541843__featured_collection_zEQatQ,\n  #Slider-template--23686114541843__featured_collection_xrn4VY,\n  #Slider-template--23686114541843__featured_collection_mPGFDx,\n  #Slider-template--23686114541843__featured_collection_9EkhtT,\n  #Slider-template--23686114541843__featured_collection_YmTLtJ,\n  #Slider-template--23686114541843__featured_collection_NkcLmV,\n  #Slider-template--23686114541843__featured_collection_CMThWw,\n  #Slider-template--23686114541843__featured_collection_amJ9Vk  {\n    user-select: none; \n    -webkit-overflow-scrolling: touch; \n    overflow-x: auto; \n    scroll-snap-type: none;  \n    scroll-behavior: smooth; \n  } \n<\/style>\n\n<script>\ndocument.addEventListener('DOMContentLoaded', function () {\n  \/\/ Check screen width to decide whether to apply drag functionality\n  if (window.innerWidth > 768) { \/\/ Only apply on screens larger than 768px (adjust as needed)\n    const carousels = document.querySelectorAll(\n      '#Slider-template--23686114541843__featured_collection, ' + \n      '#Slider-template--23686114541843__featured_collection_zEQatQ, ' +\n      '#Slider-template--23686114541843__featured_collection_xrn4VY, ' +\n      '#Slider-template--23686114541843__featured_collection_mPGFDx, ' +\n      '#Slider-template--23686114541843__featured_collection_9EkhtT, ' +\n      '#Slider-template--23686114541843__featured_collection_NkcLmV, ' +\n      '#Slider-template--23686114541843__featured_collection_YmTLtJ, ' +\n      '#Slider-template--23686114541843__featured_collection_amJ9Vk, ' +\n      '#Slider-template--23686114541843__featured_collection_CMThWw '\n    );\n\n    carousels.forEach(carousel => {\n      let isMouseDown = false;\n      let isDragging = false;\n      let startX;\n      let scrollLeft;\n\n      carousel.style.cursor = 'grab';\n\n      carousel.addEventListener('mousedown', function (e) {\n        isMouseDown = true;\n        isDragging = false; \/\/ Reset dragging state\n        startX = e.pageX - carousel.offsetLeft;\n        scrollLeft = carousel.scrollLeft;\n\n        setTimeout(() => {\n          if (isMouseDown) {\n            isDragging = true;\n            carousel.style.cursor = 'grabbing';\n            carousel.querySelectorAll('a').forEach(link => link.style.pointerEvents = 'none'); \/\/ Disable link clicks\n          }\n        }, 200); \/\/ 0.2 second delay to initiate dragging\n      });\n\n      carousel.addEventListener('mouseleave', function () {\n        if (isMouseDown) resetState(carousel);\n      });\n\n      carousel.addEventListener('mouseup', function () {\n        if (isMouseDown) resetState(carousel);\n      });\n\n      carousel.addEventListener('mousemove', function (e) {\n        if (!isMouseDown || !isDragging) return;\n\n        e.preventDefault(); \/\/ Prevent text selection while dragging\n\n        const x = e.pageX - carousel.offsetLeft;\n        const walk = x - startX;\n\n        carousel.scrollLeft = scrollLeft - walk;\n      });\n\n      carousel.addEventListener('touchstart', function (e) {\n        const touchStart = e.touches[0].pageX; \n        let touchMove;\n\n        carousel.addEventListener('touchmove', function (e) {\n          touchMove = e.touches[0].pageX; \n          const moveDistance = touchStart - touchMove;\n          carousel.scrollLeft += moveDistance;\n        });\n\n        carousel.addEventListener('touchend', function () {\n          carousel.removeEventListener('touchmove', null);\n          carousel.removeEventListener('touchend', null);\n        });\n      });\n\n      function resetState(carousel) {\n        isMouseDown = false;\n        isDragging = false;\n        carousel.style.cursor = 'grab';\n        carousel.querySelectorAll('a').forEach(link => link.style.pointerEvents = 'auto'); \/\/ Re-enable link clicks\n      }\n    });\n  }\n});\n<\/script> \n<script>\n    document.addEventListener(\"DOMContentLoaded\", function () {\n        function processProductTitles() {\n            document.querySelectorAll('.product-title').forEach(function (titleElement) {\n                if (!titleElement.querySelector('.product-subtitle')) { \n                    const titleText = titleElement.textContent.trim();\n                    const match = titleText.match(\/-\\s*(\\d+\\s*ml)\/i); \n\n                    if (match) {\n                        const mlText = match[1]; \n                        const newTitle = titleText.replace(\/-\\s*\\d+\\s*ml\/i, '').trim(); \n\n                        titleElement.textContent = newTitle; \n\n                        const subtitleElement = document.createElement('span');\n                        subtitleElement.className = 'product-subtitle';\n                        subtitleElement.textContent = mlText;\n\n                        titleElement.appendChild(subtitleElement);\n                    }\n                }\n            });\n        }\n\n        var observer = new MutationObserver(function (mutationsList, observer) {\n            mutationsList.forEach(function (mutation) {\n                if (mutation.type === \"childList\") {\n                    processProductTitles();\n                }\n            });\n        });\n\n        observer.observe(document.body, { childList: true, subtree: true });\n\n        processProductTitles();\n    });\n<\/script>\n<script>\n    document.addEventListener(\"DOMContentLoaded\", function () {\n        function hideIDRText() {\n\n            document.querySelectorAll('.product-price, .cart-price, .checkout-price').forEach(function (priceElement) {\n\n                priceElement.innerHTML = priceElement.innerHTML.replace(\/\\s*IDR\/gi, '');\n            });\n        }\n\n        var observer = new MutationObserver(function (mutationsList, observer) {\n            mutationsList.forEach(function (mutation) {\n                if (mutation.type === \"childList\") {\n                    hideIDRText(); \n                }\n            });\n        });\n\n        observer.observe(document.body, { childList: true, subtree: true });\n\n        hideIDRText(); \n    });\n<\/script>\n<style>\n.custom3-feature-icons-container{display:flex;justify-content:center;align-items:center;flex-wrap:wrap;width:100%;margin:0 auto}.custom3-feature-icon{display:flex;flex-direction:column;align-items:center;margin:10px;width:45%;max-width:120px}.custom3-feature-icon img{width:60px;height:60px;object-fit:contain;filter:brightness(0) invert(0)}.custom3-feature-icon p{text-align:center;margin-top:10px;color:#000}.custom3-mobile-feature-icons-section{display:none;background-color:#d5e8da;padding:20px 0}@media (max-width:768px){.custom3-mobile-feature-icons-section{display:block}.custom3-feature-icons-container{display:flex;flex-wrap:wrap;justify-content:center}.custom3-feature-icon{width:40%;margin:10px}.custom3-feature-icon img{width:50px;height:50px}.custom3-feature-icon p{text-align:center;margin-top:5px;color:#000;font-size:.8rem;line-height:1.2}.custom3-mobile-feature-icons-section h2{text-align:center;color:#000;font-size:2.5rem;font-weight:700}}\n  <\/style>\n<script>\n    document.addEventListener(\"DOMContentLoaded\", function() {\n    \n        var observer = new MutationObserver(function(mutationsList, observer) {\n            mutationsList.forEach(function(mutation) {\n                if (mutation.type === \"childList\") {\n                    var paragraph = document.querySelector(\"p a[href='https:\/\/globosoftware.net']\");\n                    if (paragraph) {\n                        paragraph.closest(\"p\").style.display = \"none\";\n                        observer.disconnect();\n                    }\n                }\n            });\n        });\n    \n        observer.observe(document.body, { childList: true, subtree: true });\n    });\n<\/script>\n<script>\n    document.addEventListener(\"DOMContentLoaded\", function() {\n    \n        var observer = new MutationObserver(function(mutationsList, observer) {\n            mutationsList.forEach(function(mutation) {\n                if (mutation.type === \"childList\") {\n                    var floatingButton = document.querySelector(\".floating-button.circle.half-bottom.right\");\n                    if (floatingButton) {\n                        floatingButton.style.display = \"none\";\n    \n                        observer.disconnect();\n                    }\n                }\n            });\n        });\n        observer.observe(document.body, { childList: true, subtree: true });\n    });\n    <\/script>\n    <script>\n        document.addEventListener(\"DOMContentLoaded\", function() {\n        \n            var observer = new MutationObserver(function(mutationsList, observer) {\n                mutationsList.forEach(function(mutation) {\n                    if (mutation.type === \"childList\") {\n                        var paragraph = document.querySelector(\"p a[href='https:\/\/globosoftware.net']\");\n                        if (paragraph) {\n                            paragraph.closest(\"p\").style.display = \"none\";\n                            observer.disconnect();\n                        }\n                    }\n                });\n            });\n        \n            observer.observe(document.body, { childList: true, subtree: true });\n        });\n    <\/script>\n<script>\ndocument.addEventListener(\"DOMContentLoaded\", function() {\n    document.title = \"frank green Indonesia\";\n  });\n<\/script>","color_scheme":"","padding_top":0,"padding_bottom":0}},"custom_liquid_LNP73k":{"type":"custom-liquid","custom_css":["@media display(min-width:769px) {.custom-slider-container {display: none; }}"],"settings":{"custom_liquid":"<div class=\"custom-slider-container\"> \n\n  <div id=\"custom-slide1\"  class=\"custom-slide\" style=\"background-image: url('https:\/\/cdn.shopify.com\/s\/files\/1\/0906\/2072\/3475\/files\/web-banner-GENERAL-GRADIENT.jpg?v=1741248128');\">\n    <div class=\"custom-content\">\n      <div class=\"custom-text-content\">\n        <h1 class=\"custom-main-heading\">New Gradient Collection<\/h1>\n        <p class=\"custom-description\"> Limited Edition<\/p>\n      <\/div>\n      <div class=\"custom-button-container\">\n          <a href=\"\/collections\/new-arrivals\" class=\"custom-button-link\">Shop Now<\/a>\n      <\/div>\n    <\/div>\n  <\/div>\n  <div id=\"custom-slide2\" class=\"custom-slide\" style=\"background-image: url('https:\/\/cdn.shopify.com\/s\/files\/1\/0906\/2072\/3475\/files\/web-banner-2880x1234X.jpg?v=1739960215');\">\n    <div class=\"custom-content\">\n      <div class=\"custom-text-content\">\n        <h1 class=\"custom-main-heading\">New Chrome Collection<\/h1>\n        <p class=\"custom-description\"> Available in Chrome Rainbow and Chrome Silver<\/p>\n      <\/div>\n      <div class=\"custom-button-container\">\n          <a href=\"\/products\/chrome-ceramic-reusable-bottle\" class=\"custom-button-link\">Shop Now<\/a>\n      <\/div>\n      <\/div>\n  <\/div>\n<\/div>\n\n<style>\n.custom-slider-container {\n  display: flex;\n  overflow: hidden;\n  width: 100%;\n  height: 90vh; \n  position: relative;\n}\n\n.custom-slider-container .custom-slide {\n  min-width: 100%;\n  height: 100%;\n  display: flex;\n  align-items: center;\n  background-size: cover;\n  background-position: center;\n  background-repeat: no-repeat;\n  padding: 0 50px;\n}\n\n.custom-slider-container .custom-content { \n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  width: 100%;\n  position: relative;\n}\n\n.custom-slider-container .custom-text-content {\n  flex: 1;\n}\n\n.custom-slider-container .custom-description {\n  font-family: 'Plus Jakarta Sans', sans-serif;\n  font-size: 1.5rem;\n  font-weight: normal;\n  color: black;\n  margin-top: 0.5rem;\n}\n\n.custom-slider-container .custom-main-heading {\n  font-family: 'Plus Jakarta Sans', sans-serif;\n  font-size: 3.5rem;\n  font-weight: bold;\n  color: black; \n}\n\n.custom-slider-container .custom-button-container {\n  display: flex;\n  justify-content: flex-start;\n  align-items: center;\n  margin-top: 3rem;\n}\n\n.custom-slider-container .custom-button-link {\n  font-size: 3rem;\n  font-family: 'Plus Jakarta Sans', sans-serif;\n  text-decoration: none;\n  font-weight: bold;\n  color: black; \n  border: none;\n  background: none;\n  cursor: pointer;\n  padding: 0;\n  display: inline-block;\n  padding-bottom: 2px;\n  background-image: linear-gradient(#000 0 0);\n  background-position: 0 100%; \n  background-size: 0% 5%;\n  background-repeat: no-repeat;\n  transition:\n    background-size 0.3s,\n    background-position 0s 0.3s; \n}\n\n.custom-slider-container .custom-button-link:hover {\n  background-position: 100% 100%;\n  background-size: 100% 5%;\n}\n\n.custom-slider-container .custom-button-link::after {\n  content: '';\n  display: inline-block;\n  width: 1rem;\n  height: 1rem; \n  background-color: black;\n  margin-left: 10px;\n  position: relative;\n  border-radius: 50%; \n  animation: none; \n  transform: translateY(-2rem);\n}\n\n.custom-slider-container .custom-button-link:hover::after {\n  animation: bounce 1s forwards;\n}\n\n@keyframes bounce {\n  0% {\n    transform: translateY(-2rem);\n  }\n  50% {\n    transform: translateY(-1rem); \n  }\n  100% {\n    transform: translateY(-2rem);\n  }\n}\n\n@media (max-width: 768px) {\n  .custom-slider-container {\n    height: 60vh;\n  }\n\n  .custom-slider-container .custom-slide {\n    flex-direction: row;\n    align-items: center;\n    padding: 0 20px;\n    position: relative;\n  }\n\n  .custom-slider-container .custom-content {\n    height:100%;\n    display: flex;\n    flex-direction: column;\n    position: absolute; \n    left: 20px; \n    align-items: flex-start;\n    padding-top:60%;\n  }\n\n  .custom-slider-container .custom-main-heading {\n    font-size: 2rem;\n    margin-bottom: 0 !important;\n  }\n\n  .custom-slider-container .custom-description {\n    font-size: 1rem;\n    margin-bottom: auto;\n  }\n\n  .custom-slider-container .custom-button-container {\n    padding-top:50vh;\n    position: absolute; \n    display:flex;\n    flex-direction: column;\n    bottom: 20px; \n    left: 20px; \n    right: 50px;  \n    align-items: flex-end;\n  }\n  .custom-slider-container .custom-button-link {\n    font-size: 1.5rem; \n    align-items: flex-end;\n  }\n\n  .custom-slider-container .custom-button-link::after {\n    width: 0.8rem;\n    height: 0.8rem;\n    margin-left: 5px;\n    transform: translateY(-1.5rem);\n  }\n} \n<\/style>\n\n<script>\nconst slide1 = document.getElementById('custom-slide1');\nconst slide2 = document.getElementById('custom-slide2');\nlet currentSlide = 0;\n\nfunction showSlide(index) {\n\n  slide1.style.display = 'none';\n  slide2.style.display = 'none';\n\n  if (index === 0) {\n    slide1.style.display = 'flex';\n  } else if (index === 1) {\n    slide2.style.display = 'flex';\n  }\n}\n\nsetInterval(() => {\n  currentSlide = (currentSlide + 1) % 2; \n  showSlide(currentSlide);\n}, 5000);\n\nshowSlide(currentSlide);\n\n<\/script>","color_scheme":"","padding_top":0,"padding_bottom":0}},"featured_collection_zEQatQ":{"type":"featured-collection","custom_css":[".title {font-family: serif; font-weight: normal; letter-spacing: 0.2px; font-size: 2rem;}",".card__heading {font-size: 1.2rem; letter-spacing: 0.2px; font-weight: bold;}",".price-item {font-weight: bold; font-size: 0.85rem;}",".slider-buttons {display: none;}",".card__information {gap: 0 !important;}",".price {margin-top: 0 !important;}",".card-information > * {line-height: 0.8;}",".full-unstyled-link {font-size: 1.2rem;}","@media (max-width: 768px) {.title {font-size: 1.3rem; padding-bottom: 0.5rem; } .full-unstyled-link {font-size: 1.1rem; }}"],"settings":{"title":"New Arrivals","heading_size":"h2","description":"","show_description":false,"description_style":"body","collection":"new-arrivals","products_to_show":7,"columns_desktop":4,"full_width":false,"show_view_all":false,"view_all_style":"solid","enable_desktop_slider":true,"color_scheme":"","image_ratio":"portrait","image_shape":"default","show_secondary_image":false,"show_vendor":false,"show_rating":false,"quick_add":"none","columns_mobile":"2","swipe_on_mobile":true,"padding_top":16,"padding_bottom":8}},"featured_collection_qnpWAj":{"type":"featured-collection","custom_css":[".title {font-family: serif; font-weight: normal; letter-spacing: 0.2px; font-size: 2rem;}",".card__heading {font-size: 1.2rem; letter-spacing: 0.2px; font-weight: bold;}",".price-item {font-weight: bold; font-size: 0.85rem;}",".slider-buttons {display: none;}",".card__information {gap: 0 !important;}",".price {margin-top: 0 !important;}",".card-information > * {line-height: 0.8;}",".full-unstyled-link {font-size: 1.2rem;}","@media (max-width: 768px) {.title {font-size: 1.3rem; padding-bottom: 0.5rem; } .full-unstyled-link {font-size: 1.1rem; }}"],"settings":{"title":"New Gradient Collection","heading_size":"h2","description":"","show_description":false,"description_style":"body","collection":"gradient-collection","products_to_show":3,"columns_desktop":3,"full_width":false,"show_view_all":false,"view_all_style":"solid","enable_desktop_slider":true,"color_scheme":"","image_ratio":"adapt","image_shape":"default","show_secondary_image":false,"show_vendor":false,"show_rating":false,"quick_add":"none","columns_mobile":"2","swipe_on_mobile":true,"padding_top":16,"padding_bottom":8}},"featured_collection_tA4H8g":{"type":"featured-collection","disabled":true,"custom_css":[".title {font-family: serif; font-weight: normal; letter-spacing: 0.2px; font-size: 2rem;}",".card__heading {font-size: 1.2rem; letter-spacing: 0.2px; font-weight: bold;}",".price-item {font-weight: bold; font-size: 0.85rem;}",".slider-buttons {display: none;}",".card__information {gap: 0 !important;}",".price {margin-top: 0 !important;}",".card-information > * {line-height: 0.8;}",".full-unstyled-link {font-size: 1.2rem;}","@media (max-width: 768px) {.title {font-size: 1.3rem; padding-bottom: 0.5rem; } .full-unstyled-link {font-size: 1.1rem; }}"],"settings":{"title":"Ramadan Exclusive Hampers","heading_size":"h2","description":"","show_description":false,"description_style":"body","collection":"ramadhan-gift-box","products_to_show":3,"columns_desktop":3,"full_width":false,"show_view_all":false,"view_all_style":"solid","enable_desktop_slider":true,"color_scheme":"","image_ratio":"adapt","image_shape":"default","show_secondary_image":true,"show_vendor":false,"show_rating":false,"quick_add":"none","columns_mobile":"2","swipe_on_mobile":true,"padding_top":16,"padding_bottom":8}},"featured_collection_amJ9Vk":{"type":"featured-collection","custom_css":[".title {font-family: serif; font-weight: normal; letter-spacing: 0.2px; font-size: 2rem;}",".card__heading {font-size: 1.2rem; letter-spacing: 0.2px; font-weight: bold;}",".price-item {font-weight: bold; font-size: 0.85rem;}",".slider-buttons {display: none;}",".card__information {gap: 0 !important;}",".price {margin-top: 0 !important;}",".card-information > * {line-height: 0.8;}",".full-unstyled-link {font-size: 1.2rem;}","@media (max-width: 768px) {.title {font-size: 1.3rem; padding-bottom: 0.5rem; } .full-unstyled-link {font-size: 1.1rem; }}"],"settings":{"title":"Grip Finish","heading_size":"h2","description":"","show_description":false,"description_style":"body","collection":"grip-finish","products_to_show":9,"columns_desktop":4,"full_width":false,"show_view_all":false,"view_all_style":"solid","enable_desktop_slider":true,"color_scheme":"","image_ratio":"adapt","image_shape":"default","show_secondary_image":false,"show_vendor":false,"show_rating":false,"quick_add":"none","columns_mobile":"2","swipe_on_mobile":true,"padding_top":16,"padding_bottom":16}},"featured_collection_LHCzFA":{"type":"featured-collection","custom_css":[".title {font-family: serif; font-weight: normal; letter-spacing: 0.2px; font-size: 2rem;}",".card__heading {font-size: 1.2rem; letter-spacing: 0.2px; font-weight: bold;}",".price-item {font-weight: bold; font-size: 0.85rem;}",".slider-buttons {display: none;}",".card__information {gap: 0 !important;}",".price {margin-top: 0 !important;}",".card-information > * {line-height: 0.8;}",".full-unstyled-link {font-size: 1.2rem;}","@media (max-width: 768px) {.title {font-size: 1.3rem; padding-bottom: 0.5rem; } .full-unstyled-link {font-size: 1.1rem; }}"],"settings":{"title":"Introducing Chrome Colours","heading_size":"h2","description":"","show_description":false,"description_style":"body","collection":"dazzling-chrome","products_to_show":3,"columns_desktop":3,"full_width":false,"show_view_all":true,"view_all_style":"solid","enable_desktop_slider":false,"color_scheme":"","image_ratio":"adapt","image_shape":"default","show_secondary_image":false,"show_vendor":false,"show_rating":false,"quick_add":"none","columns_mobile":"2","swipe_on_mobile":true,"padding_top":16,"padding_bottom":16}},"featured_collection_bqBqNz":{"type":"featured-collection","disabled":true,"custom_css":[".title {font-family: serif; font-weight: normal; letter-spacing: 0.2px; font-size: 2rem;}",".card__heading {font-size: 1.2rem; letter-spacing: 0.2px; font-weight: bold;}",".price-item {font-weight: bold; font-size: 0.85rem;}",".slider-buttons {display: none;}",".card__information {gap: 0 !important;}",".price {margin-top: 0 !important;}",".card-information > * {line-height: 0.8;}",".full-unstyled-link {font-size: 1.2rem;}","@media (max-width: 768px) {.title {font-size: 1.3rem; padding-bottom: 0.5rem; } .full-unstyled-link {font-size: 1.1rem; }}"],"settings":{"title":"Khaki Our New Colour","heading_size":"h2","description":"","show_description":false,"description_style":"body","collection":"new-arrivals-khaki","products_to_show":4,"columns_desktop":3,"full_width":false,"show_view_all":false,"view_all_style":"solid","enable_desktop_slider":false,"color_scheme":"","image_ratio":"adapt","image_shape":"default","show_secondary_image":false,"show_vendor":false,"show_rating":false,"quick_add":"none","columns_mobile":"2","swipe_on_mobile":true,"padding_top":16,"padding_bottom":16}},"featured_collection_fLk3t6":{"type":"featured-collection","custom_css":[".title {font-family: serif; font-weight: normal; letter-spacing: 0.2px; font-size: 2rem;}",".card__heading {font-size: 1.2rem; letter-spacing: 0.2px; font-weight: bold;}",".price-item {font-weight: bold; font-size: 0.85rem;}",".slider-buttons {display: none;}",".card__information {gap: 0 !important;}",".price {margin-top: 0 !important;}",".card-information > * {line-height: 0.8;}",".full-unstyled-link {font-size: 1.2rem;}","@media (max-width: 768px) {.title {font-size: 1.3rem; padding-bottom: 0.5rem; } .full-unstyled-link {font-size: 1.1rem; }}"],"settings":{"title":"Free Monogramming Bundles","heading_size":"h2","description":"","show_description":false,"description_style":"body","collection":"bundles","products_to_show":4,"columns_desktop":4,"full_width":false,"show_view_all":false,"view_all_style":"solid","enable_desktop_slider":true,"color_scheme":"","image_ratio":"adapt","image_shape":"default","show_secondary_image":false,"show_vendor":false,"show_rating":false,"quick_add":"none","columns_mobile":"2","swipe_on_mobile":true,"padding_top":0,"padding_bottom":16}},"featured_collection":{"type":"featured-collection","custom_css":[".title {font-family: serif; font-weight: normal; letter-spacing: 0.2px; font-size: 2rem;}",".card__heading {font-size: 1.2rem; letter-spacing: 0.2px; font-weight: bold;}",".price-item {font-weight: bold; font-size: 0.85rem;}",".slider-buttons {display: none;}",".card__information {gap: 0 !important;}",".price {margin-top: 0 !important;}",".card-information > * {line-height: 0.8;}",".full-unstyled-link {font-size: 1.2rem;}","@media (max-width: 768px) {.title {font-size: 1.3rem; padding-bottom: 0.5rem; } .full-unstyled-link {font-size: 1.1rem; }}"],"settings":{"title":"20oz Ceramic Reusable Bottle","heading_size":"h2","description":"","show_description":false,"description_style":"subtitle","collection":"20-oz","products_to_show":25,"columns_desktop":4,"full_width":false,"show_view_all":true,"view_all_style":"solid","enable_desktop_slider":true,"color_scheme":"scheme-1","image_ratio":"portrait","image_shape":"default","show_secondary_image":false,"show_vendor":false,"show_rating":false,"quick_add":"none","columns_mobile":"2","swipe_on_mobile":true,"padding_top":16,"padding_bottom":16}},"featured_collection_xrn4VY":{"type":"featured-collection","custom_css":[".title {font-family: serif; font-weight: normal; letter-spacing: 0.2px; font-size: 2rem;}",".card__heading {font-size: 1.2rem; letter-spacing: 0.2px; font-weight: bold;}",".price-item {font-weight: bold; font-size: 0.85rem;}",".slider-buttons {display: none;}",".card__information {gap: 0 !important;}",".price {margin-top: 0 !important;}",".card-information > * {line-height: 0.8;}",".full-unstyled-link {font-size: 1.2rem;}","@media (max-width: 768px) {.title {font-size: 1.3rem; padding-bottom: 0.5rem; } .full-unstyled-link {font-size: 1.1rem; }}"],"settings":{"title":"34oz Ceramic Reusable Bottle","heading_size":"h2","description":"","show_description":false,"description_style":"subtitle","collection":"34-oz","products_to_show":25,"columns_desktop":4,"full_width":false,"show_view_all":true,"view_all_style":"solid","enable_desktop_slider":true,"color_scheme":"scheme-1","image_ratio":"adapt","image_shape":"default","show_secondary_image":false,"show_vendor":false,"show_rating":false,"quick_add":"none","columns_mobile":"2","swipe_on_mobile":true,"padding_top":16,"padding_bottom":16}},"featured_collection_NkcLmV":{"type":"featured-collection","custom_css":[".title {font-family: serif; font-weight: normal; letter-spacing: 0.2px; font-size: 2rem;}",".card__heading {font-size: 1.2rem; letter-spacing: 0.2px; font-weight: bold;}",".price-item {font-weight: bold; font-size: 0.85rem;}",".slider-buttons {display: none;}",".card__information {gap: 0 !important;}",".price {margin-top: 0 !important;}",".card-information > * {line-height: 0.8;}",".full-unstyled-link {font-size: 1.2rem;}","@media (max-width: 768px) {.title {font-size: 1.3rem; padding-bottom: 0.5rem; } .full-unstyled-link {font-size: 1.1rem; }}"],"settings":{"title":"12oz Ceramic Coffee Cup with Hinged Lid","heading_size":"h2","description":"","show_description":false,"description_style":"body","collection":"ceramic-coffee-cup-with-hinged-lid","products_to_show":25,"columns_desktop":4,"full_width":false,"show_view_all":false,"view_all_style":"solid","enable_desktop_slider":true,"color_scheme":"","image_ratio":"adapt","image_shape":"default","show_secondary_image":false,"show_vendor":false,"show_rating":false,"quick_add":"none","columns_mobile":"2","swipe_on_mobile":true,"padding_top":16,"padding_bottom":16}},"featured_collection_9EkhtT":{"type":"featured-collection","custom_css":[".title {font-family: serif; font-weight: normal; letter-spacing: 0.2px; font-size: 2rem;}",".card__heading {font-size: 1.2rem; letter-spacing: 0.2px; font-weight: bold;}",".price-item {font-weight: bold; font-size: 0.85rem;}",".slider-buttons {display: none;}",".card__information {gap: 0 !important;}",".price {margin-top: 0 !important;}",".card-information > * {line-height: 0.8;}",".full-unstyled-link {font-size: 1.2rem;}","@media (max-width: 768px) {.title {font-size: 1.3rem; padding-bottom: 0.5rem; } .full-unstyled-link {font-size: 1.1rem; }}"],"settings":{"title":"15oz Iced Coffee Cups","heading_size":"h2","description":"","show_description":false,"description_style":"subtitle","collection":"15-oz-cup","products_to_show":25,"columns_desktop":4,"full_width":false,"show_view_all":true,"view_all_style":"solid","enable_desktop_slider":true,"color_scheme":"scheme-1","image_ratio":"adapt","image_shape":"default","show_secondary_image":false,"show_vendor":false,"show_rating":false,"quick_add":"none","columns_mobile":"2","swipe_on_mobile":true,"padding_top":16,"padding_bottom":16}},"featured_collection_YmTLtJ":{"type":"featured-collection","disabled":true,"custom_css":[".title {font-family: serif; font-weight: normal; letter-spacing: 0.2px; font-size: 2rem;}",".card__heading {font-size: 1.3rem; letter-spacing: 0.2px; font-weight: bold;}",".price-item {font-weight: bold; font-size: 0.85rem;}",".slider-buttons {display: none;}",".card__information {gap: 0 !important;}",".price {margin-top: 0 !important;}",".card-information > * {line-height: 0.8;}",".full-unstyled-link {font-size: 1.2rem;}","@media (max-width: 768px) {.title {font-size: 1.2rem; padding-bottom: 0.5rem; } .full-unstyled-link {font-size: 1.1rem; }}"],"settings":{"title":"16oz Ceramic Reusable Cups","heading_size":"h2","description":"","show_description":false,"description_style":"subtitle","collection":"16-oz","products_to_show":25,"columns_desktop":4,"full_width":false,"show_view_all":true,"view_all_style":"solid","enable_desktop_slider":true,"color_scheme":"scheme-1","image_ratio":"adapt","image_shape":"default","show_secondary_image":false,"show_vendor":false,"show_rating":false,"quick_add":"none","columns_mobile":"1","swipe_on_mobile":true,"padding_top":0,"padding_bottom":0}},"featured_collection_mPGFDx":{"type":"featured-collection","custom_css":[".title {font-family: serif; font-weight: normal; letter-spacing: 0.2px; font-size: 2rem;}",".card__heading {font-size: 1.2rem; letter-spacing: 0.2px; font-weight: bold;}",".price-item {font-weight: bold; font-size: 0.85rem;}",".slider-buttons {display: none;}",".card__information {gap: 0 !important;}",".price {margin-top: 0 !important;}",".card-information > * {line-height: 0.8;}",".full-unstyled-link {font-size: 1.2rem;}","@media (max-width: 768px) {.title {font-size: 1.3rem; padding-bottom: 0.5rem; } .full-unstyled-link {font-size: 1.1rem; }}"],"settings":{"title":"Customise","heading_size":"h2","description":"","show_description":false,"description_style":"subtitle","collection":"customable","products_to_show":11,"columns_desktop":3,"full_width":false,"show_view_all":false,"view_all_style":"solid","enable_desktop_slider":true,"color_scheme":"scheme-1","image_ratio":"adapt","image_shape":"default","show_secondary_image":false,"show_vendor":false,"show_rating":false,"quick_add":"none","columns_mobile":"2","swipe_on_mobile":true,"padding_top":16,"padding_bottom":16}},"featured_collection_CMThWw":{"type":"featured-collection","custom_css":[".title {font-family: serif; font-weight: normal; letter-spacing: 0.2px; font-size: 2rem;}",".card__heading {font-size: 1.2rem; letter-spacing: 0.2px; font-weight: bold;}",".price-item {font-weight: bold; font-size: 0.85rem;}",".slider-buttons {display: none;}",".card__information {gap: 0 !important;}",".price {margin-top: 0 !important;}",".card-information > * {line-height: 0.8;}",".full-unstyled-link {font-size: 1.2rem;}","@media (max-width: 768px) {.title {font-size: 1.3rem; padding-bottom: 0.5rem; } .full-unstyled-link {font-size: 1.1rem; }}"],"settings":{"title":"Accessories","heading_size":"h2","description":"","show_description":false,"description_style":"subtitle","collection":"accessories","products_to_show":25,"columns_desktop":4,"full_width":false,"show_view_all":true,"view_all_style":"solid","enable_desktop_slider":true,"color_scheme":"scheme-1","image_ratio":"adapt","image_shape":"default","show_secondary_image":false,"show_vendor":false,"show_rating":false,"quick_add":"none","columns_mobile":"2","swipe_on_mobile":true,"padding_top":16,"padding_bottom":12}},"custom_liquid_g9n7w4":{"type":"custom-liquid","custom_css":[],"settings":{"custom_liquid":"<style>\n\nbubble{margin:0;height:100vh;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#f5a623,#f9d84d,#4a90e2,#9013fe,#b1006c);background-size:300% 300%;animation:15s infinite gradient;position:relative;overflow:hidden}@keyframes gradient{0%,100%{background-position:0 50%}50%{background-position:100% 50%}}.circle{position:absolute;border-radius:50%;opacity:.7}.circle-1{width:200px;height:200px;background:rgba(255,99,71,.5);top:20%;left:10%}.circle-2{width:300px;height:300px;background:rgba(54,215,183,.5);top:40%;right:15%}.circle-3{width:250px;height:250px;background:rgba(255,140,0,.5);bottom:30%;left:25%}.circle-4{width:180px;height:180px;background:rgba(139,69,19,.5);bottom:20%;right:5%}\n\n<\/style>\n<div class=\"circle circle-1\"><\/div>\n<div class=\"circle circle-2\"><\/div>\n<div class=\"circle circle-3\"><\/div>\n<div class=\"circle circle-4\"><\/div>","color_scheme":"","padding_top":0,"padding_bottom":0}},"custom_liquid_4RdUrP":{"type":"custom-liquid","settings":{"custom_liquid":"<style>\n.customcircle1-banner{position:relative;overflow:hidden;background-color:#c5b9ac}.customcircle1-banner__media{position:relative;width:100vW;height:60vh}.customcircle1-banner__media-image{position:absolute;top:0;left:0;width:100%;height:200%;object-fit:cover;animation:20s linear infinite customcircle1-moveImage}@keyframes customcircle1-moveImage{0%{transform:translateY(-100%)}100%{transform:translateY(100%)}}.customcircle1-banner__content{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);color:#e65d94;width:100%;max-width:90vw;margin:0 auto;text-align:center}.customcircle1-banner__box{width:90vw}.customcircle1-banner__heading{color:#e65d94;font-size:1.6em;font-family:'Plus Jakarta Sans',sans-serif;font-weight:400;margin:0}.customcircle1-banner__text{font-size:2em;font-family:'Plus Jakarta Sans',sans-serif;margin:0 auto;font-weight:700}@media screen and (max-width:768px){.customcircle1-banner__media{height:50vh}.customcircle1-banner__heading{font-size:1.4em}.customcircle1-banner__text{font-size:1.6em}.customcircle1-banner__content{max-width:80vw}.customcircle1-banner__box{width:80vw}}@media screen and (max-width:480px){.customcircle1{height:60vh}.customcircle1-banner__media{height:50vh}.customcircle1-banner__heading{font-size:1.2em}.customcircle1-banner__text{font-size:1.4em}.customcircle1-banner__content{max-width:70vw}.customcircle1-banner__box{width:70vw}}\n<\/style>\n<div id=\"Banner-template--{{ section.id }}\" class=\"customcircle1-banner\">\n  <div class=\"customcircle1-banner__media\">\n    <div class=\"customcircle1-banner__media-image\">\n      <img src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0906\/2072\/3475\/files\/Circles_-_Narrow.png?v=1733296388\" alt=\"Background Image\" class=\"banner__image customcircle1-banner__image--foreground\">\n    <\/div>\n  <\/div>\n  <div class=\"customcircle1-banner__content\">\n    <div class=\"customcircle1-banner__box\">\n      <h2 class=\"customcircle1-banner__heading\">Premium. Stylish. Functional.<\/h2>\n      <div class=\"customcircle1-banner__text\">\n        <p>Reusable products you'll want to use again and again (and again).<\/p>\n      <\/div>\n    <\/div>\n  <\/div>\n<\/div>","color_scheme":"","padding_top":0,"padding_bottom":0}},"custom_liquid_Qp7Hyn":{"type":"custom-liquid","settings":{"custom_liquid":"<style>\n.custom3-feature-icons-container{display:flex;justify-content:center;align-items:center;flex-wrap:wrap;width:100%;margin:0 auto}.custom3-feature-icon{display:flex;flex-direction:column;align-items:center;margin:10px;width:45%;max-width:120px}.custom3-feature-icon img{width:60px;height:60px;object-fit:contain;filter:brightness(0) invert(0)}.custom3-feature-icon p{text-align:center;margin-top:10px;color:#000}.custom3-mobile-feature-icons-section{display:none;background-color:#d5e8da;padding:20px 0}@media (max-width:768px){.custom3-mobile-feature-icons-section{display:block}.custom3-feature-icons-container{display:flex;flex-wrap:wrap;justify-content:center}.custom3-feature-icon{width:40%;margin:10px}.custom3-feature-icon img{width:50px;height:50px}.custom3-feature-icon p{text-align:center;margin-top:5px;color:#000;font-size:.8rem;line-height:1.2}.custom3-mobile-feature-icons-section h2{text-align:center;color:#000;font-size:2.5rem;font-weight:700}}.custom3-feature-icons-container{display:flex;justify-content:center;align-items:center;flex-wrap:wrap;width:100%;margin:0 auto}.custom3-feature-icon{display:flex;flex-direction:column;align-items:center;margin:10px;width:45%;max-width:120px}.custom3-feature-icon img{width:60px;height:60px;object-fit:contain;filter:brightness(0) invert(0)}.custom3-feature-icon p{text-align:center;margin-top:10px;color:#000}.custom3-mobile-feature-icons-section{display:none;background-color:#d5e8da;padding:20px 0}@media (max-width:768px){.custom3-mobile-feature-icons-section{display:block}.custom3-feature-icons-container{display:flex;flex-wrap:wrap;justify-content:center}.custom3-feature-icon{width:40%;margin:10px}.custom3-feature-icon img{width:50px;height:50px}.custom3-feature-icon p{text-align:center;margin-top:5px;color:#000;font-size:.8rem;line-height:1.2}.custom3-mobile-feature-icons-section h2{text-align:center;color:#000;font-size:2.5rem;font-weight:700}}\n<\/style>\n  <section class=\"custom3-mobile-feature-icons-section\">\n    <h2>Frank Features<\/h2>\n    <div class=\"custom3-feature-icons-container\">\n      {% assign features = \n        \"Customisable:\/\/cdn.shopify.com\/s\/files\/1\/0906\/2072\/3475\/files\/CUSTOMISEABLE.svg?v=1728297945,\n        Monogrammable:\/\/cdn.shopify.com\/s\/files\/1\/0906\/2072\/3475\/files\/MONOGRAMMABLE.svg?v=1728297945,\n        Hot or cold for hours:\/\/cdn.shopify.com\/s\/files\/1\/0906\/2072\/3475\/files\/NO_METALLIC.svg?v=1728297945,\n        Premium materials:\/\/cdn.shopify.com\/s\/files\/1\/0906\/2072\/3475\/files\/PREMIUM.svg?v=1728297946\" | split: ',' %}\n  \n      {% for feature in features %} \n        {% assign feature_parts = feature | split: ':' %}\n        <div class=\"custom3-feature-icon\">\n          <img src=\"{{ feature_parts[1] }}\" alt=\"{{ feature_parts[0] }}\" \/>\n          <p>{{ feature_parts[0] }}<\/p>\n        <\/div>\n      {% endfor %}\n    <\/div>\n  <\/section>","color_scheme":"","padding_top":0,"padding_bottom":0}},"custom_liquid_PYkKCE":{"type":"custom-liquid","custom_css":[],"settings":{"custom_liquid":"<style>\n.feature-icons-section{background-color:#b9e0cb;text-align:center;padding:40px 20px}.feature-icons-section h2{font-size:24px;color:#333;margin-bottom:20px}.feature-icons-container{display:flex;justify-content:space-around;align-items:center;flex-wrap:wrap;gap:20px}.feature-icon i{font-size:32px;color:#333;margin-bottom:10px}.feature-icon{display:flex;flex-direction:column;align-items:center;margin:20px}.feature-icon img{width:60px;height:60px;object-fit:contain}.feature-icon p{font-family:'Plus Jakarta Sans',sans-serif;font-size:16px;color:#333;text-align:center;margin-top:10px}@media (max-width:768px){.feature-icons-section{display:none!important}}\n  <\/style>\n  \n  <section class=\"feature-icons-section\">\n    <h2 style=\"font-size: 2.5rem; font-weight: normal;font-family:'Plus Jakarta Sans', sans-serif;  ;\">frank features<\/h2>\n    <div class=\"feature-icons-container\">\n      {% assign features = \n        \"Customisable:\/\/cdn.shopify.com\/s\/files\/1\/0906\/2072\/3475\/files\/CUSTOMISEABLE.svg?v=1728297945,\n        Hot or cold for hours:\/\/cdn.shopify.com\/s\/files\/1\/0906\/2072\/3475\/files\/NO_METALLIC.svg?v=1728297945,\n        Monogrammable:\/\/cdn.shopify.com\/s\/files\/1\/0906\/2072\/3475\/files\/MONOGRAMMABLE.svg?v=1728297945,\n        Premium materials:\/\/cdn.shopify.com\/s\/files\/1\/0906\/2072\/3475\/files\/PREMIUM.svg?v=1728297946\" | split: ',' %}\n  \n      {% for feature in features %}\n        {% assign feature_parts = feature | split: ':' %}\n        <div class=\"feature-icon\">\n          <img src=\"{{ feature_parts[1] }}\" alt=\"{{ feature_parts[0] }}\" \/>\n          <p>{{ feature_parts[0] }}<\/p>\n        <\/div>\n      {% endfor %}\n    <\/div>\n  <\/section>","color_scheme":"","padding_top":0,"padding_bottom":0}},"custom_liquid_HrMzQ3":{"type":"custom-liquid","settings":{"custom_liquid":"<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>Responsive Product Section<\/title>\n    <style>\n    .custom1-image-wrapper,.custom1-product-section{position:relative!important;overflow:hidden!important;display:flex!important}.custom1-product-section{height:150vh!important;flex-direction:row!important}.custom1-image-wrapper{flex:1!important;justify-content:center!important;align-items:center!important;height:100%}.custom1-background-image,.custom1-product-image{position:absolute!important;object-fit:cover!important}.custom1-product-image{transition:transform .5s,width .5s,bottom .5s!important;transform-origin:center center!important;z-index:2!important}.custom1-background-image{top:0!important;left:0!important;height:100%!important;width:100%!important;z-index:1!important}.custom1-product-title,.custom1-text-wrapper{position:relative!important;color:#fff!important}.custom1-text-wrapper{flex:1!important;padding:20px!important;background-color:#f28123!important;display:flex!important;flex-direction:column!important;justify-content:center!important;align-items:center!important;height:100%}.custom1-product-title{font-size:2rem!important;font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;margin:0}.custom1-product-title::after{content:'';position:absolute;left:0;bottom:0;width:0;height:4px;background-color:#fff;transition:width .5s}.custom1-product-title:hover::after{width:100%}.custom1-description{font-family:'Plus Jakarta Sans',sans-serif;font-weight:400;font-size:1.5em!important;line-height:1.5!important;color:#fff!important;text-align:center;width:90%;padding:5%;transition:transform .3s}@media (max-width:768px){.custom1-product-section{display:none!important}}.custom1-image-wrapper,.custom1-product-section{position:relative!important;overflow:hidden!important;display:flex!important}.custom1-product-section{height:150vh!important;flex-direction:row!important}.custom1-image-wrapper{flex:1!important;justify-content:center!important;align-items:center!important;height:100%}.custom1-background-image,.custom1-product-image{position:absolute!important;object-fit:cover!important}.custom1-product-image{transition:transform .5s,width .5s,bottom .5s!important;transform-origin:center center!important;z-index:2!important}.custom1-background-image{top:0!important;left:0!important;height:100%!important;width:100%!important;z-index:1!important}.custom1-product-title,.custom1-text-wrapper{position:relative!important;color:#fff!important}.custom1-text-wrapper{flex:1!important;padding:20px!important;background-color:#f28123!important;display:flex!important;flex-direction:column!important;justify-content:center!important;align-items:center!important;height:100%}.custom1-product-title{font-size:2rem!important;font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;margin:0}.custom1-product-title::after{content:'';position:absolute;left:0;bottom:0;width:0;height:4px;background-color:#fff;transition:width .5s}.custom1-product-title:hover::after{width:100%}.custom1-description{font-family:'Plus Jakarta  Sans',sans-serif;font-weight:400;font-size:1.5em!important;line-height:1.5!important;color:#fff!important;text-align:center;width:90%;padding:5%;transition:transform .3s}@media (max-width:768px){.custom1-product-section{display:none!important}}\n    <\/style>\n<\/head>\n<body>\n    <div class=\"custom1-product-section\">\n        <!-- Image Column -->\n        <div class=\"custom1-image-wrapper\">\n            <img src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0906\/2072\/3475\/files\/Copy_of_FG_MAC_CHAWKS_S01_0896_1x1_099b274e-f431-465a-bbdf-780fa9620cce.jpg?v=1728634176\" alt=\"Product Image\" class=\"custom1-product-image\">\n            <img src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0906\/2072\/3475\/files\/Copy_of_2104_FG_CELEBRATION_CUPS_1-1_V1.02.jpg?v=1728452580\" alt=\"Background Image\" class=\"custom1-background-image\">\n        <\/div>\n\n        <!-- Text Column -->\n        <div class=\"custom1-text-wrapper\">\n            <p class=\"custom1-description\">\n                Our signature range of reusable bottles! Beautifully-designed and functional, you'll want to carry them everywhere.\n            <\/p>\n            <p style=\"padding-top:15px;\"><\/p>\n            <h2 class=\"custom1-product-title\">Reusable Bottles<\/h2>\n        <\/div>\n    <\/div>\n\n    <script>\n    document.addEventListener('scroll', function () {\n      const productImage = document.querySelector('.custom1-product-image');\n      const productSection = document.querySelector('.custom1-product-section');\n      const description = document.querySelector('.custom1-description');\n      \n      const sectionHeight = productSection.offsetHeight;\n      const scrollY = window.scrollY;\n      const shrinkStart = productSection.offsetTop;\n      const shrinkEnd = shrinkStart + sectionHeight * 0.8;\n  \n      if (scrollY > shrinkStart && scrollY <= shrinkEnd) {\n          const progress = (scrollY - shrinkStart) \/ (shrinkEnd - shrinkStart);\n  \n          \/\/ Image scaling\n          const scale = 1 - progress * 0.75;\n          productImage.style.transform = `scale(${scale})`;\n          productImage.style.width = `${100 - progress * 75}%`;\n  \n          \/\/ Text movement: Start at the top and move to the middle\n          const translateY = -50 + progress * 50; \/\/ Start from -50px and move to 0px\n          description.style.transform = `translateY(${translateY}%)`;\n      } else if (scrollY > shrinkEnd) {\n          \/\/ Final state for image\n          productImage.style.transform = 'scale(0.25)';\n          productImage.style.width = '25%';\n  \n          \/\/ Final state for text\n          description.style.transform = `translateY(0%)`;\n      } else {\n          \/\/ Initial state for image\n          productImage.style.transform = 'scale(1)';\n          productImage.style.width = 'auto';\n  \n          \/\/ Initial state for text\n          description.style.transform = `translateY(-50%)`;\n      }\n  });\n  \n    <\/script>\n<\/body>\n<\/html>","color_scheme":"","padding_top":0,"padding_bottom":0}},"custom_liquid_qcYNAq":{"type":"custom-liquid","custom_css":[],"settings":{"custom_liquid":"<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>Responsive Product Section<\/title>\n    <style> \n    .custom2-product-section{display:none}@media (max-width:768px){.custom2-description,.custom2-product-title{font-family:'Plus Jakarta Sans',sans-serif;color:#fff}.custom2-product-section{display:flex;flex-direction:column;height:120vh;overflow:hidden;position:relative}.custom2-image-wrapper{flex:0 0 80vh;display:flex;justify-content:center;align-items:center;overflow:hidden;position:relative;background:url('https:\/\/cdn.shopify.com\/s\/files\/1\/0906\/2072\/3475\/files\/Copy_of_2104_FG_CELEBRATION_CUPS_1-1_V1.02.jpg?v=1728452580') center center\/cover no-repeat}.custom2-product-image{max-height:80vh;max-width:auto;object-fit:cover;position:absolute;z-index:2;transition:transform .5s,width .5s}.custom2-text-wrapper{flex:1;padding:20px;background-color:#f28123;color:#fff;display:flex;flex-direction:column;justify-content:center;align-items:center}.custom2-product-title{font-size:2rem;font-weight:700;margin:10px 0}.custom2-description{font-weight:400;font-size:1.2em;line-height:1.5;text-align:center;margin:0;transition:transform .3s}}\n    <\/style>\n<\/head>\n<body>\n    <div class=\"custom2-product-section\">\n        <div class=\"custom2-image-wrapper\">\n            <img src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0906\/2072\/3475\/files\/Copy_of_FG_MAC_CHAWKS_S01_0896_1x1_099b274e-f431-465a-bbdf-780fa9620cce.jpg?v=1728634176\" alt=\"Product Image\" class=\"custom2-product-image\">\n        <\/div>\n\n        <div class=\"custom2-text-wrapper\">\n            <p class=\"custom2-description\">\n                Our signature range of reusable bottles! Beautifully-designed and functional, you'll want to carry them everywhere.\n            <\/p>\n            <h2 class=\"custom2-product-title\">Reusable Bottles<\/h2>\n        <\/div>\n    <\/div>\n\n    <script>\n        document.addEventListener('scroll', function () {\n            const productImage = document.querySelector('.custom2-product-image');\n            const productSection = document.querySelector('.custom2-product-section');\n            const description = document.querySelector('.custom2-description');\n\n            const sectionHeight = productSection.offsetHeight;\n            const scrollY = window.scrollY;\n            const shrinkStart = productSection.offsetTop; \n            const shrinkEnd = shrinkStart + sectionHeight * 0.4; \n            if (scrollY > shrinkStart && scrollY <= shrinkEnd) {\n                const progress = (scrollY - shrinkStart) \/ (shrinkEnd - shrinkStart);\n\n                const scale = 1 - progress * 0.75;\n                productImage.style.transform = `scale(${scale})`;\n\n                const translateY = progress * 100; \n                productImage.style.transform += ` translateY(${translateY}%)`;\n\n                const translateYText = -50 + progress * 50;\n                description.style.transform = `translateY(${translateYText}%)`;\n            } else if (scrollY > shrinkEnd) {\n                productImage.style.transform = 'scale(0.25) translateY(100%)';\n\n                description.style.transform = `translateY(0%)`;\n            } else {\n                productImage.style.transform = 'scale(1) translateY(0%)';\n\n                description.style.transform = `translateY(-50%)`;\n            }\n        });\n    <\/script>\n<\/body>\n<\/html>","color_scheme":"","padding_top":0,"padding_bottom":0}},"custom_liquid_CVe9EL":{"type":"custom-liquid","settings":{"custom_liquid":"<style>\n.custom-body{font-family:Arial,sans-serif;margin:0;padding:0;line-height:1.6}.custom-container{width:100%;height:80vh;margin:0 auto;position:relative;display:flex;align-items:center;justify-content:center;flex-direction:column}.custom-image-with-text{display:flex;justify-content:space-between;align-items:center;transition:opacity .3s ease-in-out;position:absolute;width:100%;height:100%;opacity:0;visibility:hidden}.custom-image-with-text.active{opacity:1;visibility:visible}.custom-image-container{width:55%;display:flex;justify-content:center;align-items:center;overflow:hidden;height:100%}.custom-image-container img{width:100%;height:100%;object-fit:contain}.custom-text-container{width:45%;padding:20px;text-align:left;box-sizing:border-box;height:100%;overflow:hidden}.custom-caption{font-size:16px;margin-bottom:10px}.custom-buttons-desktop{display:flex;justify-content:space-between;position:absolute;top:10px;right:10px;z-index:10}.custom-button{padding:10px 20px;margin:0 5px;background-color:#16b721;color:#fff;border:none;cursor:pointer;border-radius:5px}.custom-button:hover{background-color:#18cb36}.active{display:flex}.inactive{display:none}@media (max-width:768px){.custom-container{flex-direction:column;height:80vh}.custom-image-with-text{flex-direction:column;height:auto;justify-content:center}.custom-image-container{width:100%;height:300px}.custom-text-container{width:100%;padding:10px;text-align:center}.custom-buttons-mobile{display:flex;justify-content:center;margin-top:20px;width:100%;padding:0 20px}.custom-button{margin:5px;padding:8px 15px;flex:none}.custom-buttons-desktop{display:none}}@media (min-width:769px){.custom-buttons-mobile{display:none;padding-bottom:5vw}.custom-buttons-desktop{display:flex}}\n<\/style>\n<\/head>\n<body class=\"custom-body\">\n\n<div class=\"custom-container\">\n<div class=\"custom-buttons-desktop\">\n    <button class=\"custom-button\" onclick=\"showRow(0)\">1<\/button>\n    <button class=\"custom-button\" onclick=\"showRow(1)\">2<\/button>\n    <button class=\"custom-button\" onclick=\"showRow(2)\">3<\/button>\n<\/div>\n\n<div class=\"custom-buttons-mobile\">\n    <button class=\"custom-button\" onclick=\"showRow(0)\">1<\/button>\n    <button class=\"custom-button\" onclick=\"showRow(1)\">2<\/button>\n    <button class=\"custom-button\" onclick=\"showRow(2)\">3<\/button>\n<\/div>\n\n<div class=\"custom-image-with-text active\">\n    <div class=\"custom-image-container\">\n        <img src=\"\/\/frankgreen.id\/cdn\/shop\/files\/home1110.png?v=1732524558\" alt=\"Image 1\">\n    <\/div>\n    <div class=\"custom-text-container\">\n        <p class=\"custom-caption\">We make sustainability easy!<\/p>\n        <h2>Make it yours<\/h2>\n        <p>Customise and personalise to make your Frank Green feel uniquely you.<\/p>\n    <\/div>\n<\/div>\n\n<div class=\"custom-image-with-text\">\n    <div class=\"custom-image-container\">\n        <img src=\"\/\/frankgreen.id\/cdn\/shop\/files\/home1112.png?v=1732524558\" alt=\"Image 2\">\n    <\/div>\n    <div class=\"custom-text-container\">\n        <p class=\"custom-caption\">We make sustainability easy!<\/p>\n        <h2>Choose your product<\/h2>\n        <p>Discover beautifully-designed reusable bottles, cups, homewares and more!<\/p>\n    <\/div>\n<\/div>\n\n<div class=\"custom-image-with-text\">\n    <div class=\"custom-image-container\">\n        <img src=\"\/\/frankgreen.id\/cdn\/shop\/files\/home3.png?v=1734042712\" alt=\"Image 3\">\n    <\/div>\n    <div class=\"custom-text-container\">\n        <p class=\"custom-caption\">We make sustainability easy!<\/p>\n        <h2>Reuse, over and over again<\/h2>\n        <p>Keep your frank green on hand to say no to single-use plastic forever.<\/p>\n    <\/div>\n<\/div>\n<\/div>\n\n<script>\nlet currentIndex = 0;\nconst rows = document.querySelectorAll('.custom-image-with-text');\nconst totalRows = rows.length;\n\nfunction showRow(index) {\n    rows.forEach((row, i) => {\n        if (i === index) {\n            row.classList.add('active');\n            row.classList.remove('inactive');\n        } else {\n            row.classList.add('inactive');\n            row.classList.remove('active');\n        }\n    });\n}\n\nsetInterval(() => {\n    currentIndex = (currentIndex + 1) % totalRows;\n    showRow(currentIndex);\n}, 5000);\n\nshowRow(0);\n<\/script>","color_scheme":"","padding_top":16,"padding_bottom":16}},"1740364831abdcfe82":{"type":"apps","blocks":{"klaviyo_email_marketing_sms_form_embed_block_7CcAcK":{"type":"shopify:\/\/apps\/klaviyo-email-marketing-sms\/blocks\/form-embed-block\/2632fe16-c075-4321-a88b-50b567f42507","settings":{"formId":"UZBM4r"}},"klaviyo_email_marketing_sms_form_embed_block_pdHr8N":{"type":"shopify:\/\/apps\/klaviyo-email-marketing-sms\/blocks\/form-embed-block\/2632fe16-c075-4321-a88b-50b567f42507","settings":{"formId":"YeWckY"}}},"block_order":["klaviyo_email_marketing_sms_form_embed_block_7CcAcK","klaviyo_email_marketing_sms_form_embed_block_pdHr8N"],"custom_css":["@media (max-width: 768px) {.klaviyo-form-YeWckY {display: block; }}","@media (min-width: 769px) {.klaviyo-form-YeWckY {display: none; }}","@media (max-width: 768px) {.klaviyo-form-UZBM4r {display: none; }}","@media (min-width: 768px) {.klaviyo-form-UZBM4r {display: block; }}"],"settings":{"include_margins":true}}},"order":["custom_liquid_WgtWxe","custom_liquid_LNP73k","featured_collection_zEQatQ","featured_collection_qnpWAj","featured_collection_tA4H8g","featured_collection_amJ9Vk","featured_collection_LHCzFA","featured_collection_bqBqNz","featured_collection_fLk3t6","featured_collection","featured_collection_xrn4VY","featured_collection_NkcLmV","featured_collection_9EkhtT","featured_collection_YmTLtJ","featured_collection_mPGFDx","featured_collection_CMThWw","custom_liquid_g9n7w4","custom_liquid_4RdUrP","custom_liquid_Qp7Hyn","custom_liquid_PYkKCE","custom_liquid_HrMzQ3","custom_liquid_qcYNAq","custom_liquid_CVe9EL","1740364831abdcfe82"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "custom_liquid_WgtWxe": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "<!-- Google Tag Manager (noscript) -->\n<noscript><iframe src=\"https://www.googletagmanager.com/ns.html?id=GTM-KQQ55SR4\"\n  height=\"0\" width=\"0\" style=\"display:none;visibility:hidden\"></iframe></noscript>\n<!-- End Google Tag Manager (noscript) -->\n<style>\n  .collection { \n  margin-top:0;\n  }\n  .collection__title--desktop-slider {\n    margin-bottom: 0 !important;\n  }\n  .title{\n  margin-bottom: 0 !important;\n  }\n</style>\n<style>\n  #Slider-template--23686114541843__featured_collection, \n  #Slider-template--23686114541843__featured_collection_zEQatQ,\n  #Slider-template--23686114541843__featured_collection_xrn4VY,\n  #Slider-template--23686114541843__featured_collection_mPGFDx,\n  #Slider-template--23686114541843__featured_collection_9EkhtT,\n  #Slider-template--23686114541843__featured_collection_YmTLtJ,\n  #Slider-template--23686114541843__featured_collection_NkcLmV,\n  #Slider-template--23686114541843__featured_collection_CMThWw,\n  #Slider-template--23686114541843__featured_collection_amJ9Vk  {\n    user-select: none; \n    -webkit-overflow-scrolling: touch; \n    overflow-x: auto; \n    scroll-snap-type: none;  \n    scroll-behavior: smooth; \n  } \n</style>\n\n<script>\ndocument.addEventListener('DOMContentLoaded', function () {\n  // Check screen width to decide whether to apply drag functionality\n  if (window.innerWidth > 768) { // Only apply on screens larger than 768px (adjust as needed)\n    const carousels = document.querySelectorAll(\n      '#Slider-template--23686114541843__featured_collection, ' + \n      '#Slider-template--23686114541843__featured_collection_zEQatQ, ' +\n      '#Slider-template--23686114541843__featured_collection_xrn4VY, ' +\n      '#Slider-template--23686114541843__featured_collection_mPGFDx, ' +\n      '#Slider-template--23686114541843__featured_collection_9EkhtT, ' +\n      '#Slider-template--23686114541843__featured_collection_NkcLmV, ' +\n      '#Slider-template--23686114541843__featured_collection_YmTLtJ, ' +\n      '#Slider-template--23686114541843__featured_collection_amJ9Vk, ' +\n      '#Slider-template--23686114541843__featured_collection_CMThWw '\n    );\n\n    carousels.forEach(carousel => {\n      let isMouseDown = false;\n      let isDragging = false;\n      let startX;\n      let scrollLeft;\n\n      carousel.style.cursor = 'grab';\n\n      carousel.addEventListener('mousedown', function (e) {\n        isMouseDown = true;\n        isDragging = false; // Reset dragging state\n        startX = e.pageX - carousel.offsetLeft;\n        scrollLeft = carousel.scrollLeft;\n\n        setTimeout(() => {\n          if (isMouseDown) {\n            isDragging = true;\n            carousel.style.cursor = 'grabbing';\n            carousel.querySelectorAll('a').forEach(link => link.style.pointerEvents = 'none'); // Disable link clicks\n          }\n        }, 200); // 0.2 second delay to initiate dragging\n      });\n\n      carousel.addEventListener('mouseleave', function () {\n        if (isMouseDown) resetState(carousel);\n      });\n\n      carousel.addEventListener('mouseup', function () {\n        if (isMouseDown) resetState(carousel);\n      });\n\n      carousel.addEventListener('mousemove', function (e) {\n        if (!isMouseDown || !isDragging) return;\n\n        e.preventDefault(); // Prevent text selection while dragging\n\n        const x = e.pageX - carousel.offsetLeft;\n        const walk = x - startX;\n\n        carousel.scrollLeft = scrollLeft - walk;\n      });\n\n      carousel.addEventListener('touchstart', function (e) {\n        const touchStart = e.touches[0].pageX; \n        let touchMove;\n\n        carousel.addEventListener('touchmove', function (e) {\n          touchMove = e.touches[0].pageX; \n          const moveDistance = touchStart - touchMove;\n          carousel.scrollLeft += moveDistance;\n        });\n\n        carousel.addEventListener('touchend', function () {\n          carousel.removeEventListener('touchmove', null);\n          carousel.removeEventListener('touchend', null);\n        });\n      });\n\n      function resetState(carousel) {\n        isMouseDown = false;\n        isDragging = false;\n        carousel.style.cursor = 'grab';\n        carousel.querySelectorAll('a').forEach(link => link.style.pointerEvents = 'auto'); // Re-enable link clicks\n      }\n    });\n  }\n});\n</script> \n<script>\n    document.addEventListener(\"DOMContentLoaded\", function () {\n        function processProductTitles() {\n            document.querySelectorAll('.product-title').forEach(function (titleElement) {\n                if (!titleElement.querySelector('.product-subtitle')) { \n                    const titleText = titleElement.textContent.trim();\n                    const match = titleText.match(/-\\s*(\\d+\\s*ml)/i); \n\n                    if (match) {\n                        const mlText = match[1]; \n                        const newTitle = titleText.replace(/-\\s*\\d+\\s*ml/i, '').trim(); \n\n                        titleElement.textContent = newTitle; \n\n                        const subtitleElement = document.createElement('span');\n                        subtitleElement.className = 'product-subtitle';\n                        subtitleElement.textContent = mlText;\n\n                        titleElement.appendChild(subtitleElement);\n                    }\n                }\n            });\n        }\n\n        var observer = new MutationObserver(function (mutationsList, observer) {\n            mutationsList.forEach(function (mutation) {\n                if (mutation.type === \"childList\") {\n                    processProductTitles();\n                }\n            });\n        });\n\n        observer.observe(document.body, { childList: true, subtree: true });\n\n        processProductTitles();\n    });\n</script>\n<script>\n    document.addEventListener(\"DOMContentLoaded\", function () {\n        function hideIDRText() {\n\n            document.querySelectorAll('.product-price, .cart-price, .checkout-price').forEach(function (priceElement) {\n\n                priceElement.innerHTML = priceElement.innerHTML.replace(/\\s*IDR/gi, '');\n            });\n        }\n\n        var observer = new MutationObserver(function (mutationsList, observer) {\n            mutationsList.forEach(function (mutation) {\n                if (mutation.type === \"childList\") {\n                    hideIDRText(); \n                }\n            });\n        });\n\n        observer.observe(document.body, { childList: true, subtree: true });\n\n        hideIDRText(); \n    });\n</script>\n<style>\n.custom3-feature-icons-container{display:flex;justify-content:center;align-items:center;flex-wrap:wrap;width:100%;margin:0 auto}.custom3-feature-icon{display:flex;flex-direction:column;align-items:center;margin:10px;width:45%;max-width:120px}.custom3-feature-icon img{width:60px;height:60px;object-fit:contain;filter:brightness(0) invert(0)}.custom3-feature-icon p{text-align:center;margin-top:10px;color:#000}.custom3-mobile-feature-icons-section{display:none;background-color:#d5e8da;padding:20px 0}@media (max-width:768px){.custom3-mobile-feature-icons-section{display:block}.custom3-feature-icons-container{display:flex;flex-wrap:wrap;justify-content:center}.custom3-feature-icon{width:40%;margin:10px}.custom3-feature-icon img{width:50px;height:50px}.custom3-feature-icon p{text-align:center;margin-top:5px;color:#000;font-size:.8rem;line-height:1.2}.custom3-mobile-feature-icons-section h2{text-align:center;color:#000;font-size:2.5rem;font-weight:700}}\n  </style>\n<script>\n    document.addEventListener(\"DOMContentLoaded\", function() {\n    \n        var observer = new MutationObserver(function(mutationsList, observer) {\n            mutationsList.forEach(function(mutation) {\n                if (mutation.type === \"childList\") {\n                    var paragraph = document.querySelector(\"p a[href='https://globosoftware.net']\");\n                    if (paragraph) {\n                        paragraph.closest(\"p\").style.display = \"none\";\n                        observer.disconnect();\n                    }\n                }\n            });\n        });\n    \n        observer.observe(document.body, { childList: true, subtree: true });\n    });\n</script>\n<script>\n    document.addEventListener(\"DOMContentLoaded\", function() {\n    \n        var observer = new MutationObserver(function(mutationsList, observer) {\n            mutationsList.forEach(function(mutation) {\n                if (mutation.type === \"childList\") {\n                    var floatingButton = document.querySelector(\".floating-button.circle.half-bottom.right\");\n                    if (floatingButton) {\n                        floatingButton.style.display = \"none\";\n    \n                        observer.disconnect();\n                    }\n                }\n            });\n        });\n        observer.observe(document.body, { childList: true, subtree: true });\n    });\n    </script>\n    <script>\n        document.addEventListener(\"DOMContentLoaded\", function() {\n        \n            var observer = new MutationObserver(function(mutationsList, observer) {\n                mutationsList.forEach(function(mutation) {\n                    if (mutation.type === \"childList\") {\n                        var paragraph = document.querySelector(\"p a[href='https://globosoftware.net']\");\n                        if (paragraph) {\n                            paragraph.closest(\"p\").style.display = \"none\";\n                            observer.disconnect();\n                        }\n                    }\n                });\n            });\n        \n            observer.observe(document.body, { childList: true, subtree: true });\n        });\n    </script>\n<script>\ndocument.addEventListener(\"DOMContentLoaded\", function() {\n    document.title = \"frank green Indonesia\";\n  });\n</script>",
+        "color_scheme": "",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "banner_main_yMkx68": {
+      "type": "banner-main",
+      "blocks": {
+        "slide_GjLAeg": {
+          "type": "slide",
+          "settings": {
+            "background_image": "shopify://shop_images/web-banner-general-april.jpg",
+            "heading": "Discover New Colours:",
+            "description": "Buttermilk & Cloud",
+            "button_text": "Shop Now",
+            "button_link": "shopify://collections/new-arrivals"
+          }
+        }
+      },
+      "block_order": [
+        "slide_GjLAeg"
+      ],
+      "name": "Banner Main",
+      "settings": {
+        "slide_interval": 5000
+      }
+    },
+    "featured_collection_zEQatQ": {
+      "type": "featured-collection",
+      "custom_css": [
+        ".title {font-family: serif; font-weight: normal; letter-spacing: 0.2px; font-size: 2rem;}",
+        ".card__heading {font-size: 1.2rem; letter-spacing: 0.2px; font-weight: bold;}",
+        ".price-item {font-weight: bold; font-size: 0.85rem;}",
+        ".slider-buttons {display: none;}",
+        ".card__information {gap: 0 !important;}",
+        ".price {margin-top: 0 !important;}",
+        ".card-information > * {line-height: 0.8;}",
+        ".full-unstyled-link {font-size: 1.2rem;}",
+        "@media (max-width: 768px) {.title {font-size: 1.3rem; padding-bottom: 0.5rem; } .full-unstyled-link {font-size: 1.1rem; }}"
+      ],
+      "settings": {
+        "title": "New Arrivals",
+        "heading_size": "h2",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "collection": "new-arrivals",
+        "products_to_show": 7,
+        "columns_desktop": 4,
+        "full_width": false,
+        "show_view_all": false,
+        "view_all_style": "solid",
+        "enable_desktop_slider": true,
+        "color_scheme": "",
+        "image_ratio": "portrait",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "none",
+        "columns_mobile": "2",
+        "swipe_on_mobile": true,
+        "padding_top": 16,
+        "padding_bottom": 8
+      }
+    },
+    "featured_collection_qnpWAj": {
+      "type": "featured-collection",
+      "custom_css": [
+        ".title {font-family: serif; font-weight: normal; letter-spacing: 0.2px; font-size: 2rem;}",
+        ".card__heading {font-size: 1.2rem; letter-spacing: 0.2px; font-weight: bold;}",
+        ".price-item {font-weight: bold; font-size: 0.85rem;}",
+        ".slider-buttons {display: none;}",
+        ".card__information {gap: 0 !important;}",
+        ".price {margin-top: 0 !important;}",
+        ".card-information > * {line-height: 0.8;}",
+        ".full-unstyled-link {font-size: 1.2rem;}",
+        "@media (max-width: 768px) {.title {font-size: 1.3rem; padding-bottom: 0.5rem; } .full-unstyled-link {font-size: 1.1rem; }}"
+      ],
+      "settings": {
+        "title": "New Gradient Collection",
+        "heading_size": "h2",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "collection": "gradient-collection",
+        "products_to_show": 3,
+        "columns_desktop": 3,
+        "full_width": false,
+        "show_view_all": false,
+        "view_all_style": "solid",
+        "enable_desktop_slider": true,
+        "color_scheme": "",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "none",
+        "columns_mobile": "2",
+        "swipe_on_mobile": true,
+        "padding_top": 16,
+        "padding_bottom": 8
+      }
+    },
+    "featured_collection_tA4H8g": {
+      "type": "featured-collection",
+      "disabled": true,
+      "custom_css": [
+        ".title {font-family: serif; font-weight: normal; letter-spacing: 0.2px; font-size: 2rem;}",
+        ".card__heading {font-size: 1.2rem; letter-spacing: 0.2px; font-weight: bold;}",
+        ".price-item {font-weight: bold; font-size: 0.85rem;}",
+        ".slider-buttons {display: none;}",
+        ".card__information {gap: 0 !important;}",
+        ".price {margin-top: 0 !important;}",
+        ".card-information > * {line-height: 0.8;}",
+        ".full-unstyled-link {font-size: 1.2rem;}",
+        "@media (max-width: 768px) {.title {font-size: 1.3rem; padding-bottom: 0.5rem; } .full-unstyled-link {font-size: 1.1rem; }}"
+      ],
+      "settings": {
+        "title": "Ramadan Exclusive Hampers",
+        "heading_size": "h2",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "collection": "ramadhan-gift-box",
+        "products_to_show": 3,
+        "columns_desktop": 3,
+        "full_width": false,
+        "show_view_all": false,
+        "view_all_style": "solid",
+        "enable_desktop_slider": true,
+        "color_scheme": "",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "none",
+        "columns_mobile": "2",
+        "swipe_on_mobile": true,
+        "padding_top": 16,
+        "padding_bottom": 8
+      }
+    },
+    "featured_collection_amJ9Vk": {
+      "type": "featured-collection",
+      "custom_css": [
+        ".title {font-family: serif; font-weight: normal; letter-spacing: 0.2px; font-size: 2rem;}",
+        ".card__heading {font-size: 1.2rem; letter-spacing: 0.2px; font-weight: bold;}",
+        ".price-item {font-weight: bold; font-size: 0.85rem;}",
+        ".slider-buttons {display: none;}",
+        ".card__information {gap: 0 !important;}",
+        ".price {margin-top: 0 !important;}",
+        ".card-information > * {line-height: 0.8;}",
+        ".full-unstyled-link {font-size: 1.2rem;}",
+        "@media (max-width: 768px) {.title {font-size: 1.3rem; padding-bottom: 0.5rem; } .full-unstyled-link {font-size: 1.1rem; }}"
+      ],
+      "settings": {
+        "title": "Grip Finish",
+        "heading_size": "h2",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "collection": "grip-finish",
+        "products_to_show": 9,
+        "columns_desktop": 4,
+        "full_width": false,
+        "show_view_all": false,
+        "view_all_style": "solid",
+        "enable_desktop_slider": true,
+        "color_scheme": "",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "none",
+        "columns_mobile": "2",
+        "swipe_on_mobile": true,
+        "padding_top": 16,
+        "padding_bottom": 16
+      }
+    },
+    "featured_collection_LHCzFA": {
+      "type": "featured-collection",
+      "custom_css": [
+        ".title {font-family: serif; font-weight: normal; letter-spacing: 0.2px; font-size: 2rem;}",
+        ".card__heading {font-size: 1.2rem; letter-spacing: 0.2px; font-weight: bold;}",
+        ".price-item {font-weight: bold; font-size: 0.85rem;}",
+        ".slider-buttons {display: none;}",
+        ".card__information {gap: 0 !important;}",
+        ".price {margin-top: 0 !important;}",
+        ".card-information > * {line-height: 0.8;}",
+        ".full-unstyled-link {font-size: 1.2rem;}",
+        "@media (max-width: 768px) {.title {font-size: 1.3rem; padding-bottom: 0.5rem; } .full-unstyled-link {font-size: 1.1rem; }}"
+      ],
+      "settings": {
+        "title": "Introducing Chrome Colours",
+        "heading_size": "h2",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "collection": "dazzling-chrome",
+        "products_to_show": 3,
+        "columns_desktop": 3,
+        "full_width": false,
+        "show_view_all": true,
+        "view_all_style": "solid",
+        "enable_desktop_slider": false,
+        "color_scheme": "",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "none",
+        "columns_mobile": "2",
+        "swipe_on_mobile": true,
+        "padding_top": 16,
+        "padding_bottom": 16
+      }
+    },
+    "featured_collection_bqBqNz": {
+      "type": "featured-collection",
+      "disabled": true,
+      "custom_css": [
+        ".title {font-family: serif; font-weight: normal; letter-spacing: 0.2px; font-size: 2rem;}",
+        ".card__heading {font-size: 1.2rem; letter-spacing: 0.2px; font-weight: bold;}",
+        ".price-item {font-weight: bold; font-size: 0.85rem;}",
+        ".slider-buttons {display: none;}",
+        ".card__information {gap: 0 !important;}",
+        ".price {margin-top: 0 !important;}",
+        ".card-information > * {line-height: 0.8;}",
+        ".full-unstyled-link {font-size: 1.2rem;}",
+        "@media (max-width: 768px) {.title {font-size: 1.3rem; padding-bottom: 0.5rem; } .full-unstyled-link {font-size: 1.1rem; }}"
+      ],
+      "settings": {
+        "title": "Khaki Our New Colour",
+        "heading_size": "h2",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "collection": "new-arrivals-khaki",
+        "products_to_show": 4,
+        "columns_desktop": 3,
+        "full_width": false,
+        "show_view_all": false,
+        "view_all_style": "solid",
+        "enable_desktop_slider": false,
+        "color_scheme": "",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "none",
+        "columns_mobile": "2",
+        "swipe_on_mobile": true,
+        "padding_top": 16,
+        "padding_bottom": 16
+      }
+    },
+    "featured_collection_fLk3t6": {
+      "type": "featured-collection",
+      "custom_css": [
+        ".title {font-family: serif; font-weight: normal; letter-spacing: 0.2px; font-size: 2rem;}",
+        ".card__heading {font-size: 1.2rem; letter-spacing: 0.2px; font-weight: bold;}",
+        ".price-item {font-weight: bold; font-size: 0.85rem;}",
+        ".slider-buttons {display: none;}",
+        ".card__information {gap: 0 !important;}",
+        ".price {margin-top: 0 !important;}",
+        ".card-information > * {line-height: 0.8;}",
+        ".full-unstyled-link {font-size: 1.2rem;}",
+        "@media (max-width: 768px) {.title {font-size: 1.3rem; padding-bottom: 0.5rem; } .full-unstyled-link {font-size: 1.1rem; }}"
+      ],
+      "settings": {
+        "title": "Free Monogramming Bundles",
+        "heading_size": "h2",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "collection": "bundles",
+        "products_to_show": 4,
+        "columns_desktop": 4,
+        "full_width": false,
+        "show_view_all": false,
+        "view_all_style": "solid",
+        "enable_desktop_slider": true,
+        "color_scheme": "",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "none",
+        "columns_mobile": "2",
+        "swipe_on_mobile": true,
+        "padding_top": 0,
+        "padding_bottom": 16
+      }
+    },
+    "featured_collection": {
+      "type": "featured-collection",
+      "custom_css": [
+        ".title {font-family: serif; font-weight: normal; letter-spacing: 0.2px; font-size: 2rem;}",
+        ".card__heading {font-size: 1.2rem; letter-spacing: 0.2px; font-weight: bold;}",
+        ".price-item {font-weight: bold; font-size: 0.85rem;}",
+        ".slider-buttons {display: none;}",
+        ".card__information {gap: 0 !important;}",
+        ".price {margin-top: 0 !important;}",
+        ".card-information > * {line-height: 0.8;}",
+        ".full-unstyled-link {font-size: 1.2rem;}",
+        "@media (max-width: 768px) {.title {font-size: 1.3rem; padding-bottom: 0.5rem; } .full-unstyled-link {font-size: 1.1rem; }}"
+      ],
+      "settings": {
+        "title": "20oz Ceramic Reusable Bottle",
+        "heading_size": "h2",
+        "description": "",
+        "show_description": false,
+        "description_style": "subtitle",
+        "collection": "20-oz",
+        "products_to_show": 25,
+        "columns_desktop": 4,
+        "full_width": false,
+        "show_view_all": true,
+        "view_all_style": "solid",
+        "enable_desktop_slider": true,
+        "color_scheme": "scheme-1",
+        "image_ratio": "portrait",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "none",
+        "columns_mobile": "2",
+        "swipe_on_mobile": true,
+        "padding_top": 16,
+        "padding_bottom": 16
+      }
+    },
+    "featured_collection_xrn4VY": {
+      "type": "featured-collection",
+      "custom_css": [
+        ".title {font-family: serif; font-weight: normal; letter-spacing: 0.2px; font-size: 2rem;}",
+        ".card__heading {font-size: 1.2rem; letter-spacing: 0.2px; font-weight: bold;}",
+        ".price-item {font-weight: bold; font-size: 0.85rem;}",
+        ".slider-buttons {display: none;}",
+        ".card__information {gap: 0 !important;}",
+        ".price {margin-top: 0 !important;}",
+        ".card-information > * {line-height: 0.8;}",
+        ".full-unstyled-link {font-size: 1.2rem;}",
+        "@media (max-width: 768px) {.title {font-size: 1.3rem; padding-bottom: 0.5rem; } .full-unstyled-link {font-size: 1.1rem; }}"
+      ],
+      "settings": {
+        "title": "34oz Ceramic Reusable Bottle",
+        "heading_size": "h2",
+        "description": "",
+        "show_description": false,
+        "description_style": "subtitle",
+        "collection": "34-oz",
+        "products_to_show": 25,
+        "columns_desktop": 4,
+        "full_width": false,
+        "show_view_all": true,
+        "view_all_style": "solid",
+        "enable_desktop_slider": true,
+        "color_scheme": "scheme-1",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "none",
+        "columns_mobile": "2",
+        "swipe_on_mobile": true,
+        "padding_top": 16,
+        "padding_bottom": 16
+      }
+    },
+    "featured_collection_NkcLmV": {
+      "type": "featured-collection",
+      "custom_css": [
+        ".title {font-family: serif; font-weight: normal; letter-spacing: 0.2px; font-size: 2rem;}",
+        ".card__heading {font-size: 1.2rem; letter-spacing: 0.2px; font-weight: bold;}",
+        ".price-item {font-weight: bold; font-size: 0.85rem;}",
+        ".slider-buttons {display: none;}",
+        ".card__information {gap: 0 !important;}",
+        ".price {margin-top: 0 !important;}",
+        ".card-information > * {line-height: 0.8;}",
+        ".full-unstyled-link {font-size: 1.2rem;}",
+        "@media (max-width: 768px) {.title {font-size: 1.3rem; padding-bottom: 0.5rem; } .full-unstyled-link {font-size: 1.1rem; }}"
+      ],
+      "settings": {
+        "title": "12oz Ceramic Coffee Cup with Hinged Lid",
+        "heading_size": "h2",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "collection": "ceramic-coffee-cup-with-hinged-lid",
+        "products_to_show": 25,
+        "columns_desktop": 4,
+        "full_width": false,
+        "show_view_all": false,
+        "view_all_style": "solid",
+        "enable_desktop_slider": true,
+        "color_scheme": "",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "none",
+        "columns_mobile": "2",
+        "swipe_on_mobile": true,
+        "padding_top": 16,
+        "padding_bottom": 16
+      }
+    },
+    "featured_collection_9EkhtT": {
+      "type": "featured-collection",
+      "custom_css": [
+        ".title {font-family: serif; font-weight: normal; letter-spacing: 0.2px; font-size: 2rem;}",
+        ".card__heading {font-size: 1.2rem; letter-spacing: 0.2px; font-weight: bold;}",
+        ".price-item {font-weight: bold; font-size: 0.85rem;}",
+        ".slider-buttons {display: none;}",
+        ".card__information {gap: 0 !important;}",
+        ".price {margin-top: 0 !important;}",
+        ".card-information > * {line-height: 0.8;}",
+        ".full-unstyled-link {font-size: 1.2rem;}",
+        "@media (max-width: 768px) {.title {font-size: 1.3rem; padding-bottom: 0.5rem; } .full-unstyled-link {font-size: 1.1rem; }}"
+      ],
+      "settings": {
+        "title": "15oz Iced Coffee Cups",
+        "heading_size": "h2",
+        "description": "",
+        "show_description": false,
+        "description_style": "subtitle",
+        "collection": "15-oz-cup",
+        "products_to_show": 25,
+        "columns_desktop": 4,
+        "full_width": false,
+        "show_view_all": true,
+        "view_all_style": "solid",
+        "enable_desktop_slider": true,
+        "color_scheme": "scheme-1",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "none",
+        "columns_mobile": "2",
+        "swipe_on_mobile": true,
+        "padding_top": 16,
+        "padding_bottom": 16
+      }
+    },
+    "featured_collection_YmTLtJ": {
+      "type": "featured-collection",
+      "disabled": true,
+      "custom_css": [
+        ".title {font-family: serif; font-weight: normal; letter-spacing: 0.2px; font-size: 2rem;}",
+        ".card__heading {font-size: 1.3rem; letter-spacing: 0.2px; font-weight: bold;}",
+        ".price-item {font-weight: bold; font-size: 0.85rem;}",
+        ".slider-buttons {display: none;}",
+        ".card__information {gap: 0 !important;}",
+        ".price {margin-top: 0 !important;}",
+        ".card-information > * {line-height: 0.8;}",
+        ".full-unstyled-link {font-size: 1.2rem;}",
+        "@media (max-width: 768px) {.title {font-size: 1.2rem; padding-bottom: 0.5rem; } .full-unstyled-link {font-size: 1.1rem; }}"
+      ],
+      "settings": {
+        "title": "16oz Ceramic Reusable Cups",
+        "heading_size": "h2",
+        "description": "",
+        "show_description": false,
+        "description_style": "subtitle",
+        "collection": "16-oz",
+        "products_to_show": 25,
+        "columns_desktop": 4,
+        "full_width": false,
+        "show_view_all": true,
+        "view_all_style": "solid",
+        "enable_desktop_slider": true,
+        "color_scheme": "scheme-1",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "none",
+        "columns_mobile": "1",
+        "swipe_on_mobile": true,
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "featured_collection_mPGFDx": {
+      "type": "featured-collection",
+      "custom_css": [
+        ".title {font-family: serif; font-weight: normal; letter-spacing: 0.2px; font-size: 2rem;}",
+        ".card__heading {font-size: 1.2rem; letter-spacing: 0.2px; font-weight: bold;}",
+        ".price-item {font-weight: bold; font-size: 0.85rem;}",
+        ".slider-buttons {display: none;}",
+        ".card__information {gap: 0 !important;}",
+        ".price {margin-top: 0 !important;}",
+        ".card-information > * {line-height: 0.8;}",
+        ".full-unstyled-link {font-size: 1.2rem;}",
+        "@media (max-width: 768px) {.title {font-size: 1.3rem; padding-bottom: 0.5rem; } .full-unstyled-link {font-size: 1.1rem; }}"
+      ],
+      "settings": {
+        "title": "Customise",
+        "heading_size": "h2",
+        "description": "",
+        "show_description": false,
+        "description_style": "subtitle",
+        "collection": "customable",
+        "products_to_show": 11,
+        "columns_desktop": 3,
+        "full_width": false,
+        "show_view_all": false,
+        "view_all_style": "solid",
+        "enable_desktop_slider": true,
+        "color_scheme": "scheme-1",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "none",
+        "columns_mobile": "2",
+        "swipe_on_mobile": true,
+        "padding_top": 16,
+        "padding_bottom": 16
+      }
+    },
+    "featured_collection_CMThWw": {
+      "type": "featured-collection",
+      "custom_css": [
+        ".title {font-family: serif; font-weight: normal; letter-spacing: 0.2px; font-size: 2rem;}",
+        ".card__heading {font-size: 1.2rem; letter-spacing: 0.2px; font-weight: bold;}",
+        ".price-item {font-weight: bold; font-size: 0.85rem;}",
+        ".slider-buttons {display: none;}",
+        ".card__information {gap: 0 !important;}",
+        ".price {margin-top: 0 !important;}",
+        ".card-information > * {line-height: 0.8;}",
+        ".full-unstyled-link {font-size: 1.2rem;}",
+        "@media (max-width: 768px) {.title {font-size: 1.3rem; padding-bottom: 0.5rem; } .full-unstyled-link {font-size: 1.1rem; }}"
+      ],
+      "settings": {
+        "title": "Accessories",
+        "heading_size": "h2",
+        "description": "",
+        "show_description": false,
+        "description_style": "subtitle",
+        "collection": "accessories",
+        "products_to_show": 25,
+        "columns_desktop": 4,
+        "full_width": false,
+        "show_view_all": true,
+        "view_all_style": "solid",
+        "enable_desktop_slider": true,
+        "color_scheme": "scheme-1",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "none",
+        "columns_mobile": "2",
+        "swipe_on_mobile": true,
+        "padding_top": 16,
+        "padding_bottom": 12
+      }
+    },
+    "custom_liquid_g9n7w4": {
+      "type": "custom-liquid",
+      "custom_css": [],
+      "settings": {
+        "custom_liquid": "<style>\n\nbubble{margin:0;height:100vh;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#f5a623,#f9d84d,#4a90e2,#9013fe,#b1006c);background-size:300% 300%;animation:15s infinite gradient;position:relative;overflow:hidden}@keyframes gradient{0%,100%{background-position:0 50%}50%{background-position:100% 50%}}.circle{position:absolute;border-radius:50%;opacity:.7}.circle-1{width:200px;height:200px;background:rgba(255,99,71,.5);top:20%;left:10%}.circle-2{width:300px;height:300px;background:rgba(54,215,183,.5);top:40%;right:15%}.circle-3{width:250px;height:250px;background:rgba(255,140,0,.5);bottom:30%;left:25%}.circle-4{width:180px;height:180px;background:rgba(139,69,19,.5);bottom:20%;right:5%}\n\n</style>\n<div class=\"circle circle-1\"></div>\n<div class=\"circle circle-2\"></div>\n<div class=\"circle circle-3\"></div>\n<div class=\"circle circle-4\"></div>",
+        "color_scheme": "",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "custom_liquid_4RdUrP": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "<style>\n.customcircle1-banner{position:relative;overflow:hidden;background-color:#c5b9ac}.customcircle1-banner__media{position:relative;width:100vW;height:60vh}.customcircle1-banner__media-image{position:absolute;top:0;left:0;width:100%;height:200%;object-fit:cover;animation:20s linear infinite customcircle1-moveImage}@keyframes customcircle1-moveImage{0%{transform:translateY(-100%)}100%{transform:translateY(100%)}}.customcircle1-banner__content{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);color:#e65d94;width:100%;max-width:90vw;margin:0 auto;text-align:center}.customcircle1-banner__box{width:90vw}.customcircle1-banner__heading{color:#e65d94;font-size:1.6em;font-family:'Plus Jakarta Sans',sans-serif;font-weight:400;margin:0}.customcircle1-banner__text{font-size:2em;font-family:'Plus Jakarta Sans',sans-serif;margin:0 auto;font-weight:700}@media screen and (max-width:768px){.customcircle1-banner__media{height:50vh}.customcircle1-banner__heading{font-size:1.4em}.customcircle1-banner__text{font-size:1.6em}.customcircle1-banner__content{max-width:80vw}.customcircle1-banner__box{width:80vw}}@media screen and (max-width:480px){.customcircle1{height:60vh}.customcircle1-banner__media{height:50vh}.customcircle1-banner__heading{font-size:1.2em}.customcircle1-banner__text{font-size:1.4em}.customcircle1-banner__content{max-width:70vw}.customcircle1-banner__box{width:70vw}}\n</style>\n<div id=\"Banner-template--{{ section.id }}\" class=\"customcircle1-banner\">\n  <div class=\"customcircle1-banner__media\">\n    <div class=\"customcircle1-banner__media-image\">\n      <img src=\"https://cdn.shopify.com/s/files/1/0906/2072/3475/files/Circles_-_Narrow.png?v=1733296388\" alt=\"Background Image\" class=\"banner__image customcircle1-banner__image--foreground\">\n    </div>\n  </div>\n  <div class=\"customcircle1-banner__content\">\n    <div class=\"customcircle1-banner__box\">\n      <h2 class=\"customcircle1-banner__heading\">Premium. Stylish. Functional.</h2>\n      <div class=\"customcircle1-banner__text\">\n        <p>Reusable products you'll want to use again and again (and again).</p>\n      </div>\n    </div>\n  </div>\n</div>",
+        "color_scheme": "",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "custom_liquid_Qp7Hyn": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "<style>\n.custom3-feature-icons-container{display:flex;justify-content:center;align-items:center;flex-wrap:wrap;width:100%;margin:0 auto}.custom3-feature-icon{display:flex;flex-direction:column;align-items:center;margin:10px;width:45%;max-width:120px}.custom3-feature-icon img{width:60px;height:60px;object-fit:contain;filter:brightness(0) invert(0)}.custom3-feature-icon p{text-align:center;margin-top:10px;color:#000}.custom3-mobile-feature-icons-section{display:none;background-color:#d5e8da;padding:20px 0}@media (max-width:768px){.custom3-mobile-feature-icons-section{display:block}.custom3-feature-icons-container{display:flex;flex-wrap:wrap;justify-content:center}.custom3-feature-icon{width:40%;margin:10px}.custom3-feature-icon img{width:50px;height:50px}.custom3-feature-icon p{text-align:center;margin-top:5px;color:#000;font-size:.8rem;line-height:1.2}.custom3-mobile-feature-icons-section h2{text-align:center;color:#000;font-size:2.5rem;font-weight:700}}.custom3-feature-icons-container{display:flex;justify-content:center;align-items:center;flex-wrap:wrap;width:100%;margin:0 auto}.custom3-feature-icon{display:flex;flex-direction:column;align-items:center;margin:10px;width:45%;max-width:120px}.custom3-feature-icon img{width:60px;height:60px;object-fit:contain;filter:brightness(0) invert(0)}.custom3-feature-icon p{text-align:center;margin-top:10px;color:#000}.custom3-mobile-feature-icons-section{display:none;background-color:#d5e8da;padding:20px 0}@media (max-width:768px){.custom3-mobile-feature-icons-section{display:block}.custom3-feature-icons-container{display:flex;flex-wrap:wrap;justify-content:center}.custom3-feature-icon{width:40%;margin:10px}.custom3-feature-icon img{width:50px;height:50px}.custom3-feature-icon p{text-align:center;margin-top:5px;color:#000;font-size:.8rem;line-height:1.2}.custom3-mobile-feature-icons-section h2{text-align:center;color:#000;font-size:2.5rem;font-weight:700}}\n</style>\n  <section class=\"custom3-mobile-feature-icons-section\">\n    <h2>Frank Features</h2>\n    <div class=\"custom3-feature-icons-container\">\n      {% assign features = \n        \"Customisable://cdn.shopify.com/s/files/1/0906/2072/3475/files/CUSTOMISEABLE.svg?v=1728297945,\n        Monogrammable://cdn.shopify.com/s/files/1/0906/2072/3475/files/MONOGRAMMABLE.svg?v=1728297945,\n        Hot or cold for hours://cdn.shopify.com/s/files/1/0906/2072/3475/files/NO_METALLIC.svg?v=1728297945,\n        Premium materials://cdn.shopify.com/s/files/1/0906/2072/3475/files/PREMIUM.svg?v=1728297946\" | split: ',' %}\n  \n      {% for feature in features %} \n        {% assign feature_parts = feature | split: ':' %}\n        <div class=\"custom3-feature-icon\">\n          <img src=\"{{ feature_parts[1] }}\" alt=\"{{ feature_parts[0] }}\" />\n          <p>{{ feature_parts[0] }}</p>\n        </div>\n      {% endfor %}\n    </div>\n  </section>",
+        "color_scheme": "",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "custom_liquid_PYkKCE": {
+      "type": "custom-liquid",
+      "custom_css": [],
+      "settings": {
+        "custom_liquid": "<style>\n.feature-icons-section{background-color:#b9e0cb;text-align:center;padding:40px 20px}.feature-icons-section h2{font-size:24px;color:#333;margin-bottom:20px}.feature-icons-container{display:flex;justify-content:space-around;align-items:center;flex-wrap:wrap;gap:20px}.feature-icon i{font-size:32px;color:#333;margin-bottom:10px}.feature-icon{display:flex;flex-direction:column;align-items:center;margin:20px}.feature-icon img{width:60px;height:60px;object-fit:contain}.feature-icon p{font-family:'Plus Jakarta Sans',sans-serif;font-size:16px;color:#333;text-align:center;margin-top:10px}@media (max-width:768px){.feature-icons-section{display:none!important}}\n  </style>\n  \n  <section class=\"feature-icons-section\">\n    <h2 style=\"font-size: 2.5rem; font-weight: normal;font-family:'Plus Jakarta Sans', sans-serif;  ;\">frank features</h2>\n    <div class=\"feature-icons-container\">\n      {% assign features = \n        \"Customisable://cdn.shopify.com/s/files/1/0906/2072/3475/files/CUSTOMISEABLE.svg?v=1728297945,\n        Hot or cold for hours://cdn.shopify.com/s/files/1/0906/2072/3475/files/NO_METALLIC.svg?v=1728297945,\n        Monogrammable://cdn.shopify.com/s/files/1/0906/2072/3475/files/MONOGRAMMABLE.svg?v=1728297945,\n        Premium materials://cdn.shopify.com/s/files/1/0906/2072/3475/files/PREMIUM.svg?v=1728297946\" | split: ',' %}\n  \n      {% for feature in features %}\n        {% assign feature_parts = feature | split: ':' %}\n        <div class=\"feature-icon\">\n          <img src=\"{{ feature_parts[1] }}\" alt=\"{{ feature_parts[0] }}\" />\n          <p>{{ feature_parts[0] }}</p>\n        </div>\n      {% endfor %}\n    </div>\n  </section>",
+        "color_scheme": "",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "custom_liquid_HrMzQ3": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>Responsive Product Section</title>\n    <style>\n    .custom1-image-wrapper,.custom1-product-section{position:relative!important;overflow:hidden!important;display:flex!important}.custom1-product-section{height:150vh!important;flex-direction:row!important}.custom1-image-wrapper{flex:1!important;justify-content:center!important;align-items:center!important;height:100%}.custom1-background-image,.custom1-product-image{position:absolute!important;object-fit:cover!important}.custom1-product-image{transition:transform .5s,width .5s,bottom .5s!important;transform-origin:center center!important;z-index:2!important}.custom1-background-image{top:0!important;left:0!important;height:100%!important;width:100%!important;z-index:1!important}.custom1-product-title,.custom1-text-wrapper{position:relative!important;color:#fff!important}.custom1-text-wrapper{flex:1!important;padding:20px!important;background-color:#f28123!important;display:flex!important;flex-direction:column!important;justify-content:center!important;align-items:center!important;height:100%}.custom1-product-title{font-size:2rem!important;font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;margin:0}.custom1-product-title::after{content:'';position:absolute;left:0;bottom:0;width:0;height:4px;background-color:#fff;transition:width .5s}.custom1-product-title:hover::after{width:100%}.custom1-description{font-family:'Plus Jakarta Sans',sans-serif;font-weight:400;font-size:1.5em!important;line-height:1.5!important;color:#fff!important;text-align:center;width:90%;padding:5%;transition:transform .3s}@media (max-width:768px){.custom1-product-section{display:none!important}}.custom1-image-wrapper,.custom1-product-section{position:relative!important;overflow:hidden!important;display:flex!important}.custom1-product-section{height:150vh!important;flex-direction:row!important}.custom1-image-wrapper{flex:1!important;justify-content:center!important;align-items:center!important;height:100%}.custom1-background-image,.custom1-product-image{position:absolute!important;object-fit:cover!important}.custom1-product-image{transition:transform .5s,width .5s,bottom .5s!important;transform-origin:center center!important;z-index:2!important}.custom1-background-image{top:0!important;left:0!important;height:100%!important;width:100%!important;z-index:1!important}.custom1-product-title,.custom1-text-wrapper{position:relative!important;color:#fff!important}.custom1-text-wrapper{flex:1!important;padding:20px!important;background-color:#f28123!important;display:flex!important;flex-direction:column!important;justify-content:center!important;align-items:center!important;height:100%}.custom1-product-title{font-size:2rem!important;font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;margin:0}.custom1-product-title::after{content:'';position:absolute;left:0;bottom:0;width:0;height:4px;background-color:#fff;transition:width .5s}.custom1-product-title:hover::after{width:100%}.custom1-description{font-family:'Plus Jakarta  Sans',sans-serif;font-weight:400;font-size:1.5em!important;line-height:1.5!important;color:#fff!important;text-align:center;width:90%;padding:5%;transition:transform .3s}@media (max-width:768px){.custom1-product-section{display:none!important}}\n    </style>\n</head>\n<body>\n    <div class=\"custom1-product-section\">\n        <!-- Image Column -->\n        <div class=\"custom1-image-wrapper\">\n            <img src=\"https://cdn.shopify.com/s/files/1/0906/2072/3475/files/Copy_of_FG_MAC_CHAWKS_S01_0896_1x1_099b274e-f431-465a-bbdf-780fa9620cce.jpg?v=1728634176\" alt=\"Product Image\" class=\"custom1-product-image\">\n            <img src=\"https://cdn.shopify.com/s/files/1/0906/2072/3475/files/Copy_of_2104_FG_CELEBRATION_CUPS_1-1_V1.02.jpg?v=1728452580\" alt=\"Background Image\" class=\"custom1-background-image\">\n        </div>\n\n        <!-- Text Column -->\n        <div class=\"custom1-text-wrapper\">\n            <p class=\"custom1-description\">\n                Our signature range of reusable bottles! Beautifully-designed and functional, you'll want to carry them everywhere.\n            </p>\n            <p style=\"padding-top:15px;\"></p>\n            <h2 class=\"custom1-product-title\">Reusable Bottles</h2>\n        </div>\n    </div>\n\n    <script>\n    document.addEventListener('scroll', function () {\n      const productImage = document.querySelector('.custom1-product-image');\n      const productSection = document.querySelector('.custom1-product-section');\n      const description = document.querySelector('.custom1-description');\n      \n      const sectionHeight = productSection.offsetHeight;\n      const scrollY = window.scrollY;\n      const shrinkStart = productSection.offsetTop;\n      const shrinkEnd = shrinkStart + sectionHeight * 0.8;\n  \n      if (scrollY > shrinkStart && scrollY <= shrinkEnd) {\n          const progress = (scrollY - shrinkStart) / (shrinkEnd - shrinkStart);\n  \n          // Image scaling\n          const scale = 1 - progress * 0.75;\n          productImage.style.transform = `scale(${scale})`;\n          productImage.style.width = `${100 - progress * 75}%`;\n  \n          // Text movement: Start at the top and move to the middle\n          const translateY = -50 + progress * 50; // Start from -50px and move to 0px\n          description.style.transform = `translateY(${translateY}%)`;\n      } else if (scrollY > shrinkEnd) {\n          // Final state for image\n          productImage.style.transform = 'scale(0.25)';\n          productImage.style.width = '25%';\n  \n          // Final state for text\n          description.style.transform = `translateY(0%)`;\n      } else {\n          // Initial state for image\n          productImage.style.transform = 'scale(1)';\n          productImage.style.width = 'auto';\n  \n          // Initial state for text\n          description.style.transform = `translateY(-50%)`;\n      }\n  });\n  \n    </script>\n</body>\n</html>",
+        "color_scheme": "",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "custom_liquid_qcYNAq": {
+      "type": "custom-liquid",
+      "custom_css": [],
+      "settings": {
+        "custom_liquid": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>Responsive Product Section</title>\n    <style> \n    .custom2-product-section{display:none}@media (max-width:768px){.custom2-description,.custom2-product-title{font-family:'Plus Jakarta Sans',sans-serif;color:#fff}.custom2-product-section{display:flex;flex-direction:column;height:120vh;overflow:hidden;position:relative}.custom2-image-wrapper{flex:0 0 80vh;display:flex;justify-content:center;align-items:center;overflow:hidden;position:relative;background:url('https://cdn.shopify.com/s/files/1/0906/2072/3475/files/Copy_of_2104_FG_CELEBRATION_CUPS_1-1_V1.02.jpg?v=1728452580') center center/cover no-repeat}.custom2-product-image{max-height:80vh;max-width:auto;object-fit:cover;position:absolute;z-index:2;transition:transform .5s,width .5s}.custom2-text-wrapper{flex:1;padding:20px;background-color:#f28123;color:#fff;display:flex;flex-direction:column;justify-content:center;align-items:center}.custom2-product-title{font-size:2rem;font-weight:700;margin:10px 0}.custom2-description{font-weight:400;font-size:1.2em;line-height:1.5;text-align:center;margin:0;transition:transform .3s}}\n    </style>\n</head>\n<body>\n    <div class=\"custom2-product-section\">\n        <div class=\"custom2-image-wrapper\">\n            <img src=\"https://cdn.shopify.com/s/files/1/0906/2072/3475/files/Copy_of_FG_MAC_CHAWKS_S01_0896_1x1_099b274e-f431-465a-bbdf-780fa9620cce.jpg?v=1728634176\" alt=\"Product Image\" class=\"custom2-product-image\">\n        </div>\n\n        <div class=\"custom2-text-wrapper\">\n            <p class=\"custom2-description\">\n                Our signature range of reusable bottles! Beautifully-designed and functional, you'll want to carry them everywhere.\n            </p>\n            <h2 class=\"custom2-product-title\">Reusable Bottles</h2>\n        </div>\n    </div>\n\n    <script>\n        document.addEventListener('scroll', function () {\n            const productImage = document.querySelector('.custom2-product-image');\n            const productSection = document.querySelector('.custom2-product-section');\n            const description = document.querySelector('.custom2-description');\n\n            const sectionHeight = productSection.offsetHeight;\n            const scrollY = window.scrollY;\n            const shrinkStart = productSection.offsetTop; \n            const shrinkEnd = shrinkStart + sectionHeight * 0.4; \n            if (scrollY > shrinkStart && scrollY <= shrinkEnd) {\n                const progress = (scrollY - shrinkStart) / (shrinkEnd - shrinkStart);\n\n                const scale = 1 - progress * 0.75;\n                productImage.style.transform = `scale(${scale})`;\n\n                const translateY = progress * 100; \n                productImage.style.transform += ` translateY(${translateY}%)`;\n\n                const translateYText = -50 + progress * 50;\n                description.style.transform = `translateY(${translateYText}%)`;\n            } else if (scrollY > shrinkEnd) {\n                productImage.style.transform = 'scale(0.25) translateY(100%)';\n\n                description.style.transform = `translateY(0%)`;\n            } else {\n                productImage.style.transform = 'scale(1) translateY(0%)';\n\n                description.style.transform = `translateY(-50%)`;\n            }\n        });\n    </script>\n</body>\n</html>",
+        "color_scheme": "",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "custom_liquid_CVe9EL": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "<style>\n.custom-body{font-family:Arial,sans-serif;margin:0;padding:0;line-height:1.6}.custom-container{width:100%;height:80vh;margin:0 auto;position:relative;display:flex;align-items:center;justify-content:center;flex-direction:column}.custom-image-with-text{display:flex;justify-content:space-between;align-items:center;transition:opacity .3s ease-in-out;position:absolute;width:100%;height:100%;opacity:0;visibility:hidden}.custom-image-with-text.active{opacity:1;visibility:visible}.custom-image-container{width:55%;display:flex;justify-content:center;align-items:center;overflow:hidden;height:100%}.custom-image-container img{width:100%;height:100%;object-fit:contain}.custom-text-container{width:45%;padding:20px;text-align:left;box-sizing:border-box;height:100%;overflow:hidden}.custom-caption{font-size:16px;margin-bottom:10px}.custom-buttons-desktop{display:flex;justify-content:space-between;position:absolute;top:10px;right:10px;z-index:10}.custom-button{padding:10px 20px;margin:0 5px;background-color:#16b721;color:#fff;border:none;cursor:pointer;border-radius:5px}.custom-button:hover{background-color:#18cb36}.active{display:flex}.inactive{display:none}@media (max-width:768px){.custom-container{flex-direction:column;height:80vh}.custom-image-with-text{flex-direction:column;height:auto;justify-content:center}.custom-image-container{width:100%;height:300px}.custom-text-container{width:100%;padding:10px;text-align:center}.custom-buttons-mobile{display:flex;justify-content:center;margin-top:20px;width:100%;padding:0 20px}.custom-button{margin:5px;padding:8px 15px;flex:none}.custom-buttons-desktop{display:none}}@media (min-width:769px){.custom-buttons-mobile{display:none;padding-bottom:5vw}.custom-buttons-desktop{display:flex}}\n</style>\n</head>\n<body class=\"custom-body\">\n\n<div class=\"custom-container\">\n<div class=\"custom-buttons-desktop\">\n    <button class=\"custom-button\" onclick=\"showRow(0)\">1</button>\n    <button class=\"custom-button\" onclick=\"showRow(1)\">2</button>\n    <button class=\"custom-button\" onclick=\"showRow(2)\">3</button>\n</div>\n\n<div class=\"custom-buttons-mobile\">\n    <button class=\"custom-button\" onclick=\"showRow(0)\">1</button>\n    <button class=\"custom-button\" onclick=\"showRow(1)\">2</button>\n    <button class=\"custom-button\" onclick=\"showRow(2)\">3</button>\n</div>\n\n<div class=\"custom-image-with-text active\">\n    <div class=\"custom-image-container\">\n        <img src=\"//frankgreen.id/cdn/shop/files/home1110.png?v=1732524558\" alt=\"Image 1\">\n    </div>\n    <div class=\"custom-text-container\">\n        <p class=\"custom-caption\">We make sustainability easy!</p>\n        <h2>Make it yours</h2>\n        <p>Customise and personalise to make your Frank Green feel uniquely you.</p>\n    </div>\n</div>\n\n<div class=\"custom-image-with-text\">\n    <div class=\"custom-image-container\">\n        <img src=\"//frankgreen.id/cdn/shop/files/home1112.png?v=1732524558\" alt=\"Image 2\">\n    </div>\n    <div class=\"custom-text-container\">\n        <p class=\"custom-caption\">We make sustainability easy!</p>\n        <h2>Choose your product</h2>\n        <p>Discover beautifully-designed reusable bottles, cups, homewares and more!</p>\n    </div>\n</div>\n\n<div class=\"custom-image-with-text\">\n    <div class=\"custom-image-container\">\n        <img src=\"//frankgreen.id/cdn/shop/files/home3.png?v=1734042712\" alt=\"Image 3\">\n    </div>\n    <div class=\"custom-text-container\">\n        <p class=\"custom-caption\">We make sustainability easy!</p>\n        <h2>Reuse, over and over again</h2>\n        <p>Keep your frank green on hand to say no to single-use plastic forever.</p>\n    </div>\n</div>\n</div>\n\n<script>\nlet currentIndex = 0;\nconst rows = document.querySelectorAll('.custom-image-with-text');\nconst totalRows = rows.length;\n\nfunction showRow(index) {\n    rows.forEach((row, i) => {\n        if (i === index) {\n            row.classList.add('active');\n            row.classList.remove('inactive');\n        } else {\n            row.classList.add('inactive');\n            row.classList.remove('active');\n        }\n    });\n}\n\nsetInterval(() => {\n    currentIndex = (currentIndex + 1) % totalRows;\n    showRow(currentIndex);\n}, 5000);\n\nshowRow(0);\n</script>",
+        "color_scheme": "",
+        "padding_top": 16,
+        "padding_bottom": 16
+      }
+    },
+    "1740364831abdcfe82": {
+      "type": "apps",
+      "blocks": {
+        "klaviyo_email_marketing_sms_form_embed_block_7CcAcK": {
+          "type": "shopify://apps/klaviyo-email-marketing-sms/blocks/form-embed-block/2632fe16-c075-4321-a88b-50b567f42507",
+          "settings": {
+            "formId": "UZBM4r"
+          }
+        },
+        "klaviyo_email_marketing_sms_form_embed_block_pdHr8N": {
+          "type": "shopify://apps/klaviyo-email-marketing-sms/blocks/form-embed-block/2632fe16-c075-4321-a88b-50b567f42507",
+          "settings": {
+            "formId": "YeWckY"
+          }
+        }
+      },
+      "block_order": [
+        "klaviyo_email_marketing_sms_form_embed_block_7CcAcK",
+        "klaviyo_email_marketing_sms_form_embed_block_pdHr8N"
+      ],
+      "custom_css": [
+        "@media (max-width: 768px) {.klaviyo-form-YeWckY {display: block; }}",
+        "@media (min-width: 769px) {.klaviyo-form-YeWckY {display: none; }}",
+        "@media (max-width: 768px) {.klaviyo-form-UZBM4r {display: none; }}",
+        "@media (min-width: 768px) {.klaviyo-form-UZBM4r {display: block; }}"
+      ],
+      "settings": {
+        "include_margins": true
+      }
+    }
+  },
+  "order": [
+    "custom_liquid_WgtWxe",
+    "banner_main_yMkx68",
+    "featured_collection_zEQatQ",
+    "featured_collection_qnpWAj",
+    "featured_collection_tA4H8g",
+    "featured_collection_amJ9Vk",
+    "featured_collection_LHCzFA",
+    "featured_collection_bqBqNz",
+    "featured_collection_fLk3t6",
+    "featured_collection",
+    "featured_collection_xrn4VY",
+    "featured_collection_NkcLmV",
+    "featured_collection_9EkhtT",
+    "featured_collection_YmTLtJ",
+    "featured_collection_mPGFDx",
+    "featured_collection_CMThWw",
+    "custom_liquid_g9n7w4",
+    "custom_liquid_4RdUrP",
+    "custom_liquid_Qp7Hyn",
+    "custom_liquid_PYkKCE",
+    "custom_liquid_HrMzQ3",
+    "custom_liquid_qcYNAq",
+    "custom_liquid_CVe9EL",
+    "1740364831abdcfe82"
+  ]
+}
