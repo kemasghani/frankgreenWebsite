@@ -21,6 +21,16 @@
     "banner_main_yMkx68": {
       "type": "banner-main",
       "blocks": {
+        "slide_GjLAeg": {
+          "type": "slide",
+          "settings": {
+            "background_image": "shopify://shop_images/web_banner_FG.jpg",
+            "heading": "Special Edition",
+            "description": "Tur SAMA SAMA",
+            "button_text": "Shop Now",
+            "button_link": "shopify://collections/special-edition"
+          }
+        },
         "slide_Ma8qa9": {
           "type": "slide",
           "settings": {
@@ -31,20 +41,21 @@
             "button_link": "shopify://collections/new-arrivals"
           }
         },
-        "slide_GjLAeg": {
+        "slide_DWBJKw": {
           "type": "slide",
           "settings": {
-            "background_image": "shopify://shop_images/web_banner_FG.jpg",
-            "heading": "Special Edition",
-            "description": "Tur SAMA SAMA",
+            "background_image": "shopify://shop_images/web-banner-GENERAL-GRADIENT.webp",
+            "heading": "New Gradient Collection",
+            "description": "Limited Edition",
             "button_text": "Shop Now",
-            "button_link": "shopify://collections/special-edition"
+            "button_link": "shopify://collections/gradient-collection"
           }
         }
       },
       "block_order": [
+        "slide_GjLAeg",
         "slide_Ma8qa9",
-        "slide_GjLAeg"
+        "slide_DWBJKw"
       ],
       "name": "Banner Main",
       "settings": {
