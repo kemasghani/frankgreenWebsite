@@ -18,6 +18,28 @@
         "padding_bottom": 0
       }
     },
+    "banner_main_yMkx68": {
+      "type": "banner-main",
+      "blocks": {
+        "slide_GjLAeg": {
+          "type": "slide",
+          "settings": {
+            "background_image": "shopify://shop_images/web_banner_FG.jpg",
+            "heading": "Special Edition",
+            "description": "Tur SAMA SAMA",
+            "button_text": "Shop Now",
+            "button_link": "shopify://collections/special-edition"
+          }
+        }
+      },
+      "block_order": [
+        "slide_GjLAeg"
+      ],
+      "name": "Banner Main",
+      "settings": {
+        "slide_interval": 5000
+      }
+    },
     "featured_collection_EJQrJD": {
       "type": "featured-collection",
       "custom_css": [
@@ -56,28 +78,6 @@
         "swipe_on_mobile": true,
         "padding_top": 36,
         "padding_bottom": 36
-      }
-    },
-    "banner_main_yMkx68": {
-      "type": "banner-main",
-      "blocks": {
-        "slide_GjLAeg": {
-          "type": "slide",
-          "settings": {
-            "background_image": "shopify://shop_images/web_banner_FG.jpg",
-            "heading": "Special Edition",
-            "description": "Tur SAMA SAMA",
-            "button_text": "Shop Now",
-            "button_link": "shopify://collections/new-arrivals"
-          }
-        }
-      },
-      "block_order": [
-        "slide_GjLAeg"
-      ],
-      "name": "Banner Main",
-      "settings": {
-        "slide_interval": 5000
       }
     },
     "featured_collection_zEQatQ": {
