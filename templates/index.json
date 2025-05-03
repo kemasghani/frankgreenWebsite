@@ -21,6 +21,16 @@
     "banner_main_yMkx68": {
       "type": "banner-main",
       "blocks": {
+        "slide_Ma8qa9": {
+          "type": "slide",
+          "settings": {
+            "background_image": "shopify://shop_images/web-banner-general-april.jpg",
+            "heading": "Discover New Colours",
+            "description": "Slide Description",
+            "button_text": "Shop Now",
+            "button_link": ""
+          }
+        },
         "slide_GjLAeg": {
           "type": "slide",
           "settings": {
@@ -33,6 +43,7 @@
         }
       },
       "block_order": [
+        "slide_Ma8qa9",
         "slide_GjLAeg"
       ],
       "name": "Banner Main",
