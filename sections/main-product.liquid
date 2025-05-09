@@ -724,6 +724,25 @@
   </div>
 </product-info>
 <script>
+  document.addEventListener("DOMContentLoaded", function() {
+    // Target the input element based on its placeholder (or any other attribute you prefer)
+    const monogramInput = document.querySelector('input[placeholder="Monogram"][name="properties[Enter Monogram]"]');
+
+    // Check if the input field exists
+    if (monogramInput) {
+        // Attach an input event listener to the input field
+        monogramInput.addEventListener('input', function() {
+            // Remove any non-alphabetic characters
+            monogramInput.value = monogramInput.value.replace(/[^A-Za-z]/g, '');
+
+            // Optional: Ensure the length does not exceed 8 characters
+            if (monogramInput.value.length > 8) {
+                monogramInput.value = monogramInput.value.substring(0, 8);
+            }
+        });
+    }
+});
+
     document.addEventListener("DOMContentLoaded", function() {
       // Keep track of elements we've already processed
       var processedElements = new Set();
