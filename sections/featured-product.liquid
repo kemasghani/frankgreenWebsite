@@ -487,22 +487,34 @@
   {% endif %}
 </product-info>
 <script>
-  document.addEventListener("DOMContentLoaded", function() {
-    // Target the input element based on its placeholder (or any other attribute you prefer)
+document.addEventListener("DOMContentLoaded", function() {
+    // Target the input element based on its placeholder and name
     const monogramInput = document.querySelector('input[placeholder="Monogram"][name="properties[Enter Monogram]"]');
 
-    // Check if the input field exists
-    if (monogramInput) {
-        // Attach an input event listener to the input field
-        monogramInput.addEventListener('input', function() {
-            // Remove any non-alphabetic characters
-            monogramInput.value = monogramInput.value.replace(/[^A-Za-z]/g, '');
+    // Check if the input element exists
+    if (!monogramInput) {
+        console.log("Input element not found!");
+        return;
+    }
 
-            // Optional: Ensure the length does not exceed 8 characters
-            if (monogramInput.value.length > 8) {
-                monogramInput.value = monogramInput.value.substring(0, 8);
-            }
-        });
+    console.log("Input element found:", monogramInput);
+
+    // Set a test value with symbols (you can change this for testing)
+    monogramInput.value = "Test@123!";
+
+    // Trigger the input event manually
+    monogramInput.dispatchEvent(new Event('input'));
+
+    // Log the cleaned value
+    console.log("Cleaned value:", monogramInput.value);
+});
+
+document.addEventListener("input", function(event) {
+    const monogramInput = event.target;
+    if (monogramInput && monogramInput.name === "properties[Enter Monogram]") {
+        // Remove any non-alphabetic characters
+        monogramInput.value = monogramInput.value.replace(/[^A-Za-z]/g, '');
+        console.log("Input cleaned on input event:", monogramInput.value);
     }
 });
 
