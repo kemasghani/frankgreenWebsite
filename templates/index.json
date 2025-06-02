@@ -21,6 +21,16 @@
     "banner_main_yMkx68": {
       "type": "banner-main",
       "blocks": {
+        "slide_Gi4g7q": {
+          "type": "slide",
+          "settings": {
+            "background_image": "shopify://shop_images/web_banner_-_hinged_lid.jpg",
+            "heading": "Get 5 FREE Coffees on Us",
+            "description": "frank green x Toby’s Estate",
+            "button_text": "Shop Now",
+            "button_link": ""
+          }
+        },
         "slide_GjLAeg": {
           "type": "slide",
           "settings": {
@@ -53,6 +63,7 @@
         }
       },
       "block_order": [
+        "slide_Gi4g7q",
         "slide_GjLAeg",
         "slide_Ma8qa9",
         "slide_DWBJKw"
