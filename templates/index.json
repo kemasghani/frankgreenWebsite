@@ -24,7 +24,10 @@
         "slide_GjLAeg": {
           "type": "slide",
           "settings": {
+            "media_type": "image",
             "background_image": "shopify://shop_images/web_banner_FG.jpg",
+            "background_video": "shopify://files/videos/glow in the dark Banner.mp4",
+            "show_content": true,
             "heading": "Special Edition",
             "description": "Tur SAMA SAMA",
             "button_text": "Shop Now",
@@ -34,7 +37,9 @@
         "slide_Ma8qa9": {
           "type": "slide",
           "settings": {
+            "media_type": "image",
             "background_image": "shopify://shop_images/web-banner-general-april.jpg",
+            "show_content": true,
             "heading": "Discover New Colours",
             "description": "Buttermilk & Cloud",
             "button_text": "Shop Now",
@@ -44,7 +49,9 @@
         "slide_DWBJKw": {
           "type": "slide",
           "settings": {
+            "media_type": "image",
             "background_image": "shopify://shop_images/web-banner-GENERAL-GRADIENT.webp",
+            "show_content": true,
             "heading": "New Gradient Collection",
             "description": "Limited Edition",
             "button_text": "Shop Now",

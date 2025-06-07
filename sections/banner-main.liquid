@@ -1,20 +1,16 @@
 <div class="custom-slider-container">
   {% for block in section.blocks %}
-    {% if block.settings.media_type == 'video' %}
-      {{ block.settings.background_video | video_tag: autoplay: true, loop: true, muted: true, playsinline: true, class: 'custom-slide-video' }}
-    {% else %}
-      <div id="custom-slide{{ forloop.index }}" class="custom-slide" style="background-image: url('{{ block.settings.background_image | img_url: 'master' }}');" {{ block.shopify_attributes }}>
-        <div class="custom-content">
-          <div class="custom-text-content">
-            <h1 class="custom-main-heading">{{ block.settings.heading }}</h1>
-            <p class="custom-description">{{ block.settings.description }}</p>
-          </div>
-          <div class="custom-button-container">
-            <a href="{{ block.settings.button_link }}" class="custom-button-link">{{ block.settings.button_text }}</a>
-          </div>
+    <div id="custom-slide{{ forloop.index }}" class="custom-slide" style="background-image: url('{{ block.settings.background_image | img_url: 'master' }}');" {{ block.shopify_attributes }}>
+      <div class="custom-content">
+        <div class="custom-text-content">
+          <h1 class="custom-main-heading">{{ block.settings.heading }}</h1>
+          <p class="custom-description">{{ block.settings.description }}</p>
+        </div>
+        <div class="custom-button-container">
+          <a href="{{ block.settings.button_link }}" class="custom-button-link">{{ block.settings.button_text }}</a>
         </div>
       </div>
-    {% endif %}
+    </div>
   {% endfor %}
 </div>
 
@@ -54,7 +50,7 @@
   font-family: 'Plus Jakarta Sans', sans-serif;
   font-size: 1.5rem;
   font-weight: normal;
-  color: black;
+  color: white;
   margin-top: 0.5rem;
 }
 
@@ -62,7 +58,7 @@
   font-family: 'Plus Jakarta Sans', sans-serif;
   font-size: 3.5rem;
   font-weight: bold;
-  color: black;
+  color: white;
 }
 
 .custom-slider-container .custom-button-container {
@@ -77,7 +73,7 @@
   font-family: 'Plus Jakarta Sans', sans-serif;
   text-decoration: none;
   font-weight: bold;
-  color: black;
+  color: white;
   border: none;
   background: none;
   cursor: pointer;
@@ -103,7 +99,7 @@
   display: inline-block;
   width: 1rem;
   height: 1rem;
-  background-color: black;
+  background-color: white;
   margin-left: 10px;
   position: relative;
   border-radius: 50%;
@@ -226,30 +222,9 @@ showSlide(currentSlide);
       "name": "Slide",
       "settings": [
         {
-          "type": "select",
-          "id": "media_type",
-          "label": "Media Type",
-          "default": "image",
-          "options": [
-            { "value": "image", "label": "Image" },
-            { "value": "video", "label": "Video" }
-          ]
-        },
-        {
           "type": "image_picker",
           "id": "background_image",
           "label": "Background Image"
-        },
-        {
-          "type": "video",
-          "id": "background_video",
-          "label": "Background Video"
-        },
-        {
-          "type": "checkbox",
-          "id": "show_content",
-          "label": "Show Content",
-          "default": true
         },
         {
           "type": "text",
@@ -276,7 +251,6 @@ showSlide(currentSlide);
         }
       ]
     }
-
   ],
   "presets": [
     {
