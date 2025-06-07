@@ -23,6 +23,13 @@
     "announcement-bar": {
       "type": "announcement-bar",
       "blocks": {
+        "announcement_zxfrEM": {
+          "type": "announcement",
+          "settings": {
+            "text": "New Arrivals: 20oz Chrome Collection",
+            "link": "shopify://collections/customable"
+          }
+        },
         "announcement_VFVif4": {
           "type": "announcement",
           "settings": {
@@ -39,6 +46,7 @@
         }
       },
       "block_order": [
+        "announcement_zxfrEM",
         "announcement_VFVif4",
         "announcement_Jz7AnB"
       ],

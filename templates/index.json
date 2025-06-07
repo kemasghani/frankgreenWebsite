@@ -21,6 +21,16 @@
     "banner_main_yMkx68": {
       "type": "banner-main",
       "blocks": {
+        "slide_i7H6WL": {
+          "type": "slide",
+          "settings": {
+            "background_image": "shopify://shop_images/web_banner_-_chrome_20oz.jpg",
+            "heading": "New Chrome Collection",
+            "description": "Rainbow & Silver Chrome in 20oz",
+            "button_text": "Shop Now",
+            "button_link": "https://frankgreen.id/search?q=chrome&_pos=1&_psq=chrome&_ss=e&_v=1.0"
+          }
+        },
         "slide_Gi4g7q": {
           "type": "slide",
           "settings": {
@@ -30,50 +40,11 @@
             "button_text": "Shop Now",
             "button_link": "shopify://collections/reusable-cups"
           }
-        },
-        "slide_GjLAeg": {
-          "type": "slide",
-          "settings": {
-            "media_type": "image",
-            "background_image": "shopify://shop_images/web_banner_FG.jpg",
-            "background_video": "shopify://files/videos/glow in the dark Banner.mp4",
-            "show_content": true,
-            "heading": "Special Edition",
-            "description": "Tur SAMA SAMA",
-            "button_text": "Shop Now",
-            "button_link": "shopify://collections/special-edition"
-          }
-        },
-        "slide_Ma8qa9": {
-          "type": "slide",
-          "settings": {
-            "media_type": "image",
-            "background_image": "shopify://shop_images/web-banner-general-april.jpg",
-            "show_content": true,
-            "heading": "Discover New Colours",
-            "description": "Buttermilk & Cloud",
-            "button_text": "Shop Now",
-            "button_link": "shopify://collections/new-arrivals"
-          }
-        },
-        "slide_DWBJKw": {
-          "type": "slide",
-          "settings": {
-            "media_type": "image",
-            "background_image": "shopify://shop_images/web-banner-GENERAL-GRADIENT.webp",
-            "show_content": true,
-            "heading": "New Gradient Collection",
-            "description": "Limited Edition",
-            "button_text": "Shop Now",
-            "button_link": "shopify://collections/gradient-collection"
-          }
         }
       },
       "block_order": [
-        "slide_Gi4g7q",
-        "slide_GjLAeg",
-        "slide_Ma8qa9",
-        "slide_DWBJKw"
+        "slide_i7H6WL",
+        "slide_Gi4g7q"
       ],
       "name": "Banner Main",
       "settings": {
@@ -173,6 +144,7 @@
         ".full-unstyled-link {font-size: 1.2rem;}",
         "@media (max-width: 768px) {.title {font-size: 1.3rem; padding-bottom: 0.5rem; } .full-unstyled-link {font-size: 1.1rem; }}"
       ],
+      "name": "New Arrivals",
       "settings": {
         "title": "New Arrivals",
         "heading_size": "h2",
@@ -770,9 +742,9 @@
   "order": [
     "custom_liquid_WgtWxe",
     "banner_main_yMkx68",
+    "featured_collection_zEQatQ",
     "featured_collection_NkcLmV",
     "featured_collection_EJQrJD",
-    "featured_collection_zEQatQ",
     "featured_collection_qnpWAj",
     "featured_collection_tA4H8g",
     "featured_collection_amJ9Vk",
