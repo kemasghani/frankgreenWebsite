@@ -1,20 +1,42 @@
-.mega-menu { 
-    position: static; 
+.mega-menu {
+    position: static;
     overflow-x: hidden;
-  } 
+  }
 .mega-menu__content {
   background-color: rgb(var(--color-background));
   border-left: 0;
   border-radius: 0;
   border-right: 0;
-  left: -1vw;
+  left: -1%;
   overflow-y: auto;
   padding-bottom: 3rem;
   padding-top: 3rem;
-  position: absolute; 
+  position: absolute;
   top: 100%;
   width: 100vw;
 }
+
+@media (min-width: 1540px) {
+  .mega-menu__content {
+    left: -3%;
+  }
+}
+@media (min-width: 1580px) {
+  .mega-menu__content {
+    left: -5%;
+  }
+}
+@media (min-width: 1650px) {
+  .mega-menu__content {
+    left: -7%;
+  }
+}
+@media (min-width: 1705px) {
+  .mega-menu__content {
+    left: -7%;
+  }
+}
+
 
 .shopify-section-header-sticky .mega-menu__content {
   max-height: calc(100vh - var(--header-bottom-position-desktop, 20rem) - 4rem);
