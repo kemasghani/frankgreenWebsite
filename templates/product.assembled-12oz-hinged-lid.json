@@ -22,7 +22,7 @@
     "custom_liquid_XLbxLi": {
       "type": "custom-liquid",
       "settings": {
-        "custom_liquid": "<style> \n.pplr-wrapper.pplr-dropdown.pplr-add-monogramming .pplrlabel::after {\n    content: \"+ IDR 100.000\";\n    color: green;\n    font-family: 'Plus Jakarta Sans', sans-serif; \n    font-size:1.5rem;\n    font-weight: bold;\n    margin-right: 10px;\n    position: relative;\n    left: 0;\n}  \n</style>",
+        "custom_liquid": "",
         "color_scheme": "",
         "padding_top": 0,
         "padding_bottom": 0

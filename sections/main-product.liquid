@@ -37,6 +37,9 @@
         padding-bottom: {{ section.settings.padding_bottom }}px;
       }
     }
+    .section-{{ section.id }}-padding .pplr-drop-item ._pplr_pay{
+      display: none;
+    }
   {%- endstyle -%}
 
   <script src="{{ 'product-info.js' | asset_url }}" defer="defer"></script>
@@ -724,6 +727,44 @@
   </div>
 </product-info>
 <script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const observer = new MutationObserver(function () {
+      const payOption = document.querySelector('.pplr-drop-item._pplr_pay');
+      const freeOption = document.querySelector('.pplr-drop-item._pplr_free');
+      const monogramLabel = document.querySelector('.pplr-add-monogramming .pplrlabel');
+
+      if (payOption && monogramLabel) {
+        // 1. Hide the ._pplr_pay item
+        payOption.style.opacity = '0';
+
+        // 2. Add "+ IDR 100.000" text to the label if not already present
+        if (!monogramLabel.textContent.includes("+ IDR 100.000")) {
+          monogramLabel.innerHTML = `Add Monogramming + IDR 100.000 <span class="pplr_option_price_span"></span>`;
+        }
+
+        observer.disconnect(); // Stop watching after it's applied
+      }
+      if (freeOption && monogramLabel) {
+        // 1. Hide the ._pplr_free item
+        freeOption.style.opacity = '0';
+
+        // 2. Add "+ FREE" text to the label if not already present
+        if (!monogramLabel.textContent.includes("+ FREE")) {
+          monogramLabel.innerHTML = `Add Monogramming + FREE <span class="pplr_option_price_span"></span>`;
+        }
+
+        observer.disconnect(); // Stop watching after it's applied
+      }
+    });
+
+    observer.observe(document.body, {
+      childList: true,
+      subtree: true
+    });
+  });
+
+
+
  document.addEventListener("DOMContentLoaded", function() {
     // Target the input element based on its placeholder and name
     const monogramInput = document.querySelector('input[placeholder="Monogram"][name="properties[Enter Monogram]"]');
