@@ -763,6 +763,31 @@
     });
   });
 
+function insertEmojiNote() {
+  const wrapper = document.querySelector('.pplr-wrapper.pplr-select-an-emoji-to-engrave.pplr_show_preview');
+
+  if (wrapper && !wrapper.querySelector('p.emoji-helper')) {
+    const p = document.createElement('p');
+    p.className = 'emoji-helper';
+    p.textContent = 'This digital render is for illustrative purposes only, your monogram may appear slightly different in real life and will be located on the side opposite to the frank green logo.';
+    p.style.fontSize = '1.2rem';
+    p.style.color = 'black';
+    p.style.marginTop = '10px';
+    p.style.textAlign = 'center';
+
+    wrapper.appendChild(p); // 👈 append at the end of the wrapper
+    return true;
+  }
+
+  return false;
+}
+
+const emojiCheckInterval = setInterval(() => {
+  const success = insertEmojiNote();
+  if (success) {
+    clearInterval(emojiCheckInterval);
+  }
+}, 300);
 
 
  document.addEventListener("DOMContentLoaded", function() {
