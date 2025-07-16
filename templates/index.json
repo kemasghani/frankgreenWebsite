@@ -21,6 +21,16 @@
     "banner_main_yMkx68": {
       "type": "banner-main",
       "blocks": {
+        "slide_QrRkHX": {
+          "type": "slide",
+          "settings": {
+            "background_image": "shopify://shop_images/web-banner-general-juli-ALT.jpg",
+            "heading": "Free Monogramming",
+            "description": "Exclusively on the Website",
+            "button_text": "Shop Now",
+            "button_link": ""
+          }
+        },
         "slide_i7H6WL": {
           "type": "slide",
           "settings": {
@@ -43,12 +53,53 @@
         }
       },
       "block_order": [
+        "slide_QrRkHX",
         "slide_i7H6WL",
         "slide_Gi4g7q"
       ],
       "name": "Banner Main",
       "settings": {
         "slide_interval": 5000
+      }
+    },
+    "featured_collection_zEQatQ": {
+      "type": "featured-collection",
+      "custom_css": [
+        ".title {font-family: serif; font-weight: normal; letter-spacing: 0.2px; font-size: 2rem;}",
+        ".card__heading {font-size: 1.2rem; letter-spacing: 0.2px; font-weight: bold;}",
+        ".price-item {font-weight: bold; font-size: 0.85rem;}",
+        ".slider-buttons {display: none;}",
+        ".card__information {gap: 0 !important;}",
+        ".price {margin-top: 0 !important;}",
+        ".card-information > * {line-height: 0.8;}",
+        ".full-unstyled-link {font-size: 1.2rem;}",
+        "@media (max-width: 768px) {.title {font-size: 1.3rem; padding-bottom: 0.5rem; } .full-unstyled-link {font-size: 1.1rem; }}"
+      ],
+      "name": "New Arrivals",
+      "settings": {
+        "title": "New Arrivals",
+        "heading_size": "h2",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "collection": "new-arrivals",
+        "products_to_show": 7,
+        "columns_desktop": 4,
+        "full_width": false,
+        "show_view_all": false,
+        "view_all_style": "solid",
+        "enable_desktop_slider": true,
+        "color_scheme": "",
+        "image_ratio": "portrait",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "none",
+        "columns_mobile": "2",
+        "swipe_on_mobile": true,
+        "padding_top": 16,
+        "padding_bottom": 8
       }
     },
     "featured_collection_NkcLmV": {
@@ -129,46 +180,6 @@
         "swipe_on_mobile": true,
         "padding_top": 36,
         "padding_bottom": 36
-      }
-    },
-    "featured_collection_zEQatQ": {
-      "type": "featured-collection",
-      "custom_css": [
-        ".title {font-family: serif; font-weight: normal; letter-spacing: 0.2px; font-size: 2rem;}",
-        ".card__heading {font-size: 1.2rem; letter-spacing: 0.2px; font-weight: bold;}",
-        ".price-item {font-weight: bold; font-size: 0.85rem;}",
-        ".slider-buttons {display: none;}",
-        ".card__information {gap: 0 !important;}",
-        ".price {margin-top: 0 !important;}",
-        ".card-information > * {line-height: 0.8;}",
-        ".full-unstyled-link {font-size: 1.2rem;}",
-        "@media (max-width: 768px) {.title {font-size: 1.3rem; padding-bottom: 0.5rem; } .full-unstyled-link {font-size: 1.1rem; }}"
-      ],
-      "name": "New Arrivals",
-      "settings": {
-        "title": "New Arrivals",
-        "heading_size": "h2",
-        "description": "",
-        "show_description": false,
-        "description_style": "body",
-        "collection": "new-arrivals",
-        "products_to_show": 7,
-        "columns_desktop": 4,
-        "full_width": false,
-        "show_view_all": false,
-        "view_all_style": "solid",
-        "enable_desktop_slider": true,
-        "color_scheme": "",
-        "image_ratio": "portrait",
-        "image_shape": "default",
-        "show_secondary_image": false,
-        "show_vendor": false,
-        "show_rating": false,
-        "quick_add": "none",
-        "columns_mobile": "2",
-        "swipe_on_mobile": true,
-        "padding_top": 16,
-        "padding_bottom": 8
       }
     },
     "featured_collection_qnpWAj": {
