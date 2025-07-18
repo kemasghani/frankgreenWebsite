@@ -21,9 +21,21 @@
     "banner_main_yMkx68": {
       "type": "banner-main",
       "blocks": {
+        "slide_VMDn9M": {
+          "type": "slide",
+          "settings": {
+            "content_type": "video",
+            "video_url": "shopify://files/videos/glow in the dark Banner.mp4",
+            "heading": "Slide Heading",
+            "description": "Slide Description",
+            "button_text": "Shop Now",
+            "button_link": ""
+          }
+        },
         "slide_i7H6WL": {
           "type": "slide",
           "settings": {
+            "content_type": "image",
             "background_image": "shopify://shop_images/web_banner_-_chrome_20oz.jpg",
             "heading": "New Chrome Collection",
             "description": "Rainbow & Silver Chrome in 20oz",
@@ -34,6 +46,7 @@
         "slide_Gi4g7q": {
           "type": "slide",
           "settings": {
+            "content_type": "image",
             "background_image": "shopify://shop_images/web_banner_-_hinged_lid.jpg",
             "heading": "Get 5 FREE Coffees on Us",
             "description": "frank green x Toby’s Estate",
@@ -43,12 +56,134 @@
         }
       },
       "block_order": [
+        "slide_VMDn9M",
         "slide_i7H6WL",
         "slide_Gi4g7q"
       ],
       "name": "Banner Main",
       "settings": {
-        "slide_interval": 5000
+        "slide_interval": 9000
+      }
+    },
+    "featured_collection_XhCRRT": {
+      "type": "featured-collection",
+      "disabled": true,
+      "custom_css": [
+        ".title {font-family: serif; font-weight: normal; letter-spacing: 0.2px; font-size: 2rem;}",
+        ".card__heading {font-size: 1.2rem; letter-spacing: 0.2px; font-weight: bold;}",
+        ".price-item {font-weight: bold; font-size: 0.85rem;}",
+        ".slider-buttons {display: none;}",
+        ".card__information {gap: 0 !important;}",
+        ".price {margin-top: 0 !important;}",
+        ".card-information > * {line-height: 0.8;}",
+        ".full-unstyled-link {font-size: 1.2rem;}",
+        "@media (max-width: 768px) {.title {font-size: 1.3rem; padding-bottom: 0.5rem; } .full-unstyled-link {font-size: 1.1rem; }}"
+      ],
+      "name": "New Arrivals",
+      "settings": {
+        "title": "GIIAS Collection",
+        "heading_size": "h2",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "collection": "giias",
+        "products_to_show": 25,
+        "columns_desktop": 4,
+        "full_width": false,
+        "show_view_all": false,
+        "view_all_style": "solid",
+        "enable_desktop_slider": true,
+        "color_scheme": "",
+        "image_ratio": "portrait",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "none",
+        "columns_mobile": "2",
+        "swipe_on_mobile": true,
+        "padding_top": 16,
+        "padding_bottom": 8
+      }
+    },
+    "featured_collection_bj3hqn": {
+      "type": "featured-collection",
+      "custom_css": [
+        ".title {font-family: serif; font-weight: normal; letter-spacing: 0.2px; font-size: 2rem;}",
+        ".card__heading {font-size: 1.2rem; letter-spacing: 0.2px; font-weight: bold;}",
+        ".price-item {font-weight: bold; font-size: 0.85rem;}",
+        ".slider-buttons {display: none;}",
+        ".card__information {gap: 0 !important;}",
+        ".price {margin-top: 0 !important;}",
+        ".card-information > * {line-height: 0.8;}",
+        ".full-unstyled-link {font-size: 1.2rem;}",
+        "@media (max-width: 768px) {.title {font-size: 1.3rem; padding-bottom: 0.5rem; } .full-unstyled-link {font-size: 1.1rem; }}"
+      ],
+      "name": "New Arrivals",
+      "settings": {
+        "title": "Glow Collection",
+        "heading_size": "h2",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "collection": "glow-collection",
+        "products_to_show": 4,
+        "columns_desktop": 4,
+        "full_width": false,
+        "show_view_all": false,
+        "view_all_style": "solid",
+        "enable_desktop_slider": true,
+        "color_scheme": "",
+        "image_ratio": "portrait",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "none",
+        "columns_mobile": "2",
+        "swipe_on_mobile": true,
+        "padding_top": 16,
+        "padding_bottom": 8
+      }
+    },
+    "featured_collection_zEQatQ": {
+      "type": "featured-collection",
+      "custom_css": [
+        ".title {font-family: serif; font-weight: normal; letter-spacing: 0.2px; font-size: 2rem;}",
+        ".card__heading {font-size: 1.2rem; letter-spacing: 0.2px; font-weight: bold;}",
+        ".price-item {font-weight: bold; font-size: 0.85rem;}",
+        ".slider-buttons {display: none;}",
+        ".card__information {gap: 0 !important;}",
+        ".price {margin-top: 0 !important;}",
+        ".card-information > * {line-height: 0.8;}",
+        ".full-unstyled-link {font-size: 1.2rem;}",
+        "@media (max-width: 768px) {.title {font-size: 1.3rem; padding-bottom: 0.5rem; } .full-unstyled-link {font-size: 1.1rem; }}"
+      ],
+      "name": "New Arrivals",
+      "settings": {
+        "title": "New Arrivals",
+        "heading_size": "h2",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "collection": "new-arrivals",
+        "products_to_show": 7,
+        "columns_desktop": 4,
+        "full_width": false,
+        "show_view_all": false,
+        "view_all_style": "solid",
+        "enable_desktop_slider": true,
+        "color_scheme": "",
+        "image_ratio": "portrait",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "none",
+        "columns_mobile": "2",
+        "swipe_on_mobile": true,
+        "padding_top": 16,
+        "padding_bottom": 8
       }
     },
     "featured_collection_NkcLmV": {
@@ -131,46 +266,6 @@
         "padding_bottom": 36
       }
     },
-    "featured_collection_zEQatQ": {
-      "type": "featured-collection",
-      "custom_css": [
-        ".title {font-family: serif; font-weight: normal; letter-spacing: 0.2px; font-size: 2rem;}",
-        ".card__heading {font-size: 1.2rem; letter-spacing: 0.2px; font-weight: bold;}",
-        ".price-item {font-weight: bold; font-size: 0.85rem;}",
-        ".slider-buttons {display: none;}",
-        ".card__information {gap: 0 !important;}",
-        ".price {margin-top: 0 !important;}",
-        ".card-information > * {line-height: 0.8;}",
-        ".full-unstyled-link {font-size: 1.2rem;}",
-        "@media (max-width: 768px) {.title {font-size: 1.3rem; padding-bottom: 0.5rem; } .full-unstyled-link {font-size: 1.1rem; }}"
-      ],
-      "name": "New Arrivals",
-      "settings": {
-        "title": "New Arrivals",
-        "heading_size": "h2",
-        "description": "",
-        "show_description": false,
-        "description_style": "body",
-        "collection": "new-arrivals",
-        "products_to_show": 7,
-        "columns_desktop": 4,
-        "full_width": false,
-        "show_view_all": false,
-        "view_all_style": "solid",
-        "enable_desktop_slider": true,
-        "color_scheme": "",
-        "image_ratio": "portrait",
-        "image_shape": "default",
-        "show_secondary_image": false,
-        "show_vendor": false,
-        "show_rating": false,
-        "quick_add": "none",
-        "columns_mobile": "2",
-        "swipe_on_mobile": true,
-        "padding_top": 16,
-        "padding_bottom": 8
-      }
-    },
     "featured_collection_qnpWAj": {
       "type": "featured-collection",
       "custom_css": [
@@ -201,46 +296,6 @@
         "image_ratio": "adapt",
         "image_shape": "default",
         "show_secondary_image": false,
-        "show_vendor": false,
-        "show_rating": false,
-        "quick_add": "none",
-        "columns_mobile": "2",
-        "swipe_on_mobile": true,
-        "padding_top": 16,
-        "padding_bottom": 8
-      }
-    },
-    "featured_collection_tA4H8g": {
-      "type": "featured-collection",
-      "disabled": true,
-      "custom_css": [
-        ".title {font-family: serif; font-weight: normal; letter-spacing: 0.2px; font-size: 2rem;}",
-        ".card__heading {font-size: 1.2rem; letter-spacing: 0.2px; font-weight: bold;}",
-        ".price-item {font-weight: bold; font-size: 0.85rem;}",
-        ".slider-buttons {display: none;}",
-        ".card__information {gap: 0 !important;}",
-        ".price {margin-top: 0 !important;}",
-        ".card-information > * {line-height: 0.8;}",
-        ".full-unstyled-link {font-size: 1.2rem;}",
-        "@media (max-width: 768px) {.title {font-size: 1.3rem; padding-bottom: 0.5rem; } .full-unstyled-link {font-size: 1.1rem; }}"
-      ],
-      "settings": {
-        "title": "Ramadan Exclusive Hampers",
-        "heading_size": "h2",
-        "description": "",
-        "show_description": false,
-        "description_style": "body",
-        "collection": "ramadhan-gift-box",
-        "products_to_show": 3,
-        "columns_desktop": 3,
-        "full_width": false,
-        "show_view_all": false,
-        "view_all_style": "solid",
-        "enable_desktop_slider": true,
-        "color_scheme": "",
-        "image_ratio": "adapt",
-        "image_shape": "default",
-        "show_secondary_image": true,
         "show_vendor": false,
         "show_rating": false,
         "quick_add": "none",
@@ -313,46 +368,6 @@
         "columns_desktop": 3,
         "full_width": false,
         "show_view_all": true,
-        "view_all_style": "solid",
-        "enable_desktop_slider": false,
-        "color_scheme": "",
-        "image_ratio": "adapt",
-        "image_shape": "default",
-        "show_secondary_image": false,
-        "show_vendor": false,
-        "show_rating": false,
-        "quick_add": "none",
-        "columns_mobile": "2",
-        "swipe_on_mobile": true,
-        "padding_top": 16,
-        "padding_bottom": 16
-      }
-    },
-    "featured_collection_bqBqNz": {
-      "type": "featured-collection",
-      "disabled": true,
-      "custom_css": [
-        ".title {font-family: serif; font-weight: normal; letter-spacing: 0.2px; font-size: 2rem;}",
-        ".card__heading {font-size: 1.2rem; letter-spacing: 0.2px; font-weight: bold;}",
-        ".price-item {font-weight: bold; font-size: 0.85rem;}",
-        ".slider-buttons {display: none;}",
-        ".card__information {gap: 0 !important;}",
-        ".price {margin-top: 0 !important;}",
-        ".card-information > * {line-height: 0.8;}",
-        ".full-unstyled-link {font-size: 1.2rem;}",
-        "@media (max-width: 768px) {.title {font-size: 1.3rem; padding-bottom: 0.5rem; } .full-unstyled-link {font-size: 1.1rem; }}"
-      ],
-      "settings": {
-        "title": "Khaki Our New Colour",
-        "heading_size": "h2",
-        "description": "",
-        "show_description": false,
-        "description_style": "body",
-        "collection": "new-arrivals-khaki",
-        "products_to_show": 4,
-        "columns_desktop": 3,
-        "full_width": false,
-        "show_view_all": false,
         "view_all_style": "solid",
         "enable_desktop_slider": false,
         "color_scheme": "",
@@ -522,46 +537,6 @@
         "swipe_on_mobile": true,
         "padding_top": 16,
         "padding_bottom": 16
-      }
-    },
-    "featured_collection_YmTLtJ": {
-      "type": "featured-collection",
-      "disabled": true,
-      "custom_css": [
-        ".title {font-family: serif; font-weight: normal; letter-spacing: 0.2px; font-size: 2rem;}",
-        ".card__heading {font-size: 1.3rem; letter-spacing: 0.2px; font-weight: bold;}",
-        ".price-item {font-weight: bold; font-size: 0.85rem;}",
-        ".slider-buttons {display: none;}",
-        ".card__information {gap: 0 !important;}",
-        ".price {margin-top: 0 !important;}",
-        ".card-information > * {line-height: 0.8;}",
-        ".full-unstyled-link {font-size: 1.2rem;}",
-        "@media (max-width: 768px) {.title {font-size: 1.2rem; padding-bottom: 0.5rem; } .full-unstyled-link {font-size: 1.1rem; }}"
-      ],
-      "settings": {
-        "title": "16oz Ceramic Reusable Cups",
-        "heading_size": "h2",
-        "description": "",
-        "show_description": false,
-        "description_style": "subtitle",
-        "collection": "16-oz",
-        "products_to_show": 25,
-        "columns_desktop": 4,
-        "full_width": false,
-        "show_view_all": true,
-        "view_all_style": "solid",
-        "enable_desktop_slider": true,
-        "color_scheme": "scheme-1",
-        "image_ratio": "adapt",
-        "image_shape": "default",
-        "show_secondary_image": false,
-        "show_vendor": false,
-        "show_rating": false,
-        "quick_add": "none",
-        "columns_mobile": "1",
-        "swipe_on_mobile": true,
-        "padding_top": 0,
-        "padding_bottom": 0
       }
     },
     "featured_collection_mPGFDx": {
@@ -742,19 +717,18 @@
   "order": [
     "custom_liquid_WgtWxe",
     "banner_main_yMkx68",
+    "featured_collection_XhCRRT",
+    "featured_collection_bj3hqn",
     "featured_collection_zEQatQ",
     "featured_collection_NkcLmV",
     "featured_collection_EJQrJD",
     "featured_collection_qnpWAj",
-    "featured_collection_tA4H8g",
     "featured_collection_amJ9Vk",
     "featured_collection_LHCzFA",
-    "featured_collection_bqBqNz",
     "featured_collection_fLk3t6",
     "featured_collection",
     "featured_collection_xrn4VY",
     "featured_collection_9EkhtT",
-    "featured_collection_YmTLtJ",
     "featured_collection_mPGFDx",
     "featured_collection_CMThWw",
     "custom_liquid_g9n7w4",

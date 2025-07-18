@@ -1,204 +1,225 @@
 <div class="custom-slider-container">
+
   {% for block in section.blocks %}
-    <div id="custom-slide{{ forloop.index }}" class="custom-slide" style="background-image: url('{{ block.settings.background_image | img_url: 'master' }}');" {{ block.shopify_attributes }}>
-      <div class="custom-content">
-        <div class="custom-text-content">
-          <h1 class="custom-main-heading">{{ block.settings.heading }}</h1>
-          <p class="custom-description">{{ block.settings.description }}</p>
-        </div>
-        <div class="custom-button-container">
-          <a href="{{ block.settings.button_link }}" class="custom-button-link">{{ block.settings.button_text }}</a>
+      {% assign mp4_source = block.settings.video_url.sources | where: 'format', 'mp4' | first %}
+     {% if block.settings.content_type == 'video' and mp4_source %}
+      <div id="custom-slide" class="custom-slide">
+        <video
+          autoplay
+          muted
+          playsinline
+          loop
+          style="object-fit: cover;"
+        >
+          <source src="{{ mp4_source.url }}" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+
+    {% else %}
+      <div
+        id="custom-slide{{ forloop.index }}"
+        class="custom-slide"
+        style="background-image: url('{{ block.settings.background_image | img_url: 'master' }}');"
+        {{ block.shopify_attributes }}
+      >
+        <div class="custom-content">
+          <div class="custom-text-content">
+            <h1 class="custom-main-heading">{{ block.settings.heading }}</h1>
+            <p class="custom-description">{{ block.settings.description }}</p>
+          </div>
+          <div class="custom-button-container">
+            <a href="{{ block.settings.button_link }}" class="custom-button-link">{{ block.settings.button_text }}</a>
+          </div>
         </div>
       </div>
-    </div>
+    {% endif %}
   {% endfor %}
 </div>
 
 <style>
-.custom-slider-container {
-  display: flex;
-  overflow: hidden;
-  width: 100%;
-  height: 90vh;
-  position: relative;
-}
-
-.custom-slider-container .custom-slide {
-  min-width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  padding: 0 50px;
-}
-
-.custom-slider-container .custom-content {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  position: relative;
-}
-
-.custom-slider-container .custom-text-content {
-  flex: 1;
-}
-
-.custom-slider-container .custom-description {
-  font-family: 'Plus Jakarta Sans', sans-serif;
-  font-size: 1.5rem;
-  font-weight: normal;
-  color: white;
-  margin-top: 0.5rem;
-}
-
-.custom-slider-container .custom-main-heading {
-  font-family: 'Plus Jakarta Sans', sans-serif;
-  font-size: 3.5rem;
-  font-weight: bold;
-  color: white;
-}
-
-.custom-slider-container .custom-button-container {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  margin-top: 3rem;
-}
-
-.custom-slider-container .custom-button-link {
-  font-size: 3rem;
-  font-family: 'Plus Jakarta Sans', sans-serif;
-  text-decoration: none;
-  font-weight: bold;
-  color: white;
-  border: none;
-  background: none;
-  cursor: pointer;
-  padding: 0;
-  display: inline-block;
-  padding-bottom: 2px;
-  background-image: linear-gradient(#000 0 0);
-  background-position: 0 100%;
-  background-size: 0% 5%;
-  background-repeat: no-repeat;
-  transition:
-    background-size 0.3s,
-    background-position 0s 0.3s;
-}
-
-.custom-slider-container .custom-button-link:hover {
-  background-position: 100% 100%;
-  background-size: 100% 5%;
-}
-
-.custom-slider-container .custom-button-link::after {
-  content: '';
-  display: inline-block;
-  width: 1rem;
-  height: 1rem;
-  background-color: white;
-  margin-left: 10px;
-  position: relative;
-  border-radius: 50%;
-  animation: none;
-  transform: translateY(-2rem);
-}
-
-.custom-slider-container .custom-button-link:hover::after {
-  animation: bounce 1s forwards;
-}
-
-@keyframes bounce {
-  0% {
-    transform: translateY(-2rem);
-  }
-  50% {
-    transform: translateY(-1rem);
-  }
-  100% {
-    transform: translateY(-2rem);
-  }
-}
-
-@media (max-width: 768px) {
   .custom-slider-container {
-    height: 60vh;
-  }
-
-  .custom-slider-container .custom-slide {
-    flex-direction: row;
-    align-items: center;
-    padding: 0 20px;
+    display: flex;
+    overflow: hidden;
+    width: 100%;
+    height: 90vh;
     position: relative;
   }
 
-  .custom-slider-container .custom-content {
-    height:100%;
+  .custom-slider-container .custom-slide {
+    min-width: 100%;
+    height: 100%;
     display: flex;
-    flex-direction: column;
-    position: absolute;
-    left: 20px;
-    align-items: flex-start;
-    padding-top:60%;
+    align-items: center;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 0 50px;
   }
 
-  .custom-slider-container .custom-main-heading {
-    font-size: 2rem;
-    margin-bottom: 0 !important;
+  .custom-slider-container .custom-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    position: relative;
+  }
+
+  .custom-slider-container .custom-text-content {
+    flex: 1;
   }
 
   .custom-slider-container .custom-description {
-    font-size: 1rem;
-    margin-bottom: auto;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 1.5rem;
+    font-weight: normal;
+    color: white;
+    margin-top: 0.5rem;
+  }
+
+  .custom-slider-container .custom-main-heading {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 3.5rem;
+    font-weight: bold;
+    color: white;
   }
 
   .custom-slider-container .custom-button-container {
-    padding-top:50vh;
-    position: absolute;
-    display:flex;
-    flex-direction: column;
-    bottom: 20px;
-    left: 20px;
-    right: 50px;
-    align-items: flex-end;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 3rem;
   }
+
   .custom-slider-container .custom-button-link {
-    font-size: 1.5rem;
-    align-items: flex-end;
+    font-size: 3rem;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    text-decoration: none;
+    font-weight: bold;
+    color: white;
+    border: none;
+    background: none;
+    cursor: pointer;
+    padding: 0;
+    display: inline-block;
+    padding-bottom: 2px;
+    background-image: linear-gradient(#000 0 0);
+    background-position: 0 100%;
+    background-size: 0% 5%;
+    background-repeat: no-repeat;
+    transition: background-size 0.3s, background-position 0s 0.3s;
+  }
+
+  .custom-slider-container .custom-button-link:hover {
+    background-position: 100% 100%;
+    background-size: 100% 5%;
   }
 
   .custom-slider-container .custom-button-link::after {
-    width: 0.8rem;
-    height: 0.8rem;
-    margin-left: 5px;
-    transform: translateY(-1.5rem);
+    content: '';
+    display: inline-block;
+    width: 1rem;
+    height: 1rem;
+    background-color: white;
+    margin-left: 10px;
+    position: relative;
+    border-radius: 50%;
+    animation: none;
+    transform: translateY(-2rem);
   }
-}
+
+  .custom-slider-container .custom-button-link:hover::after {
+    animation: bounce 1s forwards;
+  }
+
+  @keyframes bounce {
+    0% {
+      transform: translateY(-2rem);
+    }
+    50% {
+      transform: translateY(-1rem);
+    }
+    100% {
+      transform: translateY(-2rem);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .custom-slider-container {
+      height: 60vh;
+    }
+
+    .custom-slider-container .custom-slide {
+      flex-direction: row;
+      align-items: center;
+      padding: 0 20px;
+      position: relative;
+    }
+
+    .custom-slider-container .custom-content {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      position: absolute;
+      left: 20px;
+      align-items: flex-start;
+      padding-top: 60%;
+    }
+
+    .custom-slider-container .custom-main-heading {
+      font-size: 2rem;
+      margin-bottom: 0 !important;
+    }
+
+    .custom-slider-container .custom-description {
+      font-size: 1rem;
+      margin-bottom: auto;
+    }
+
+    .custom-slider-container .custom-button-container {
+      padding-top: 50vh;
+      position: absolute;
+      display: flex;
+      flex-direction: column;
+      bottom: 20px;
+      left: 20px;
+      right: 50px;
+      align-items: flex-end;
+    }
+    .custom-slider-container .custom-button-link {
+      font-size: 1.5rem;
+      align-items: flex-end;
+    }
+
+    .custom-slider-container .custom-button-link::after {
+      width: 0.8rem;
+      height: 0.8rem;
+      margin-left: 5px;
+      transform: translateY(-1.5rem);
+    }
+  }
 </style>
 
 <script>
-const slides = document.querySelectorAll('.custom-slide');
-let currentSlide = 0;
+  const slides = document.querySelectorAll('.custom-slide');
+  let currentSlide = 0;
 
-function showSlide(index) {
-  slides.forEach(slide => {
-    slide.style.display = 'none';
-  });
+  function showSlide(index) {
+    slides.forEach(slide => {
+      slide.style.display = 'none';
+    });
 
-  if (slides[index]) {
-    slides[index].style.display = 'flex';
+    if (slides[index]) {
+      slides[index].style.display = 'flex';
+    }
   }
-}
 
-setInterval(() => {
-  currentSlide = (currentSlide + 1) % slides.length;
+  setInterval(() => {
+    currentSlide = (currentSlide + 1) % slides.length;
+    showSlide(currentSlide);
+  }, {{ section.settings.slide_interval | default: 5000 }});
+
   showSlide(currentSlide);
-}, {{ section.settings.slide_interval | default: 5000 }});
-
-showSlide(currentSlide);
 </script>
 
 {% schema %}
@@ -221,6 +242,28 @@ showSlide(currentSlide);
       "type": "slide",
       "name": "Slide",
       "settings": [
+        {
+          "type": "select",
+          "id": "content_type",
+          "label": "Content Type",
+          "options": [
+            {
+              "value": "image",
+              "label": "Image"
+            },
+            {
+              "value": "video",
+              "label": "Video"
+            }
+          ],
+          "default": "image"
+        },
+        {
+          "type": "video",
+          "id": "video_url",
+          "label": "Video URL",
+          "info": "Only used if Content Type is Video"
+        },
         {
           "type": "image_picker",
           "id": "background_image",

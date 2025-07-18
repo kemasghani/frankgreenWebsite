@@ -40,6 +40,23 @@
       assign ratio = 1
     endif
   -%}
+  <style>
+    .glow-button {
+       position: absolute;
+    top: 12px;
+    left: 12px;
+    padding: 4px 12px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    color: #000000;
+    background: #84ee9a;
+    border-radius: 4px;
+    z-index: 10;
+    cursor: pointer;
+    border: none;
+    }
+  </style>
   <div class="card-wrapper product-card-wrapper underline-links-hover">
     <div
       class="
@@ -122,10 +139,10 @@
               >
               </a>
             <span class="arkesant">
-              {{ card_product.variants.first.metafields.custom.name | escape }} 
+              {{ card_product.variants.first.metafields.custom.name | escape }}
               {% if card_product.variants.first.metafields.custom.size and card_product.variants.first.metafields.custom.size != 0 and card_product.variants.first.metafields.custom.size != 1 %}
               | {{ card_product.variants.first.metafields.custom.size | escape }}
-              {% else %} 
+              {% else %}
               {% endif %}
             </span>
 
@@ -167,17 +184,20 @@
               {{ card_product.title | escape }}
             </a>
             <span class="arkesant">
-              {{ card_product.variants.first.metafields.custom.name | escape }} 
+              {{ card_product.variants.first.metafields.custom.name | escape }}
               {% if card_product.variants.first.metafields.custom.size and card_product.variants.first.metafields.custom.size != 0 and card_product.variants.first.metafields.custom.size != 1 %}
               | {{ card_product.variants.first.metafields.custom.size | escape }}
-              {% else %} 
+              {% else %}
               {% endif %}
             </span>
           </h3>
-          
+
        {% if card_product.tags contains 'custom' %}
         <button class="customise-button">Customise</button>
         {% endif %}
+       {% if card_product.tags contains 'glow' %}
+        <button class="glow-button">I Glow!</button>
+       {% endif %}
        {% if card_product.tags contains 'Limited' %}
           <button class="limited-button">Limited</button>
        {% endif %}
