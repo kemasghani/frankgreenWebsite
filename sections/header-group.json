@@ -27,14 +27,14 @@
           "type": "announcement",
           "settings": {
             "text": "New Arrivals: Glow Collection",
-            "link": "shopify://collections/glow-collection"
+            "link": "https://frankgreen.id/search?q=glow&options%5Bprefix%5D=last"
           }
         },
         "announcement_rH8Qn7": {
           "type": "announcement",
           "settings": {
             "text": "Free Monograming Available Now",
-            "link": ""
+            "link": "https://frankgreen.id/collections/customable"
           }
         },
         "announcement_ERRzmR": {
