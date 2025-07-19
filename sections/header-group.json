@@ -23,6 +23,27 @@
     "announcement-bar": {
       "type": "announcement-bar",
       "blocks": {
+        "announcement_qFjRci": {
+          "type": "announcement",
+          "settings": {
+            "text": "New Arrivals: Glow Collection",
+            "link": "shopify://collections/glow-collection"
+          }
+        },
+        "announcement_rH8Qn7": {
+          "type": "announcement",
+          "settings": {
+            "text": "Free Monograming Available Now",
+            "link": ""
+          }
+        },
+        "announcement_ERRzmR": {
+          "type": "announcement",
+          "settings": {
+            "text": "Welcome to our store",
+            "link": ""
+          }
+        },
         "announcement_zxfrEM": {
           "type": "announcement",
           "settings": {
@@ -46,6 +67,9 @@
         }
       },
       "block_order": [
+        "announcement_qFjRci",
+        "announcement_rH8Qn7",
+        "announcement_ERRzmR",
         "announcement_zxfrEM",
         "announcement_VFVif4",
         "announcement_Jz7AnB"

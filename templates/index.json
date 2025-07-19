@@ -24,41 +24,29 @@
         "slide_VMDn9M": {
           "type": "slide",
           "settings": {
-            "content_type": "video",
-            "video_url": "shopify://files/videos/glow in the dark Banner.mp4",
-            "heading": "Slide Heading",
-            "description": "Slide Description",
+            "content_type": "image",
+            "background_image": "shopify://shop_images/Web_Banner_Glow_in_the_dark_1.jpg",
+            "heading": "Ready, Set, glow!",
+            "description": "Join the hydration illumination",
+            "button_text": "Shop Now",
+            "button_link": "shopify://collections/glow-collection"
+          }
+        },
+        "slide_hGYmFT": {
+          "type": "slide",
+          "settings": {
+            "content_type": "image",
+            "background_image": "shopify://shop_images/web-banner-general-juli-ALT.jpg",
+            "heading": "Free Monogramming",
+            "description": "Exclusively on the Website",
             "button_text": "Shop Now",
             "button_link": ""
-          }
-        },
-        "slide_i7H6WL": {
-          "type": "slide",
-          "settings": {
-            "content_type": "image",
-            "background_image": "shopify://shop_images/web_banner_-_chrome_20oz.jpg",
-            "heading": "New Chrome Collection",
-            "description": "Rainbow & Silver Chrome in 20oz",
-            "button_text": "Shop Now",
-            "button_link": "https://frankgreen.id/search?q=chrome&_pos=1&_psq=chrome&_ss=e&_v=1.0"
-          }
-        },
-        "slide_Gi4g7q": {
-          "type": "slide",
-          "settings": {
-            "content_type": "image",
-            "background_image": "shopify://shop_images/web_banner_-_hinged_lid.jpg",
-            "heading": "Get 5 FREE Coffees on Us",
-            "description": "frank green x Toby’s Estate",
-            "button_text": "Shop Now",
-            "button_link": "shopify://collections/reusable-cups"
           }
         }
       },
       "block_order": [
         "slide_VMDn9M",
-        "slide_i7H6WL",
-        "slide_Gi4g7q"
+        "slide_hGYmFT"
       ],
       "name": "Banner Main",
       "settings": {

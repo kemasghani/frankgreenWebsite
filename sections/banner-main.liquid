@@ -19,7 +19,7 @@
     {% else %}
       <div
         id="custom-slide{{ forloop.index }}"
-        class="custom-slide"
+        class="custom-slide custom-slide-image"
         style="background-image: url('{{ block.settings.background_image | img_url: 'master' }}');"
         {{ block.shopify_attributes }}
       >
@@ -54,6 +54,8 @@
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+  }
+  .custom-slider-container .custom-slide-image {
     padding: 0 50px;
   }
 
