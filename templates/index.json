@@ -23,6 +23,7 @@
       "blocks": {
         "slide_BkqRwT": {
           "type": "slide",
+          "disabled": true,
           "settings": {
             "content_type": "image",
             "background_image": "shopify://shop_images/Web-banner-GIIAS_3.jpg",
