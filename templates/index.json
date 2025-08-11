@@ -187,46 +187,6 @@
         "padding_bottom": 8
       }
     },
-    "featured_collection_NkcLmV": {
-      "type": "featured-collection",
-      "custom_css": [
-        ".title {font-family: serif; font-weight: normal; letter-spacing: 0.2px; font-size: 2rem;}",
-        ".card__heading {font-size: 1.2rem; letter-spacing: 0.2px; font-weight: bold;}",
-        ".price-item {font-weight: bold; font-size: 0.85rem;}",
-        ".slider-buttons {display: none;}",
-        ".card__information {gap: 0 !important;}",
-        ".price {margin-top: 0 !important;}",
-        ".card-information > * {line-height: 0.8;}",
-        ".full-unstyled-link {font-size: 1.2rem;}",
-        "@media (max-width: 768px) {.title {font-size: 1.3rem; padding-bottom: 0.5rem; } .full-unstyled-link {font-size: 1.1rem; }}"
-      ],
-      "name": "12oz Ceramic Coffee Cup with Hinged Lid",
-      "settings": {
-        "title": "12oz Ceramic Coffee Cup with Hinged Lid",
-        "heading_size": "h2",
-        "description": "",
-        "show_description": false,
-        "description_style": "body",
-        "collection": "ceramic-coffee-cup-with-hinged-lid",
-        "products_to_show": 25,
-        "columns_desktop": 4,
-        "full_width": false,
-        "show_view_all": false,
-        "view_all_style": "solid",
-        "enable_desktop_slider": true,
-        "color_scheme": "",
-        "image_ratio": "adapt",
-        "image_shape": "default",
-        "show_secondary_image": false,
-        "show_vendor": false,
-        "show_rating": false,
-        "quick_add": "none",
-        "columns_mobile": "2",
-        "swipe_on_mobile": true,
-        "padding_top": 16,
-        "padding_bottom": 16
-      }
-    },
     "featured_collection_EJQrJD": {
       "type": "featured-collection",
       "disabled": true,
@@ -541,6 +501,46 @@
         "padding_bottom": 16
       }
     },
+    "featured_collection_NkcLmV": {
+      "type": "featured-collection",
+      "custom_css": [
+        ".title {font-family: serif; font-weight: normal; letter-spacing: 0.2px; font-size: 2rem;}",
+        ".card__heading {font-size: 1.2rem; letter-spacing: 0.2px; font-weight: bold;}",
+        ".price-item {font-weight: bold; font-size: 0.85rem;}",
+        ".slider-buttons {display: none;}",
+        ".card__information {gap: 0 !important;}",
+        ".price {margin-top: 0 !important;}",
+        ".card-information > * {line-height: 0.8;}",
+        ".full-unstyled-link {font-size: 1.2rem;}",
+        "@media (max-width: 768px) {.title {font-size: 1.3rem; padding-bottom: 0.5rem; } .full-unstyled-link {font-size: 1.1rem; }}"
+      ],
+      "name": "12oz Ceramic Coffee Cup with Hinged Lid",
+      "settings": {
+        "title": "12oz Ceramic Coffee Cup with Hinged Lid",
+        "heading_size": "h2",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "collection": "ceramic-coffee-cup-with-hinged-lid",
+        "products_to_show": 25,
+        "columns_desktop": 4,
+        "full_width": false,
+        "show_view_all": false,
+        "view_all_style": "solid",
+        "enable_desktop_slider": true,
+        "color_scheme": "",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "none",
+        "columns_mobile": "2",
+        "swipe_on_mobile": true,
+        "padding_top": 16,
+        "padding_bottom": 16
+      }
+    },
     "featured_collection_mPGFDx": {
       "type": "featured-collection",
       "custom_css": [
@@ -722,7 +722,6 @@
     "featured_collection_XhCRRT",
     "featured_collection_bj3hqn",
     "featured_collection_zEQatQ",
-    "featured_collection_NkcLmV",
     "featured_collection_EJQrJD",
     "featured_collection_qnpWAj",
     "featured_collection_amJ9Vk",
@@ -731,6 +730,7 @@
     "featured_collection",
     "featured_collection_xrn4VY",
     "featured_collection_9EkhtT",
+    "featured_collection_NkcLmV",
     "featured_collection_mPGFDx",
     "featured_collection_CMThWw",
     "custom_liquid_g9n7w4",
