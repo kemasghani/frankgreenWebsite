@@ -144,23 +144,36 @@
                           </a>
 
                           {%- if item.original_price != item.final_price -%}
+                            {%- assign extra_price = 0 -%}
+                            {% if item.properties._pplr_addprice %}
+                              {% assign extra_price = item.properties._pplr_addprice | plus: 0 %}
+                            {% endif %}
+
                             <div class="cart-item__discounted-prices">
                               <span class="visually-hidden">
                                 {{ 'products.product.price.regular_price' | t }}
                               </span>
-                              <s class="cart-item__old-price product-option ghani1">
-                                {{- item.original_price | money -}}
+                              <s class="cart-item__old-price product-option">
+                                {{ item.original_price | plus: extra_price | money }}
                               </s>
                               <span class="visually-hidden">
                                 {{ 'products.product.price.sale_price' | t }}
                               </span>
-                              <strong class="cart-item__final-price product-option ghani2">
-                                {{ item.original_price | money }}
+                              <strong class="cart-item__final-price product-option">
+                                {{ item.final_price | plus: extra_price | money }}
                               </strong>
                             </div>
+
                           {%- else -%}
+                            {%- assign extra_price = 0 -%}
+
+                            {% if item.properties._pplr_addprice %}
+                              {% assign extra_price = item.properties._pplr_addprice | plus: 0 %}
+                            {% endif %}
+
+                            {%- assign original_price = item.original_price | plus: extra_price -%}
                             <div class="product-option ghani">
-                              {{ item.original_price | money }}
+                              {{ original_price | money }}
                             </div>
                           {%- endif -%}
 
