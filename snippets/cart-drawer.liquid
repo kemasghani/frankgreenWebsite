@@ -148,18 +148,18 @@
                               <span class="visually-hidden">
                                 {{ 'products.product.price.regular_price' | t }}
                               </span>
-                              <s class="cart-item__old-price product-option">
+                              <s class="cart-item__old-price product-option ghani1">
                                 {{- item.original_price | money -}}
                               </s>
                               <span class="visually-hidden">
                                 {{ 'products.product.price.sale_price' | t }}
                               </span>
-                              <strong class="cart-item__final-price product-option">
-                                {{ item.final_price | money }}
+                              <strong class="cart-item__final-price product-option ghani2">
+                                {{ item.original_price | money }}
                               </strong>
                             </div>
                           {%- else -%}
-                            <div class="product-option">
+                            <div class="product-option ghani">
                               {{ item.original_price | money }}
                             </div>
                           {%- endif -%}
@@ -236,13 +236,31 @@
                                 <span class="visually-hidden">
                                   {{ 'products.product.price.sale_price' | t }}
                                 </span>
-                                <span class="price price--end">
-                                  {{ item.final_line_price | money }}
+                                {%- assign extra_price = 0 -%}
+
+                                {% if item.properties._pplr_addprice %}
+                                  {% assign extra_price = item.properties._pplr_addprice | plus: 0 %}
+                                {% endif %}
+
+                                {%- assign final_price = item.final_line_price | plus: extra_price -%}
+
+                                <span class="price price--end ghani2kemas">
+                                  {{ final_price | money }}
                                 </span>
                               </div>
                             {%- else -%}
                               <span class="price price--end">
-                                {{ item.original_line_price | money }}
+                                {%- assign extra_price = 0 -%}
+
+                                {% if item.properties._pplr_addprice %}
+                                  {% assign extra_price = item.properties._pplr_addprice | plus: 0 %}
+                                {% endif %}
+
+                                {%- assign final_price = item.original_line_price | plus: extra_price -%}
+
+                                <span class="price price--end ghani2kemas">
+                                  {{ final_price | money }}
+                                </span>
                               </span>
                             {%- endif -%}
 

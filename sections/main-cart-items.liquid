@@ -403,13 +403,18 @@
                             <dt class="visually-hidden">
                               {{ 'products.product.price.sale_price' | t }}
                             </dt>
-                            <dd class="price price--end">
+                            <dd class="price price--end ghani1">
                               {{ item.final_line_price | money }}
                             </dd>
                           </dl>
                         {%- else -%}
+                          {%- assign extra_price = 0 -%}
+                          {% if item.properties._pplr_addprice %}
+                            {% assign extra_price = item.properties._pplr_addprice | plus: 0 %}
+                          {% endif %}
+                          {%- assign final_price = item.final_line_price | plus: extra_price -%}
                           <span class="price price--end">
-                            {{ item.original_line_price | money }}
+                            {{ final_price | money }}
                           </span>
                         {%- endif -%}
 
