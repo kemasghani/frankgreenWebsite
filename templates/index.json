@@ -172,7 +172,7 @@
         ".full-unstyled-link {font-size: 1.2rem;}",
         "@media (max-width: 768px) {.title {font-size: 1.3rem; padding-bottom: 0.5rem; } .full-unstyled-link {font-size: 1.1rem; }}"
       ],
-      "name": "New Arrivals",
+      "name": "New Arrivals 2",
       "settings": {
         "title": "New Arrivals",
         "heading_size": "h2",
@@ -731,9 +731,9 @@
   "order": [
     "custom_liquid_WgtWxe",
     "banner_main_yMkx68",
+    "featured_collection_zEQatQ",
     "featured_collection_XhCRRT",
     "featured_collection_bj3hqn",
-    "featured_collection_zEQatQ",
     "featured_collection_EJQrJD",
     "featured_collection_qnpWAj",
     "featured_collection_amJ9Vk",
