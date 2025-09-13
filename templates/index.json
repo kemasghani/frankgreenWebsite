@@ -21,6 +21,17 @@
     "banner_main_yMkx68": {
       "type": "banner-main",
       "blocks": {
+        "slide_nVeepb": {
+          "type": "slide",
+          "settings": {
+            "content_type": "image",
+            "background_image": "shopify://shop_images/1000341662.jpg",
+            "heading": "Shiny, Sleek, Shadow Chrome",
+            "description": "New Limited Edition!",
+            "button_text": "Shop Now",
+            "button_link": "shopify://products/chrome-ceramic-reusable-bottle-2"
+          }
+        },
         "slide_BkqRwT": {
           "type": "slide",
           "disabled": true,
@@ -54,24 +65,13 @@
             "button_text": "Shop Now",
             "button_link": ""
           }
-        },
-        "slide_nVeepb": {
-          "type": "slide",
-          "settings": {
-            "content_type": "image",
-            "background_image": "shopify://shop_images/1000341662.jpg",
-            "heading": "Shiny, Sleek, Shadow Chrome",
-            "description": "New Limited Edition!",
-            "button_text": "Shop Now",
-            "button_link": "shopify://products/chrome-ceramic-reusable-bottle-2"
-          }
         }
       },
       "block_order": [
+        "slide_nVeepb",
         "slide_BkqRwT",
         "slide_VMDn9M",
-        "slide_hGYmFT",
-        "slide_nVeepb"
+        "slide_hGYmFT"
       ],
       "name": "Banner Main",
       "settings": {
