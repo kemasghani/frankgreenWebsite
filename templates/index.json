@@ -25,6 +25,17 @@
           "type": "slide",
           "settings": {
             "content_type": "image",
+            "background_image": "shopify://shop_images/banner-web-promo-11.11.jpg",
+            "heading": "Happy Hour Deals",
+            "description": "Get free bumper from 11 AM–1 PM",
+            "button_text": "Shop Now",
+            "button_link": "shopify://products/chrome-ceramic-reusable-bottle-2"
+          }
+        },
+        "slide_PzNJtD": {
+          "type": "slide",
+          "settings": {
+            "content_type": "image",
             "background_image": "shopify://shop_images/1000341662.jpg",
             "heading": "Shiny, Sleek, Shadow Chrome",
             "description": "New Limited Edition!",
@@ -69,6 +80,7 @@
       },
       "block_order": [
         "slide_nVeepb",
+        "slide_PzNJtD",
         "slide_BkqRwT",
         "slide_VMDn9M",
         "slide_hGYmFT"
