@@ -23,6 +23,7 @@
       "blocks": {
         "slide_nVeepb": {
           "type": "slide",
+          "disabled": true,
           "settings": {
             "content_type": "image",
             "background_image": "shopify://shop_images/banner-web-promo-11.11.jpg",
