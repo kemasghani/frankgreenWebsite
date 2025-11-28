@@ -53,7 +53,6 @@
         },
         "variant_picker_LjPwDa": {
           "type": "variant_picker",
-          "disabled": true,
           "settings": {
             "picker_type": "button",
             "swatch_shape": "circle"
@@ -128,18 +127,6 @@
           "settings": {
             "custom_liquid": "<style>\n.product .price .badge, .product .price__container {\nmargin-bottom:0;\n}\n.tpo_option-set-wrapper{\nmargin: 0;\npadding: 0 !important;\n} \n.pplr-wrapper label{\npadding:0 !important;\n}\n.tpo_button_with {\nborder-radius:10% !important;\n}\n.pplr-drop-item{\nborder-radius:10% !important;\n}\n.product-form__buttons{\n width:200px; \n}\n</style>"
           }
-        },
-        "in_cart_upsell_product_app_block_dN9tbD": {
-          "type": "shopify://apps/icu-in-cart-upsell-cross-sell/blocks/product_app_block/6a252f23-8726-4893-8b3b-1ae15957efc3",
-          "settings": {
-            "icu-product-selector": "#CartDrawer-CartItems",
-            "icu-product-action": "after",
-            "icu-product-refresh-code": "document.querySelector('.nudge-offer').remove(); \ndocument.querySelector('.nudge-offer').remove(); ajaxCart.load(); InCartUpsell.prototype.findOfferWhenReady();",
-            "icu-add-on-selector": "",
-            "icu-add-on-action": "before",
-            "icu-add-on-atc-selector": "",
-            "icu-product-show-currency-code": true
-          }
         }
       },
       "block_order": [
@@ -156,8 +143,7 @@
         "collapsible_tab_9D7KRU",
         "collapsible_tab_ckQkH8",
         "custom_liquid_HBkJrP",
-        "custom_liquid_wTBNGW",
-        "in_cart_upsell_product_app_block_dN9tbD"
+        "custom_liquid_wTBNGW"
       ],
       "custom_css": [
         ".product__title h1 {font-size: 3rem; font-weight: 600;}",
