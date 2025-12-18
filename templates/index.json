@@ -21,6 +21,17 @@
     "banner_main_yMkx68": {
       "type": "banner-main",
       "blocks": {
+        "slide_dHUQje": {
+          "type": "slide",
+          "settings": {
+            "content_type": "image",
+            "background_image": "shopify://shop_images/web-banner-box-general.jpg",
+            "heading": "Exclusive Gift Box",
+            "description": "Limited Edition",
+            "button_text": "Shop Now",
+            "button_link": "shopify://products/exclusive-christmas-hampers-package-1"
+          }
+        },
         "slide_nVeepb": {
           "type": "slide",
           "disabled": true,
@@ -80,6 +91,7 @@
         }
       },
       "block_order": [
+        "slide_dHUQje",
         "slide_nVeepb",
         "slide_PzNJtD",
         "slide_BkqRwT",
