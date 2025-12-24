@@ -21,6 +21,17 @@
     "banner_main_yMkx68": {
       "type": "banner-main",
       "blocks": {
+        "slide_Ga3WLj": {
+          "type": "slide",
+          "settings": {
+            "content_type": "image",
+            "background_image": "shopify://shop_images/web-banner-Nidji.jpg",
+            "heading": "NIDJI x frank green",
+            "description": "Special Edition",
+            "button_text": "Shop Now",
+            "button_link": "shopify://collections/special-edition-nidji"
+          }
+        },
         "slide_dHUQje": {
           "type": "slide",
           "settings": {
@@ -91,6 +102,7 @@
         }
       },
       "block_order": [
+        "slide_Ga3WLj",
         "slide_dHUQje",
         "slide_nVeepb",
         "slide_PzNJtD",
