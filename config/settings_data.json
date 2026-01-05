@@ -440,7 +440,8 @@
     "custom_css": [
       ".footer-block__newsletter,.footer__payment {display: none;}",
       ".cart-items .cart-item__totals,.product-option {font-size-adjust: 0.4; white-space: nowrap;}",
-      ".cart-item__name {font-size-adjust: 0.5;}"
+      ".cart-item__name {font-size-adjust: 0.5;}",
+      "@media (max-width: 767px) {.pplrgcolor {flex-wrap: wrap !important; } .pplr-swatch-element {aspect-ratio: 1/1; }}"
     ]
   }
 }
