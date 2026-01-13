@@ -486,6 +486,17 @@
                     Pre-Order via WhatsApp
                   </a>
                 {% endif %}
+                {% if template.suffix == 'wa' %}
+                  <style>
+                    button[type="submit"],
+                    .product-form__submit,
+                    .zepto-add-to-cart,
+                    .zp-add-to-cart {
+                      display: none !important;
+                    }
+                  </style>
+                {% endif %}
+
 
               {%- when 'rating' -%}
                 {%- if product.metafields.reviews.rating.value != blank -%}
