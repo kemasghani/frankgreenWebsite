@@ -484,13 +484,12 @@
                   Pre-Order Now
                 </a>
               {% endif %} {% endcomment %}
-               {% render 'buy-buttons', product: product %}
-
-{% if template.suffix == 'Preorder' %}
+              {% if template.suffix == 'Preorder' %}
   <a
     href="#"
     id="wa-preorder-btn"
-    class="button button--primary button-wa"
+    class="button button--primary full-width button-wa"
+    style="margin-top:12px;"
   >
     Pre-Order Now
   </a>
@@ -502,23 +501,45 @@
       waBtn.addEventListener('click', function (e) {
         e.preventDefault();
 
-        // ambil variant yang sedang dipilih
-        const variantInput = document.querySelector('input[name="id"]:checked, input[name="id"]');
-        const variantTitle = variantInput?.dataset?.variantTitle || '';
-
-        // ambil option select
-        let options = [];
+        // === VARIANT (jika ada) ===
+        let variantText = '';
+        const options = [];
         document.querySelectorAll('select[name^="options"]').forEach(select => {
           options.push(select.value);
         });
+        if (options.length) {
+          variantText = options.join(' / ');
+        }
 
-        const optionText = options.length ? options.join(' / ') : variantTitle;
+        // === MONOGRAM (ZEPTO) ===
+        let monogram = '';
+        const monoInput = document.querySelector('input.pplr_monogram');
 
-        const message =
+        if (monoInput && monoInput.value.trim() !== '') {
+          monogram = monoInput.value.trim();
+        }
+
+        // === VALIDASI (karena required) ===
+        if (monoInput && monoInput.hasAttribute('required') && !monogram) {
+          alert('Silakan isi monogram terlebih dahulu.');
+          monoInput.focus();
+          return;
+        }
+
+        // === SUSUN PESAN WA ===
+        let message =
           `Halo saya ingin pre-order:%0A` +
-          `Produk: {{ product.title | escape }}%0A` +
-          (optionText ? `Monogram: ${optionText}%0A` : '') +
-          `Link: {{ shop.url }}{{ product.url }}`;
+          `Produk: {{ product.title | escape }}%0A`;
+
+        if (variantText) {
+          message += `Variant: ${variantText}%0A`;
+        }
+
+        if (monogram) {
+          message += `Monogram: ${monogram}%0A`;
+        }
+
+        message += `Link: {{ shop.url }}{{ product.url }}`;
 
         window.open(
           `https://wa.me/62819883326?text=${encodeURIComponent(message)}`,
