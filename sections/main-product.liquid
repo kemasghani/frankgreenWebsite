@@ -475,7 +475,7 @@
                   show_pickup_availability: true
                 -%}
 
-              {% if template.suffix == 'wa' %}
+              {% if template.suffix == 'Preorder' %}
                 <a
                   href="https://wa.me/62819883326?text=Halo%20saya%20ingin%20pre-order:%20{{ product.title | url_encode }}"
                   target="_blank"
@@ -484,7 +484,7 @@
                   Pre-Order Now
                 </a>
               {% endif %}
-              {% if template.suffix == 'wa' %}
+              {% if template.suffix == 'Preorder' %}
                 <style>
                   button[type="submit"],
                   .product-form__submit,
