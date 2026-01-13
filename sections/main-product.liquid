@@ -475,7 +475,7 @@
                   show_pickup_availability: true
                 -%}
 
-              {% if template.suffix == 'Preorder' %}
+              {% comment %} {% if template.suffix == 'Preorder' %}
                 <a
                   href="https://wa.me/62819883326?text=Halo%20saya%20ingin%20pre-order:%20{{ product.title | url_encode }}"
                   target="_blank"
@@ -483,7 +483,53 @@
                 >
                   Pre-Order Now
                 </a>
-              {% endif %}
+              {% endif %} {% endcomment %}
+               {% render 'buy-buttons', product: product %}
+
+{% if template.suffix == 'wa' %}
+  <a
+    href="#"
+    id="wa-preorder-btn"
+    class="button button--primary"
+    style="margin-top:12px;"
+  >
+    Pre-Order via WhatsApp
+  </a>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const waBtn = document.getElementById('wa-preorder-btn');
+
+      waBtn.addEventListener('click', function (e) {
+        e.preventDefault();
+
+        // ambil variant yang sedang dipilih
+        const variantInput = document.querySelector('input[name="id"]:checked, input[name="id"]');
+        const variantTitle = variantInput?.dataset?.variantTitle || '';
+
+        // ambil option select
+        let options = [];
+        document.querySelectorAll('select[name^="options"]').forEach(select => {
+          options.push(select.value);
+        });
+
+        const optionText = options.length ? options.join(' / ') : variantTitle;
+
+        const message =
+          `Halo saya ingin pre-order:%0A` +
+          `Produk: {{ product.title | escape }}%0A` +
+          (optionText ? `Monogram: ${optionText}%0A` : '') +
+          `Link: {{ shop.url }}{{ product.url }}`;
+
+        window.open(
+          `https://wa.me/62819883326?text=${encodeURIComponent(message)}`,
+          '_blank'
+        );
+      });
+    });
+  </script>
+{% endif %}
+
               {% if template.suffix == 'Preorder' %}
                 <style>
                   button[type="submit"],
