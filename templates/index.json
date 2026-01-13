@@ -68,6 +68,7 @@
         },
         "slide_PzNJtD": {
           "type": "slide",
+          "disabled": true,
           "settings": {
             "content_type": "image",
             "background_image": "shopify://shop_images/1000341662.jpg",
