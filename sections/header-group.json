@@ -25,6 +25,7 @@
       "blocks": {
         "announcement_qFjRci": {
           "type": "announcement",
+          "disabled": true,
           "settings": {
             "text": "New Arrivals: Shadow Chrome",
             "link": "shopify://products/chrome-ceramic-reusable-bottle-2"
@@ -46,6 +47,7 @@
         },
         "announcement_zxfrEM": {
           "type": "announcement",
+          "disabled": true,
           "settings": {
             "text": "New Arrivals: 20oz Chrome Collection",
             "link": "shopify://collections/customable"
@@ -53,6 +55,7 @@
         },
         "announcement_VFVif4": {
           "type": "announcement",
+          "disabled": true,
           "settings": {
             "text": "New Arrivals: Buttermilk & Cloud",
             "link": "shopify://collections/gradient-collection"
@@ -60,6 +63,7 @@
         },
         "announcement_Jz7AnB": {
           "type": "announcement",
+          "disabled": true,
           "settings": {
             "text": "New Arrivals: Buttermilk & Cloud",
             "link": "shopify://products/chrome-ceramic-reusable-bottle"
