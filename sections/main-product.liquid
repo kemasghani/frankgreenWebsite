@@ -474,6 +474,19 @@
                   section_id: section.id,
                   show_pickup_availability: true
                 -%}
+                {% render 'buy-buttons', product: product %}
+
+                {% if template.suffix == 'wa' %}
+                  <a
+                    href="https://wa.me/62819883326?text=Halo%20saya%20ingin%20pre-order:%20{{ product.title | url_encode }}"
+                    target="_blank"
+                    class="button button--primary"
+                    style="margin-top:12px;"
+                  >
+                    Pre-Order via WhatsApp
+                  </a>
+                {% endif %}
+
               {%- when 'rating' -%}
                 {%- if product.metafields.reviews.rating.value != blank -%}
                   <div class="rating-wrapper">
