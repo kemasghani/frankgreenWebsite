@@ -528,15 +528,15 @@
 
         // === SUSUN PESAN WA ===
         let message =
-          `Halo saya ingin pre-order:%0A` +
-          `Produk: {{ product.title | escape }}%0A`;
+          `Halo saya ingin pre-order:\n` +
+          `Produk: {{ product.title | escape }}\n`;
 
         if (variantText) {
-          message += `Variant: ${variantText}%0A`;
+          message += `Variant: ${variantText}\n`;
         }
 
         if (monogram) {
-          message += `Monogram: ${monogram}%0A`;
+          message += `Monogram: ${monogram}\n`;
         }
 
         message += `Link: {{ shop.url }}{{ product.url }}`;
