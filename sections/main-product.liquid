@@ -486,12 +486,11 @@
               {% endif %} {% endcomment %}
                {% render 'buy-buttons', product: product %}
 
-{% if template.suffix == 'wa' %}
+{% if template.suffix == 'Preorder' %}
   <a
     href="#"
     id="wa-preorder-btn"
-    class="button button--primary"
-    style="margin-top:12px;"
+    class="button button--primary button-wa"
   >
     Pre-Order via WhatsApp
   </a>
