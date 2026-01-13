@@ -23,14 +23,13 @@
       "blocks": {
         "slide_Ga3WLj": {
           "type": "slide",
-          "disabled": true,
           "settings": {
             "content_type": "image",
             "background_image": "shopify://shop_images/web-banner-Perahu-Kertas_1.jpg",
             "heading": "Musikal Perahu Kertas",
             "description": "Official Merchandise",
             "button_text": "Pre-Order Now",
-            "button_link": "shopify://collections/special-edition-nidji"
+            "button_link": "shopify://collections/special-edition-nidji-copy"
           }
         },
         "slide_QPprFt": {
