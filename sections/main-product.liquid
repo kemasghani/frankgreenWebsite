@@ -494,7 +494,7 @@
     Pre-Order Now
   </a>
 
-  <script>
+  {% comment %} <script>
     document.addEventListener('DOMContentLoaded', function () {
       const waBtn = document.getElementById('wa-preorder-btn');
 
@@ -548,7 +548,80 @@
         );
       });
     });
-  </script>
+  </script> {% endcomment %}
+  <script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const waBtn = document.getElementById('wa-preorder-btn');
+    const variants = {{ product.variants | json }};
+
+    waBtn.addEventListener('click', function (e) {
+      e.preventDefault();
+
+      // === VARIANT OPTION ===
+      let variantText = '';
+      const selectedOptions = [];
+
+      document.querySelectorAll('select[name^="options"]').forEach(select => {
+        selectedOptions.push(select.value);
+      });
+
+      if (selectedOptions.length) {
+        variantText = selectedOptions.join(' / ');
+      }
+
+      // === CARI VARIANT + SKU ===
+      let sku = '';
+
+      const matchedVariant = variants.find(v =>
+        v.options.every((opt, i) => opt === selectedOptions[i])
+      );
+
+      if (matchedVariant && matchedVariant.sku) {
+        sku = matchedVariant.sku;
+      }
+
+      // === MONOGRAM (ZEPTO) ===
+      let monogram = '';
+      const monoInput = document.querySelector('input.pplr_monogram');
+
+      if (monoInput && monoInput.value.trim() !== '') {
+        monogram = monoInput.value.trim();
+      }
+
+      // === VALIDASI MONOGRAM ===
+      if (monoInput && monoInput.hasAttribute('required') && !monogram) {
+        alert('Silakan isi monogram terlebih dahulu.');
+        monoInput.focus();
+        return;
+      }
+
+      // === SUSUN PESAN WA ===
+      let message =
+        `Halo saya ingin pre-order:\n` +
+        `Produk: *{{ product.title | escape }}*\n`;
+
+      if (sku) {
+        message += `SKU: *${sku}*\n`;
+      }
+
+      if (variantText) {
+        message += `Variant: *${variantText}*\n`;
+      }
+
+      if (monogram) {
+        message += `Monogram: *${monogram}*\n`;
+      }
+
+      message += `Link: {{ shop.url }}{{ product.url }}`;
+
+      window.open(
+        `https://wa.me/62819883326?text=${encodeURIComponent(message)}`,
+        '_blank'
+      );
+    });
+  });
+</script>
+
 {% endif %}
 
               {% if template.suffix == 'Preorder' %}
