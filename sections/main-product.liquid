@@ -494,7 +494,7 @@
     Pre-Order Now
   </a>
 
-  {% comment %} <script>
+  <script>
     document.addEventListener('DOMContentLoaded', function () {
       const waBtn = document.getElementById('wa-preorder-btn');
 
@@ -529,7 +529,9 @@
         // === SUSUN PESAN WA ===
         let message =
           `Halo saya ingin pre-order:\n` +
-          `SKU : *{{product.sku | escape }}* \n` +
+          `{% if product.selected_or_first_available_variant.sku != blank %}` +
+          `SKU: *{{ product.selected_or_first_available_variant.sku | escape }}*\n` +
+          `{% endif %}`;
           `Produk: *{{ product.title | escape }}* \n`;
 
         if (variantText) {
@@ -548,86 +550,7 @@
         );
       });
     });
-  </script> {% endcomment %}
-  <script>
-  document.addEventListener('DOMContentLoaded', function () {
-    const waBtn = document.getElementById('wa-preorder-btn');
-    const variants = {{ product.variants | json }};
-
-    waBtn.addEventListener('click', function (e) {
-      e.preventDefault();
-
-      // === VARIANT OPTION (kalau ada) ===
-      let variantText = '';
-      const selectedOptions = [];
-
-      document.querySelectorAll('select[name^="options"]').forEach(select => {
-        selectedOptions.push(select.value);
-      });
-
-      if (selectedOptions.length) {
-        variantText = selectedOptions.join(' / ');
-      }
-
-      // === VARIANT + SKU (FIX) ===
-      let sku = '';
-      let matchedVariant = null;
-
-      if (selectedOptions.length) {
-        matchedVariant = variants.find(v =>
-          v.options.every((opt, i) => opt === selectedOptions[i])
-        );
-      }
-
-      if (!matchedVariant && variants.length) {
-        matchedVariant = variants[0];
-      }
-
-      if (matchedVariant && matchedVariant.sku) {
-        sku = matchedVariant.sku;
-      }
-
-      // === MONOGRAM (ZEPTO) ===
-      let monogram = '';
-      const monoInput = document.querySelector('input.pplr_monogram');
-
-      if (monoInput && monoInput.value.trim() !== '') {
-        monogram = monoInput.value.trim();
-      }
-
-      if (monoInput && monoInput.hasAttribute('required') && !monogram) {
-        alert('Silakan isi monogram terlebih dahulu.');
-        monoInput.focus();
-        return;
-      }
-
-      // === PESAN WA ===
-      let message =
-        `Halo saya ingin pre-order:\n` +
-        `Produk: *{{ product.title | escape }}*\n`;
-
-      if (sku) {
-        message += `SKU: *${sku}*\n`;
-      }
-
-      if (variantText) {
-        message += `Variant: *${variantText}*\n`;
-      }
-
-      if (monogram) {
-        message += `Monogram: *${monogram}*\n`;
-      }
-
-      message += `Link: {{ shop.url }}{{ product.url }}`;
-
-      window.open(
-        `https://wa.me/62819883326?text=${encodeURIComponent(message)}`,
-        '_blank'
-      );
-    });
-  });
-</script>
-
+  </script>
 
 {% endif %}
 
