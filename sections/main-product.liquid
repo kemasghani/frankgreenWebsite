@@ -578,8 +578,8 @@
       let message =
         `Halo saya ingin pre-order:\n` +
         `Produk: *{{ product.title | escape }}*\n` +
-        `{% if product.metafields.custom.product_sku != blank %}` +
-        `SKU: *{{ product.metafields.custom.product_sku | escape }}*\n` +
+        `{% if product.selected_or_first_available_variant.sku != blank %}` +
+        `SKU: *{{ product.selected_or_first_available_variant.sku }}*\n` +
         `{% endif %}`;
 
       if (monogram) {
