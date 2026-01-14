@@ -557,7 +557,7 @@
     waBtn.addEventListener('click', function (e) {
       e.preventDefault();
 
-      // === VARIANT OPTION ===
+      // === VARIANT OPTION (kalau ada) ===
       let variantText = '';
       const selectedOptions = [];
 
@@ -569,12 +569,19 @@
         variantText = selectedOptions.join(' / ');
       }
 
-      // === CARI VARIANT + SKU ===
+      // === VARIANT + SKU (FIX) ===
       let sku = '';
+      let matchedVariant = null;
 
-      const matchedVariant = variants.find(v =>
-        v.options.every((opt, i) => opt === selectedOptions[i])
-      );
+      if (selectedOptions.length) {
+        matchedVariant = variants.find(v =>
+          v.options.every((opt, i) => opt === selectedOptions[i])
+        );
+      }
+
+      if (!matchedVariant && variants.length) {
+        matchedVariant = variants[0];
+      }
 
       if (matchedVariant && matchedVariant.sku) {
         sku = matchedVariant.sku;
@@ -588,14 +595,13 @@
         monogram = monoInput.value.trim();
       }
 
-      // === VALIDASI MONOGRAM ===
       if (monoInput && monoInput.hasAttribute('required') && !monogram) {
         alert('Silakan isi monogram terlebih dahulu.');
         monoInput.focus();
         return;
       }
 
-      // === SUSUN PESAN WA ===
+      // === PESAN WA ===
       let message =
         `Halo saya ingin pre-order:\n` +
         `Produk: *{{ product.title | escape }}*\n`;
@@ -621,6 +627,7 @@
     });
   });
 </script>
+
 
 {% endif %}
 
