@@ -534,7 +534,7 @@
           let message =
         `Halo saya ingin pre-order:\n` +
         `Produk: *{{ product.title | escape }}*\n` +
-        `SKU: *{{ 'products.product.sku' | t }}*\n` +
+        `SKU: *{{ products.product.sku | t }}*\n` +
 
         if (variantText) {
           message += `Variant: *${variantText}* \n`;
