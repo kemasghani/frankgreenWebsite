@@ -529,6 +529,7 @@
         // === SUSUN PESAN WA ===
         let message =
           `Halo saya ingin pre-order:\n` +
+          `SKU : *{{product.sku | escape }}* \n` +
           `Produk: *{{ product.title | escape }}* \n`;
 
         if (variantText) {
