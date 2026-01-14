@@ -494,7 +494,7 @@
     Pre-Order Now
   </a>
 
-  <script>
+  {% comment %} <script>
     document.addEventListener('DOMContentLoaded', function () {
       const waBtn = document.getElementById('wa-preorder-btn');
 
@@ -554,7 +554,48 @@
         );
       });
     });
-  </script>
+  </script> {% endcomment %}
+  <script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const waBtn = document.getElementById('wa-preorder-btn');
+
+    waBtn.addEventListener('click', function (e) {
+      e.preventDefault();
+
+      let monogram = '';
+      const monoInput = document.querySelector('input.pplr_monogram');
+
+      if (monoInput && monoInput.value.trim() !== '') {
+        monogram = monoInput.value.trim();
+      }
+
+      if (monoInput && monoInput.hasAttribute('required') && !monogram) {
+        alert('Silakan isi monogram terlebih dahulu.');
+        monoInput.focus();
+        return;
+      }
+
+      let message =
+        `Halo saya ingin pre-order:\n` +
+        `Produk: *{{ product.title | escape }}*\n` +
+        `{% if product.selected_or_first_available_variant.sku != blank %}` +
+        `SKU: *{{ product.selected_or_first_available_variant.sku | escape }}*\n` +
+        `{% endif %}`;
+
+      if (monogram) {
+        message += `Monogram: *${monogram}*\n`;
+      }
+
+      message += `Link: {{ shop.url }}{{ product.url }}`;
+
+      window.open(
+        `https://wa.me/62819883326?text=${encodeURIComponent(message)}`,
+        '_blank'
+      );
+    });
+  });
+</script>
+
 
 {% endif %}
 
