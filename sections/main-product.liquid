@@ -527,12 +527,16 @@
         }
 
         // === SUSUN PESAN WA ===
-        let message =
+        {% comment %} let message =
           `Halo saya ingin pre-order:\n` +
-          `{% if product.selected_or_first_available_variant.sku != blank %}` +
-          `SKU: *{{ product.selected_or_first_available_variant.sku | escape }}*\n` +
-          `{% endif %}`;
-          `Produk: *{{ product.title | escape }}* \n`;
+          `Produk: *{{ product.title | escape }}* \n`; {% endcomment %}
+
+          let message =
+        `Halo saya ingin pre-order:\n` +
+        `Produk: *{{ product.title | escape }}*\n` +
+        `{% if product.selected_or_first_available_variant.sku != blank %}` +
+        `SKU: *{{ product.selected_or_first_available_variant.sku | escape }}*\n` +
+        `{% endif %}`;
 
         if (variantText) {
           message += `Variant: *${variantText}* \n`;
