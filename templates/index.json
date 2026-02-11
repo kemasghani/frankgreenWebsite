@@ -25,6 +25,17 @@
           "type": "slide",
           "settings": {
             "content_type": "image",
+            "background_image": "shopify://shop_images/web-banner-pistachio-green_bubblegum-blast_jpg.jpg",
+            "heading": "Special Edition Color",
+            "description": "Pistachio & Bubblegum",
+            "button_text": "Shop Now",
+            "button_link": "shopify://collections/special-edition-nidji-copy"
+          }
+        },
+        "slide_yBFwyE": {
+          "type": "slide",
+          "settings": {
+            "content_type": "image",
             "background_image": "shopify://shop_images/web-banner-Perahu-Kertas_1.jpg",
             "heading": "Musikal Perahu Kertas",
             "description": "Official Merchandise",
@@ -115,6 +126,7 @@
       },
       "block_order": [
         "slide_Ga3WLj",
+        "slide_yBFwyE",
         "slide_QPprFt",
         "slide_dHUQje",
         "slide_nVeepb",
