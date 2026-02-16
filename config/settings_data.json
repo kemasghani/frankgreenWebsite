@@ -441,7 +441,8 @@
       ".footer-block__newsletter,.footer__payment {display: none;}",
       ".cart-items .cart-item__totals,.product-option {font-size-adjust: 0.4; white-space: nowrap;}",
       ".cart-item__name {font-size-adjust: 0.5;}",
-      "@media (max-width: 767px) {.pplrgcolor {flex-wrap: wrap !important; } .pplr-swatch-element {aspect-ratio: 1/1; }}"
+      "@media (max-width: 767px) {.pplrgcolor {flex-wrap: wrap !important; } .pplr-swatch-element {aspect-ratio: 1/1; }}",
+      ".swatch-input__input:disabled + .swatch-input__label > .swatch::after, .swatch-input__input.visually-disabled + .swatch-input__label > .swatch::after {--crossed-line--size: 0.2rem; background-color: rgb(255, 0, 0);}"
     ]
   }
 }
