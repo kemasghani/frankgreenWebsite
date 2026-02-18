@@ -162,7 +162,9 @@
                     {%- for variant in product.variants -%}
                         <option
                             {% if variant == product.selected_or_first_available_variant %}selected="selected"{% endif %}
-                            {% if variant.available == false %}disabled{% endif %}
+                            {% if variant.available == false %}
+                                {% comment %} disabled {% endcomment %}
+                            {% endif %}
                             value="{{ variant.id }}"
                         >
                             {{ variant.title }}
