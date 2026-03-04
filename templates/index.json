@@ -34,6 +34,7 @@
         },
         "slide_yBFwyE": {
           "type": "slide",
+          "disabled": true,
           "settings": {
             "content_type": "image",
             "background_image": "shopify://shop_images/web-banner-Perahu-Kertas_1.jpg",
