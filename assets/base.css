@@ -3702,3 +3702,13 @@ details-disclosure > details {
   font-weight: 200;
   font-style: italic;
 }
+
+/* hide 0 product */
+.vrdisabled {
+  display: none !important;
+  visibility: hidden !important;
+  width: 0 !important;
+  height: 0 !important;
+  border: 0 !important;
+  margin: 0 !important;
+}
