@@ -445,7 +445,7 @@
       ".swatch-input__input:disabled + .swatch-input__label > .swatch::after,.swatch-input__input.visually-disabled + .swatch-input__label > .swatch::after {--crossed-line--size: 0.2rem; background-color: rgb(255, 0, 0);}",
       ".pplrgcolor {flex-wrap: wrap !important;}",
       ".img_thumb_small_circle span.pplrimage {aspect-ratio: 1/1;}",
-      " /* hide 0 product */.product-personalizer[data-id=\"9743991210259\"] .pplr-drop-item._pplr_flip_straw_lid {display: none; }"
+      " /* hide 0 product */"
     ]
   }
 }
