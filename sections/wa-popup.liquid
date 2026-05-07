@@ -229,23 +229,19 @@ document.addEventListener("DOMContentLoaded", () => {
   const overlay = document.getElementById("wa-popup-overlay");
   const closeBtn = document.getElementById("wa-popup-close");
   const submitBtn = document.getElementById("wa-submit");
-  localStorage.setItem("wa_popup_shown", "false");
 
   /*
     SHOW ONLY ONCE
   */
-  /*
   const alreadyShown = localStorage.getItem("wa_popup_shown");
 
-  if(!alreadyShown){
+if(!alreadyShown){
 
-    setTimeout(() => {
-      overlay.classList.remove("hidden");
-    }, 1200);
+  setTimeout(() => {
+    overlay.classList.remove("hidden");
+  }, 1200);
 
-    localStorage.setItem("wa_popup_shown", "true");
-  }
-*/
+}
   /*
     CLOSE
   */
