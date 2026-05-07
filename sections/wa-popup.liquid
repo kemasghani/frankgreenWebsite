@@ -246,8 +246,11 @@ if(!alreadyShown){
     CLOSE
   */
   function closePopup(){
-    overlay.classList.add("hidden");
-  }
+
+  overlay.classList.add("hidden");
+
+  localStorage.setItem("wa_popup_shown", "true");
+}
 
   closeBtn.addEventListener("click", closePopup);
 
