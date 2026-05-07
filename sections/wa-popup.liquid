@@ -40,10 +40,12 @@
 
     <!-- RIGHT -->
     <div class="wa-popup-right">
-      <img
-        src="{{ section.settings.popup_image | image_url: width: 1200 }}"
-        alt="Popup Image"
-      >
+      {{ section.settings.popup_image | image_url: width: 1200 | image_tag:
+  loading: 'lazy',
+  widths: '400, 600, 800, 1200',
+  alt: 'Popup Image',
+  class: 'wa-popup-image'
+}}
     </div>
 
   </div>
