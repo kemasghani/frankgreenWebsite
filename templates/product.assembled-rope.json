@@ -48,9 +48,8 @@
         },
         "custom_liquid_a7MV7G": {
           "type": "custom_liquid",
-          "disabled": true,
           "settings": {
-            "custom_liquid": "<style>\n   .button-container {\n   display: flex;\n   flex-wrap: wrap;\n   gap: 10px;\n   justify-content: left;\n   padding: 10px;\n   }\n   .color-button {\n    width: 40px;\n    height: 40px;\n    border-radius: 50%;\n    border: 1px solid black;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    text-decoration: none; \n    text-align: center;\n    position: relative;\n   } \n\n   .color-button.active {\n      border: 3px solid black;\n   }\n   \n</style>\n<script>\n   document.addEventListener(\"DOMContentLoaded\", function() {\n       let links = document.querySelectorAll(\".color-button\");\n       links.forEach(link => {\n           if (window.location.href.includes(link.getAttribute(\"href\"))) {\n               link.classList.add(\"active\");\n           }\n       });\n   });\n</script>\n<div class=\"button-container\">\n   <a href=\"/products/ceramic-reusable-bottle-midnight-black-20oz\" class=\"color-button\" style=\"background-color: #282828;\"> </a>\n   <a href=\"/products/ceramic-reusable-bottle-blushed-20oz\" class=\"color-button\" style=\"background-color: #fdd0ce;\"> </a>\n   <a href=\"/products/ceramic-reusable-bottle-deep-ocean-20oz\" class=\"color-button\" style=\"background-color: #0d3560;\"> </a>\n   <a href=\"/products/ceramic-reusable-bottle-lilac-haze-20oz\" class=\"color-button\" style=\"background-color: #ceb0d2;\"> </a>\n   <a href=\"/products/ceramic-reusable-bottle-mint-gelato-20oz\" class=\"color-button\" style=\"background-color: #b7d8c0;\"> </a>\n   <a href=\"/products/ceramic-reusable-bottle-moon-dust-20oz\" class=\"color-button\" style=\"background-color: #beb1a9;\"> </a>\n   <a href=\"/products/ceramic-reusable-bottle-neon-orange-20oz\" class=\"color-button\" style=\"background-color: #ff822b;\"> </a>\n   <a href=\"/products/ceramic-reusable-bottle-neon-pink-20oz\" class=\"color-button\" style=\"background-color: #ff4078;\"> </a>\n   <a href=\"/products/ceramic-reusable-bottle-sky-blue-20oz\" class=\"color-button\" style=\"background-color: #8ec9ea;\"> </a>\n   <a href=\"/products/ceramic-reusable-bottle-khaki-20oz\" class=\"color-button\" style=\"background-color: #3c4f2a;\"> </a>\n</div>"
+            "custom_liquid": "<style>\n   .button-container {\n   display: flex;\n   flex-wrap: wrap;\n   gap: 10px;\n   justify-content: left;\n   padding: 10px;\n   }\n   .color-button {\n    width: 40px;\n    height: 40px;\n    border-radius: 50%;\n    border: 1px solid black;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    text-decoration: none; \n    text-align: center;\n    position: relative;\n   } \n\n   .color-button.active {\n      border: 3px solid black;\n   }\n   \n</style>\n<script>\n   document.addEventListener(\"DOMContentLoaded\", function() {\n       let links = document.querySelectorAll(\".color-button\");\n       links.forEach(link => {\n           if (window.location.href.includes(link.getAttribute(\"href\"))) {\n               link.classList.add(\"active\");\n           }\n       });\n   });\n</script>\n<div class=\"button-container\">\n   <a href=\"products/rope-handle-multi-pink\" class=\"color-button\" style=\"background-color: #ff3399;\"> </a>\n<a href=\"products/rope-handle-multi-blue\" class=\"color-button\" style=\"background-color: #0099ff;\"> </a>\n   \n</div>"
           }
         },
         "variant_picker_XrABYK": {
@@ -149,6 +148,9 @@
             "icu-product-selector": "#CartDrawer-CartItems",
             "icu-product-action": "after",
             "icu-product-refresh-code": "document.querySelector('.nudge-offer').remove(); \ndocument.querySelector('.nudge-offer').remove(); ajaxCart.load(); InCartUpsell.prototype.findOfferWhenReady();",
+            "icu-add-on-selector": "",
+            "icu-add-on-action": "before",
+            "icu-add-on-atc-selector": "",
             "icu-product-show-currency-code": true
           }
         }
