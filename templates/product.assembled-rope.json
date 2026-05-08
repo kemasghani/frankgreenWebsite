@@ -265,7 +265,7 @@
       "type": "custom-liquid",
       "name": "t:sections.custom-liquid.presets.name",
       "settings": {
-        "custom_liquid": "<script>\ndocument.addEventListener(\"DOMContentLoaded\", function () {\n\n  const mediaGallery =\n    document.querySelector(\"media-gallery\");\n\n  if (!mediaGallery) return;\n\n  const secondSlide =\n    mediaGallery.querySelectorAll('[data-media-id]')[1];\n\n  if (secondSlide) {\n\n    const id = secondSlide.getAttribute(\"data-media-id\");\n\n    mediaGallery.setActiveMedia(id, true);\n\n  }\n\n});\n</script>",
+        "custom_liquid": "",
         "color_scheme": "",
         "padding_top": 40,
         "padding_bottom": 52
