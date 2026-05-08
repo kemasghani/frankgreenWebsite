@@ -21,6 +21,17 @@
     "banner_main_yMkx68": {
       "type": "banner-main",
       "blocks": {
+        "slide_wg89Qk": {
+          "type": "slide",
+          "settings": {
+            "content_type": "image",
+            "background_image": "shopify://shop_images/charm-gantungan_jpg.jpg",
+            "heading": "Rope Handle Collection",
+            "description": "Limited Edition",
+            "button_text": "Shop Now",
+            "button_link": "shopify://products/rope-handle-multi-pink"
+          }
+        },
         "slide_Ga3WLj": {
           "type": "slide",
           "disabled": true,
@@ -129,6 +140,7 @@
         }
       },
       "block_order": [
+        "slide_wg89Qk",
         "slide_Ga3WLj",
         "slide_yBFwyE",
         "slide_QPprFt",
