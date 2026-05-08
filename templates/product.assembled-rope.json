@@ -176,10 +176,7 @@
       ],
       "custom_css": [
         ".product__title h1 {font-size: 3rem; font-weight: 600;}",
-        // ".thumbnail-slider {display: none !important;}",
-        // ".slider-buttons {display: none !important;}",
         ".slider-buttonsP.product__media,.product__media-list {background-color: #edeff3 !important;}",
-        // "#Slider-Gallery-template--23686114836755 > li:nth-child(2) {display: none;}",
         "@media (max-width: 768px) {.product__title h1 {font-size: 1.5rem; font-weight: 600; }}"
       ],
       "settings": {
@@ -191,7 +188,7 @@
         "gallery_layout": "thumbnail_slider",
         "media_position": "left",
         "image_zoom": "none",
-        // "mobile_thumbnails": "hide",
+        "mobile_thumbnails": "hide",
         "hide_variants": false,
         "enable_video_looping": false,
         "padding_top": 0,
@@ -263,6 +260,16 @@
         "padding_top": 0,
         "padding_bottom": 0
       }
+    },
+    "custom_liquid_Pmj4LW": {
+      "type": "custom-liquid",
+      "name": "t:sections.custom-liquid.presets.name",
+      "settings": {
+        "custom_liquid": "<script>\ndocument.addEventListener(\"DOMContentLoaded\", function () {\n\n  const slider = document.querySelector(\".product__media-list\");\n\n  if (!slider) return;\n\n  const secondMedia = slider.querySelectorAll(\"li\")[1];\n\n  if (secondMedia) {\n\n    secondMedia.scrollIntoView({\n      behavior: \"instant\",\n      inline: \"start\",\n      block: \"nearest\"\n    });\n\n  }\n\n});\n</script>",
+        "color_scheme": "",
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
     }
   },
   "order": [
@@ -274,6 +281,7 @@
     "custom_liquid_eHPN7z",
     "custom_liquid_3apTCD",
     "custom_liquid_aDnbkn",
-    "custom_liquid_NArb6G"
+    "custom_liquid_NArb6G",
+    "custom_liquid_Pmj4LW"
   ]
 }
