@@ -34,7 +34,6 @@
         },
         "slide_wg89Qk": {
           "type": "slide",
-          "disabled": true,
           "settings": {
             "content_type": "image",
             "background_image": "shopify://shop_images/charm-gantungan_jpg_7c6c1535-57e1-4abb-8996-14feca8acfb2.jpg",
@@ -46,7 +45,6 @@
         },
         "slide_dHUQje": {
           "type": "slide",
-          "disabled": true,
           "settings": {
             "content_type": "image",
             "background_image": "shopify://shop_images/web-banner-box-general.jpg",
@@ -58,7 +56,6 @@
         },
         "slide_hGYmFT": {
           "type": "slide",
-          "disabled": true,
           "settings": {
             "content_type": "image",
             "background_image": "shopify://shop_images/web-banner-general-juli-ALT.jpg",
