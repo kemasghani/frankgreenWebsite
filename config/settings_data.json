@@ -447,7 +447,12 @@
       ".img_thumb_small_circle span.pplrimage {aspect-ratio: 1/1;}",
       " /* hide 0 product */@media screen and (min-width: 750px) {.product__media-list .product__media-item {width: 100% !important; }}",
       ".grid-2-col {display: grid; grid-template-columns: repeat(2, 1fr); gap: 30px;}",
-      "@media (max-width: 768px) {.grid-2-col {grid-template-columns: 1fr; }}"
+      "@media (max-width: 768px) {.grid-2-col {grid-template-columns: 1fr; }}",
+      "div#custom-slide1 .custom-content {flex-direction: column; align-items: flex-start;}",
+      "div#custom-slide1 h1.custom-main-heading {color: #9d5036;}",
+      "div#custom-slide1 .custom-button-container {margin-top: 0;}",
+      "div#custom-slide1 a.custom-button-link {color: #9d5036; font-weight: 500;}",
+      "div#custom-slide1 a.custom-button-link:after {background-color: #9D5036; opacity: 0;}"
     ]
   }
 }
