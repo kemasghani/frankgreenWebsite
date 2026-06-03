@@ -34,6 +34,7 @@
         },
         "slide_wg89Qk": {
           "type": "slide",
+          "disabled": true,
           "settings": {
             "content_type": "image",
             "background_image": "shopify://shop_images/charm-gantungan_jpg_7c6c1535-57e1-4abb-8996-14feca8acfb2.jpg",
@@ -43,44 +44,9 @@
             "button_link": "shopify://products/rope-handle-multi-pink"
           }
         },
-        "slide_Ga3WLj": {
-          "type": "slide",
-          "disabled": true,
-          "settings": {
-            "content_type": "image",
-            "background_image": "shopify://shop_images/web-banner-pistachio-green_bubblegum-blast_jpg.jpg",
-            "heading": "Special Edition Color",
-            "description": "Pistachio & Bubblegum",
-            "button_text": "Shop Now",
-            "button_link": "shopify://collections/new-arrivals"
-          }
-        },
-        "slide_yBFwyE": {
-          "type": "slide",
-          "disabled": true,
-          "settings": {
-            "content_type": "image",
-            "background_image": "shopify://shop_images/web-banner-Perahu-Kertas_1.jpg",
-            "heading": "Musikal Perahu Kertas",
-            "description": "Official Merchandise",
-            "button_text": "Pre-Order Now",
-            "button_link": "shopify://collections/special-edition-nidji-copy"
-          }
-        },
-        "slide_QPprFt": {
-          "type": "slide",
-          "disabled": true,
-          "settings": {
-            "content_type": "image",
-            "background_image": "shopify://shop_images/web-banner-Nidji.jpg",
-            "heading": "NIDJI x frank green",
-            "description": "Special Edition",
-            "button_text": "Shop Now",
-            "button_link": "shopify://collections/special-edition-nidji"
-          }
-        },
         "slide_dHUQje": {
           "type": "slide",
+          "disabled": true,
           "settings": {
             "content_type": "image",
             "background_image": "shopify://shop_images/web-banner-box-general.jpg",
@@ -90,56 +56,9 @@
             "button_link": "shopify://products/exclusive-gift-box-package-1"
           }
         },
-        "slide_nVeepb": {
-          "type": "slide",
-          "disabled": true,
-          "settings": {
-            "content_type": "image",
-            "background_image": "shopify://shop_images/banner-web-promo-11.11.jpg",
-            "heading": "Happy Hour Deals",
-            "description": "Get free bumper from 11 AM–1 PM",
-            "button_text": "Shop Now",
-            "button_link": "https://frankgreen.id/products/ceramic-reusable-bottle-1-ltr"
-          }
-        },
-        "slide_PzNJtD": {
-          "type": "slide",
-          "disabled": true,
-          "settings": {
-            "content_type": "image",
-            "background_image": "shopify://shop_images/1000341662.jpg",
-            "heading": "Shiny, Sleek, Shadow Chrome",
-            "description": "New Limited Edition!",
-            "button_text": "Shop Now",
-            "button_link": "shopify://products/chrome-ceramic-reusable-bottle-2"
-          }
-        },
-        "slide_BkqRwT": {
-          "type": "slide",
-          "disabled": true,
-          "settings": {
-            "content_type": "image",
-            "background_image": "shopify://shop_images/Web-banner-GIIAS_3.jpg",
-            "heading": "GIIAS Edition",
-            "description": "Free Ticket with Purchase",
-            "button_text": "Shop Now",
-            "button_link": ""
-          }
-        },
-        "slide_VMDn9M": {
-          "type": "slide",
-          "disabled": true,
-          "settings": {
-            "content_type": "image",
-            "background_image": "shopify://shop_images/Web_Banner_Glow_in_the_dark_1.jpg",
-            "heading": "Ready, Set, Glow!",
-            "description": "Join the hydration illumination",
-            "button_text": "Shop Now",
-            "button_link": "shopify://collections/glow-collection"
-          }
-        },
         "slide_hGYmFT": {
           "type": "slide",
+          "disabled": true,
           "settings": {
             "content_type": "image",
             "background_image": "shopify://shop_images/web-banner-general-juli-ALT.jpg",
@@ -153,14 +72,7 @@
       "block_order": [
         "slide_4kQfbK",
         "slide_wg89Qk",
-        "slide_Ga3WLj",
-        "slide_yBFwyE",
-        "slide_QPprFt",
         "slide_dHUQje",
-        "slide_nVeepb",
-        "slide_PzNJtD",
-        "slide_BkqRwT",
-        "slide_VMDn9M",
         "slide_hGYmFT"
       ],
       "name": "Banner Main",
