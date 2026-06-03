@@ -21,6 +21,17 @@
     "banner_main_yMkx68": {
       "type": "banner-main",
       "blocks": {
+        "slide_4kQfbK": {
+          "type": "slide",
+          "settings": {
+            "content_type": "image",
+            "background_image": "shopify://shop_images/banner-web-afgan_jpg.jpg",
+            "heading": "Afgan Collectible Item",
+            "description": "",
+            "button_text": "Pre-Order Now!",
+            "button_link": "shopify://collections/afgan-collectible"
+          }
+        },
         "slide_wg89Qk": {
           "type": "slide",
           "settings": {
@@ -140,6 +151,7 @@
         }
       },
       "block_order": [
+        "slide_4kQfbK",
         "slide_wg89Qk",
         "slide_Ga3WLj",
         "slide_yBFwyE",
