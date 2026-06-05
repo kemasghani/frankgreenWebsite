@@ -127,7 +127,13 @@
       "type": "wa-popup",
       "name": "Join Popup WA",
       "settings": {
-        "popup_image": "shopify://shop_images/website_-_member_jpg.jpg"
+        "heading": "BECOME A FRANK FRIEND",
+        "description": "Join frank green Indonesia membership and get access to exclusive benefits, referral rewards, and the latest updates from us.",
+        "name_placeholder": "Nama",
+        "button_text": "SIGN UP NOW",
+        "disclaimer_text": "By joining frank green Indonesia membership, you agree to receive promotional and marketing updates from us via email and WhatsApp. You may withdraw your consent at any time by unsubscribing from our emails or contacting frank green Indonesia’s official hotline.",
+        "popup_image": "shopify://shop_images/website_-_member_jpg.jpg",
+        "popup_image_mobile": "shopify://shop_images/Web_169_2_jpg.jpg"
       }
     }
   },
