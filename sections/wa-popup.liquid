@@ -1,7 +1,6 @@
 <div id="wa-popup-overlay" class="wa-popup-overlay hidden">
   <div class="wa-popup">
 
-    <!-- CLOSE -->
     <button id="wa-popup-close" class="wa-popup-close">
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
         <path d="M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
@@ -13,37 +12,53 @@
     <div class="wa-popup-left">
 
       <h2>
-        BECOME A FRANK FRIEND
+        {{ section.settings.heading }}
       </h2>
 
       <p>
-        Join frank green Indonesia membership and get access to exclusive benefits, referral rewards, and the latest updates from us.
+        {{ section.settings.description }}
       </p>
 
       <input
         type="text"
         id="wa-name"
-        placeholder="Nama"
+        placeholder="{{ section.settings.name_placeholder }}"
       />
 
       <button id="wa-submit">
-        SIGN UP NOW
+        {{ section.settings.button_text }}
       </button>
 
       <small>
-        By joining frank green Indonesia membership, you agree to receive promotional and marketing updates from us via email and WhatsApp. You may withdraw your consent at any time by unsubscribing from our emails or contacting frank green Indonesia’s official hotline.
+        {{ section.settings.disclaimer_text }}
       </small>
 
     </div>
 
     <!-- RIGHT -->
     <div class="wa-popup-right">
-      {{ section.settings.popup_image | image_url: width: 1200 | image_tag:
-  loading: 'lazy',
-  widths: '400, 600, 800, 1200',
-  alt: 'Popup Image',
-  class: 'wa-popup-image'
-}}
+
+      <picture>
+
+        {% if section.settings.popup_image_mobile != blank %}
+          <source
+            media="(max-width: 768px)"
+            srcset="{{ section.settings.popup_image_mobile | image_url: width: 800 }}"
+          >
+        {% endif %}
+
+        {{
+          section.settings.popup_image
+          | image_url: width: 1200
+          | image_tag:
+            loading: 'lazy',
+            widths: '400, 600, 800, 1200',
+            alt: 'Popup Image',
+            class: 'wa-popup-image'
+        }}
+
+      </picture>
+
     </div>
 
   </div>
@@ -58,12 +73,9 @@
   justify-content:center;
   align-items:center;
   z-index:99999;
-
   opacity:1;
   visibility:visible;
-  transition:
-    opacity .35s ease,
-    visibility .35s ease;
+  transition:opacity .35s ease, visibility .35s ease;
 }
 
 .wa-popup-overlay.hidden{
@@ -81,7 +93,6 @@
   display:grid;
   grid-template-columns:1fr 1fr;
   position:relative;
-
   transform:translateY(0) scale(1);
   transition:transform .35s ease;
 }
@@ -89,11 +100,11 @@
 .wa-popup-overlay.hidden .wa-popup{
   transform:translateY(20px) scale(.96);
 }
-.wa-popup-overlay small {
-    font-size: 12px;
+
+.wa-popup-overlay small{
+  font-size:12px;
 }
 
-/* LEFT */
 .wa-popup-left{
   padding:70px 55px;
   display:flex;
@@ -160,19 +171,21 @@
   font-size:12px;
 }
 
-/* RIGHT */
 .wa-popup-right{
   background:#f3f0f8;
 }
 
+.wa-popup-right picture,
 .wa-popup-right img{
   width:100%;
   height:100%;
-  object-fit:cover;
   display:block;
 }
 
-/* CLOSE BUTTON */
+.wa-popup-right img{
+  object-fit:cover;
+}
+
 .wa-popup-close{
   position:absolute;
   top:20px;
@@ -198,21 +211,22 @@
   background:#fff;
 }
 
-/* MOBILE */
 @media(max-width:768px){
 
   .wa-popup{
-    grid-template-columns:1fr;
+    display:flex;
+    flex-direction:column;
     max-height:90vh;
     overflow:auto;
   }
 
   .wa-popup-right{
-    display:none;
+    order:-1;
+    height:220px;
   }
 
   .wa-popup-left{
-    padding:60px 26px 30px;
+    padding:35px 24px 28px;
   }
 
   .wa-popup-left h2{
@@ -222,7 +236,6 @@
   .wa-popup-left p{
     font-size:16px;
   }
-
 }
 </style>
 
@@ -233,27 +246,18 @@ document.addEventListener("DOMContentLoaded", () => {
   const closeBtn = document.getElementById("wa-popup-close");
   const submitBtn = document.getElementById("wa-submit");
 
-  /*
-    SHOW ONLY ONCE
-  */
   const alreadyShown = localStorage.getItem("wa_popup_shown");
 
-if(!alreadyShown){
+  if(!alreadyShown){
+    setTimeout(() => {
+      overlay.classList.remove("hidden");
+    }, 1200);
+  }
 
-  setTimeout(() => {
-    overlay.classList.remove("hidden");
-  }, 1200);
-
-}
-  /*
-    CLOSE
-  */
   function closePopup(){
-
-  overlay.classList.add("hidden");
-
-  localStorage.setItem("wa_popup_shown", "true");
-}
+    overlay.classList.add("hidden");
+    localStorage.setItem("wa_popup_shown", "true");
+  }
 
   closeBtn.addEventListener("click", closePopup);
 
@@ -263,9 +267,6 @@ if(!alreadyShown){
     }
   });
 
-  /*
-    WHATSAPP
-  */
   submitBtn.addEventListener("click", () => {
 
     const name = document
@@ -297,9 +298,44 @@ if(!alreadyShown){
   "name": "Join Popup WA",
   "settings": [
     {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "BECOME A FRANK FRIEND"
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Description",
+      "default": "Join frank green Indonesia membership and get access to exclusive benefits, referral rewards, and the latest updates from us."
+    },
+    {
+      "type": "text",
+      "id": "name_placeholder",
+      "label": "Name Placeholder",
+      "default": "Nama"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button Text",
+      "default": "SIGN UP NOW"
+    },
+    {
+      "type": "textarea",
+      "id": "disclaimer_text",
+      "label": "Disclaimer Text",
+      "default": "By joining frank green Indonesia membership, you agree to receive promotional and marketing updates from us via email and WhatsApp. You may withdraw your consent at any time by unsubscribing from our emails or contacting frank green Indonesia’s official hotline."
+    },
+    {
       "type": "image_picker",
       "id": "popup_image",
-      "label": "Popup Image"
+      "label": "Desktop Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "popup_image_mobile",
+      "label": "Mobile Image"
     }
   ],
   "presets": [
