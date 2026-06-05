@@ -125,6 +125,9 @@
     },
     "wa_popup_w6wjyN": {
       "type": "wa-popup",
+      "custom_css": [
+        ".wa-popup-left small {font-size: 10px;}"
+      ],
       "name": "Join Popup WA",
       "settings": {
         "heading": "BECOME A FRANK FRIEND",
