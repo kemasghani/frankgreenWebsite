@@ -453,7 +453,7 @@
       "div#custom-slide1 .custom-button-container {margin-top: 0;}",
       "div#custom-slide1 a.custom-button-link {color: #9d5036; font-weight: 500;}",
       "div#custom-slide1 a.custom-button-link:after {background-color: #9d5036; opacity: 0;}",
-      ".cart-item__totals {font-size: inherit !important;}"
+      "/* .cart-item__totals {font-size: inherit !important;} */"
     ]
   }
 }
