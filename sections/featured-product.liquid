@@ -108,7 +108,8 @@
                 {%- when 'title' -%}
                   <h2 class="product__title {{ block.settings.heading_size }}" {{ block.shopify_attributes }}>
                     {%- unless placeholder -%}
-                      {{ product.title | escape }}
+                      {% comment %} {{ product.title | escape }} {% endcomment %}
+                       {{ product.metafields.custom_data.custom_title | default: product.title }}
                     {%- else -%}
                       {{ 'onboarding.product_title' | t }}
                     {%- endunless -%}
@@ -187,7 +188,7 @@
                       <quantity-input class="quantity">
                         <button class="quantity__button" name="minus" type="button">
                           <span class="visually-hidden">
-                            {{- 'products.product.quantity.decrease' | t: product: product.title | escape -}}
+                            {{- 'products.product.quantity.decrease' | t: product: product.metafields.custom_data.custom_title | default: product.title -}}
                           </span>
                           <span class="svg-wrapper">
                             {{- 'icon-minus.svg' | inline_asset_content -}}
