@@ -389,5 +389,41 @@
     {%- if settings.cart_type == 'drawer' -%}
       <script src="{{ 'cart-drawer.js' | asset_url }}" defer="defer"></script>
     {%- endif -%}
+
+    <script>
+function toggleSwitchLid() {
+    const switchBtn = document.querySelector('._pplr_switch_lid');
+    const switchColour = document.querySelector('.pplr-switch-lid-colour');
+
+    if (!switchBtn || !switchColour) return;
+
+    const swatches = switchColour.querySelectorAll('.pplr-swatch-element');
+
+    const hasAvailable = [...swatches].some(
+        s => !s.classList.contains('vrdisabled')
+    );
+
+    if (!hasAvailable) {
+        switchBtn.style.display = 'none';
+
+        if (switchBtn.classList.contains('active')) {
+            document.querySelector('._pplr_flip_straw_lid')?.click();
+        }
+    } else {
+        switchBtn.style.display = '';
+    }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    toggleSwitchLid();
+
+    new MutationObserver(toggleSwitchLid).observe(document.body, {
+        subtree: true,
+        childList: true,
+        attributes: true,
+        attributeFilter: ['class']
+    });
+});
+</script>
   </body>
 </html>
