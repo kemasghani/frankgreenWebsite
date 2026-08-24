@@ -21,6 +21,28 @@
     "banner_main_yMkx68": {
       "type": "banner-main",
       "blocks": {
+        "slide_CEJyaU": {
+          "type": "slide",
+          "settings": {
+            "content_type": "image",
+            "background_image": "shopify://shop_images/2608_INDONESIA_WEB_BANNER_2880x1234_V2_jpg.jpg",
+            "heading": "The Chrome Zone",
+            "description": "Limited Edition",
+            "button_text": "Shop Now",
+            "button_link": "shopify://collections/new-chrome"
+          }
+        },
+        "slide_JbPEki": {
+          "type": "slide",
+          "settings": {
+            "content_type": "image",
+            "background_image": "shopify://shop_images/2608_INDONESIA_WEB_BANNER_2880x1234_V1_jpg.jpg",
+            "heading": "The Chrome Zone",
+            "description": "Limited Edition",
+            "button_text": "Shop Now",
+            "button_link": "shopify://collections/new-chrome"
+          }
+        },
         "slide_4kQfbK": {
           "type": "slide",
           "disabled": true,
@@ -68,6 +90,8 @@
         }
       },
       "block_order": [
+        "slide_CEJyaU",
+        "slide_JbPEki",
         "slide_4kQfbK",
         "slide_wg89Qk",
         "slide_dHUQje",
