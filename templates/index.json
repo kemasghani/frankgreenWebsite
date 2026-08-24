@@ -115,7 +115,7 @@
         ".full-unstyled-link {font-size: 1.2rem;}",
         "@media (max-width: 768px) {.title {font-size: 1.3rem; padding-bottom: 0.5rem; } .full-unstyled-link {font-size: 1.1rem; }}"
       ],
-      "name": "New Arrivals",
+      "name": "Chrome",
       "settings": {
         "title": "The Chrome Zone",
         "heading_size": "h2",
