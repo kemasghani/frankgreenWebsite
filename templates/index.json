@@ -23,6 +23,7 @@
       "blocks": {
         "slide_ic9y76": {
           "type": "slide",
+          "disabled": true,
           "settings": {
             "content_type": "image",
             "background_image": "shopify://shop_images/web-banner-KAHITNA_jpg.jpg",
@@ -116,6 +117,7 @@
     },
     "featured_collection_4kkMNH": {
       "type": "featured-collection",
+      "disabled": true,
       "custom_css": [
         ".title {font-family: serif; font-weight: normal; letter-spacing: 0.2px; font-size: 2rem;}",
         ".card__heading {font-size: 1.2rem; letter-spacing: 0.2px; font-weight: bold;}",
@@ -127,7 +129,7 @@
         ".full-unstyled-link {font-size: 1.2rem;}",
         "@media (max-width: 768px) {.title {font-size: 1.3rem; padding-bottom: 0.5rem; } .full-unstyled-link {font-size: 1.1rem; }}"
       ],
-      "name": "Chrome 34",
+      "name": "Kahitna Limited Edition",
       "settings": {
         "title": "Kahitna Limited Edition",
         "heading_size": "h2",
