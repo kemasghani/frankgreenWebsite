@@ -600,7 +600,8 @@
 
 {% endif %}
 
-              {% if template.suffix == 'Preorder'  or template.suffix == 'PreorderAfgan20oz' %}
+              {% comment %} {% if template.suffix == 'Preorder'  or template.suffix == 'PreorderAfgan20oz' %} {% endcomment %}
+               {% if template.suffix contains 'Preorder' %}
                 <style>
                   button[type="submit"],
                   .product-form__submit,
