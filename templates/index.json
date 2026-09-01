@@ -21,6 +21,17 @@
     "banner_main_yMkx68": {
       "type": "banner-main",
       "blocks": {
+        "slide_ic9y76": {
+          "type": "slide",
+          "settings": {
+            "content_type": "image",
+            "background_image": "shopify://shop_images/web-banner-KAHITNA_jpg.jpg",
+            "heading": "Kahitna Limited Edition",
+            "description": "",
+            "button_text": "Pre-order Now",
+            "button_link": "shopify://collections/kahitna"
+          }
+        },
         "slide_CEJyaU": {
           "type": "slide",
           "settings": {
@@ -90,6 +101,7 @@
         }
       },
       "block_order": [
+        "slide_ic9y76",
         "slide_CEJyaU",
         "slide_JbPEki",
         "slide_4kQfbK",
