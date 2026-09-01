@@ -484,7 +484,8 @@
                   Pre-Order Now
                 </a>
               {% endif %} {% endcomment %}
-              {% if template.suffix == 'Preorder' or template.suffix == 'PreorderAfgan20oz' %}
+              {% comment %} {% if template.suffix == 'Preorder' or template.suffix == 'PreorderAfgan20oz' %} {% endcomment %}
+               {% if template.suffix contains 'Preorder' %}
   <a
     href="#"
     id="wa-preorder-btn"
